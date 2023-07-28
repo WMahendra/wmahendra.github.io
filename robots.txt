@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://wmahendraa.github.io/sitemap.xml
+Sitemap: https://wmahendra.github.io/sitemap.xml
