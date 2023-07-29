@@ -20,3 +20,8 @@ Currently pursuing M.Sc degree in Geoinformation Science and Earth Observation f
 
 My focus lies in landscape ecology and ecosystem science, particularly in tropical areas. I am intrigued, how do the dynamics of the surface influene the environmental quality? Moreover, what are the impact of disturbances (i.e. climate change, fire) on the ecosystem?. To address these questions, I use the integration between field measurements and remote sensing technologies to describe the phenomena spatially and temporally.
 
+<style>
+  body {
+    text-align: justify;
+  }
+</style>
