@@ -19,8 +19,8 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-Currently pursuing M.Sc degree in Geoinformation Science and Earth Observation for Environmental Modelling and Monitoring at Lund University and University of Twente. My focus is on the utilization of time series remote sensing with radar technology for natural resource, especially in tropical areas. 
+Currently pursuing M.Sc degree in Geoinformation Science and Earth Observation for Environmental Modelling and Monitoring at Lund University and University of Twente. My focus is on the utilization of time series remote sensing with radar technology for natural resource management, especially in tropical areas. I would like to know, how does the forest affect the ecosystem
 
-Prior to the move, I worked as a research assistant, studying the role of remote sensing and GIS to monitor Indonesian peatland ecosystem, integrated with multi-level policies.
+Prior to the move, I worked as a research assistant, studying the role of remote sensing and GIS followed by field assessment to monitor Indonesian peatland ecosystem, integrated with multi-level policies to enhance its effectiveness and impact. 
 
 Link to your social media connections, too. This theme is set up to use [Font Awesome icons](http://fortawesome.github.io/Font-Awesome/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
