@@ -1,6 +1,6 @@
 ---
-layout: about
-title: about
+layout: About Me
+title: About Me
 permalink: /
 subtitle: <a href='#'>M.Sc student at University of Twente</a>
 
