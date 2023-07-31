@@ -1,18 +1,15 @@
 ---
 layout: page
-title: project 1
-description: a project with a background image
-img: assets/img/12.jpg
+title: LULC Mapping in Lund Kommun, Sweden
+description: a brief explanation of two different algorithms
+img: assets/img/project1.jpg
 importance: 1
 category: work
 related_publications: einstein1956investigations, einstein1950meaning
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
-
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+Land cover information plays an important role in various sectors as it can be used to describe the spatial distribution of objects on the land surface Satellite remote sensing has been used for decades to assist land cover mapping activities due to its capability to capture vast areas and constant repetition. To produce land cover mapping, there are two general methods of image classification for land cover studies, namely visual interpretation and digital classification (Rambaldi et al., 2006). Digital classification has the advantage of automating based on pixel values that represent an object. However, field data is needed as input in formulating a classification scheme along with an evaluation of the classified land cover. This study aims to make land cover maps in Lund Kommun by integrating machine learning classification algorithms and field information.
+The study area is located in Lund Municipality centered at approximately 13o 21’ 30” E and 55o 42’ 58” N. This region has a temperate climate and relatively flat topography. Additionally, the study area is characterized by agricultural fields and forests, with a small proportion of cover consisting of water bodies and built-up areas.
 
     ---
     layout: page
