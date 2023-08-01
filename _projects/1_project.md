@@ -1,7 +1,27 @@
 ---
 layout: page
-title: LULC Mapping in Lund Kommun, Sweden
-description: A brief explanation of two different algorithms
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* CSS to style the title */
+        h1 {
+            font-size: 24px;
+        }
+        
+        /* CSS to style the description */
+        p {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="font-size: 20px;">LULC Mapping in Lund Kommun, Sweden</h1>
+    <p style="font-size: 14px;">A brief explanation of two different algorithms</p>
+    <!-- Add the rest of your content here -->
+</body>
+</html>
+
 img: assets/img/project1/7.jpg
 importance: 1
 category: work
