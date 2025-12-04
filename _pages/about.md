@@ -16,9 +16,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-Currently pursuing M.Sc degree in Geoinformation Science and Earth Observation for Environmental Modelling and Monitoring at Lund University and University of Twente. Prior to the move, I worked as a research assistant, studying the role of remote sensing and GIS followed by field assessment to monitor peatland ecosystem in Indonesia.
-
-My focus lies in landscape ecology and ecosystem science, particularly in tropical landscape. It is intrigued, how do the dynamics of the surface influence the environmental quality? Moreover, what are the impact of disturbances (i.e. climate change, fire) on the ecosystem?. To address these questions, I use the integration between field measurements and remote sensing technologies to describe the phenomena spatially and temporally.
+Deforestation are one of the most pressing challenges of the 21st century. It is intrigued, how do the dynamics of the vegetation cover affect the environmental quality? Moreover, what are the impact of disturbances (i.e. forest conversion, climate change, fire) on the ecosystem?. To address these questions, I use the integration between remote sensing technologies and field measurements to describe the phenomena spatially and temporally. Currently, I serve my role as a GIS and Forestry consultant with a focus in geospatial analyses, such as land-use change, deforestation, and carbon stock modelling to ensure compliance for carbon credit projects under different carbon standards (i.e., Verra and Gold standard). Additionaly, I advice clients the evaluation the nature credit projects, especially the technical part.
 
 <style>
   body {
