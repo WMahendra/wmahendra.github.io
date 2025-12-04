@@ -9,9 +9,9 @@
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+    - title: Master of Science
+      institution: Lund University, Sweden
+      year: 1666
       description:
         - Description 1.
         - Description 2.
@@ -19,9 +19,15 @@
           contents:
             - Sub-description 1.
             - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
+    - title: Master of Science
+      institution: University of Twente, The Netherlands
+      year: 1964
+      description:
+        - Description 1.
+        - Description 2.
+    - title: Bachelor of Science
+      institution: Universitas Gadjah Mada, Indonesia
+      year: 1949
       description:
         - Description 1.
         - Description 2.
