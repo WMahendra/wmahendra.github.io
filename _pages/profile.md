@@ -14,10 +14,12 @@ Geospatial professional with experience in geographic information system (GIS), 
 ## Education
 - 08/2023 – 07/2024
 M.Sc Geoinformation Science and Earth Observation for Environmental Modelling and Management, Faculty of ITC, University of Twente
+
 - 08/2022 – 06/2023
 M.Sc Physical Geography and Ecosystem Science, Faculty of Science, Lund University
+
 - 09/2016 – 11/2020
-B.Sc in Geographic Information Science, Faculty of Geography, Gadjah Mada University
+B.Sc in Geographic Information Science, Faculty of Geography, Universitas Gadjah Mada
 
 ## Experience
 - Role – Organization
