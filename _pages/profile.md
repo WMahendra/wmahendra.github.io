@@ -1,6 +1,7 @@
 ---
-permalink: /profile/
+layout: single
 title: Kulo William
+permalink: /profile/
 author_profile: true
 redirect_from:
   - /profile
