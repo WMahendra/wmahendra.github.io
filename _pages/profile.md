@@ -7,4 +7,16 @@ redirect_from:
   - /profile.html
 ---
 
- continue to support climate stability, biodiversity, and resilient livelihoods.
+## About Me
+I am Kulo William, working on climate stability, biodiversity, and resilient livelihoods.
+
+## Education
+- MSc in ...
+- BSc in ...
+
+## Experience
+- Role – Organization
+
+## Skills
+- GIS, Remote Sensing
+- Python, GEE
