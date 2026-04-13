@@ -8,26 +8,29 @@
 #      Markdown formatted page while the second is generated using JSON.
 
 main:
+  - title: "Profile"
+    url: /year-archive/
+    
   - title: "Publications"
     url: /publications/
-
-  - title: "Talks"
-    url: /talks/    
-
-  - title: "Teaching"
-    url: /teaching/    
     
-  - title: "Portfolio"
+  - title: "Projects"
     url: /portfolio/
         
-  - title: "Blog Posts"
+  - title: "Profile"
     url: /year-archive/
     
   - title: "CV"
-    url: /cv/
+    url: /files/William Mahendra_CV.pdf
+
+ # - title: "Talks"
+ #   url: /talks/    
+
+ # - title: "Teaching"
+ #   url: /teaching/    
     
   # - title: "CV"
   #   url: /cv-json/
     
-  - title: "Guide"
-    url: /markdown/
+ # - title: "Guide"
+ #   url: /markdown/
