@@ -1,9 +1,9 @@
 ---
-permalink: /
-title: "Kulo William"
+permalink: /profile/
+title: Kulo William
 author_profile: true
-redirect_from: 
-  - /profile/
+redirect_from:
+  - /profile
   - /profile.html
 ---
 
