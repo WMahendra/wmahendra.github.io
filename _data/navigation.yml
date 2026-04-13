@@ -16,9 +16,6 @@ main:
     
   - title: "Projects"
     url: /portfolio/
-        
-  - title: "Profile"
-    url: /year-archive/
     
   - title: "CV"
     url: /files/William Mahendra_CV.pdf
