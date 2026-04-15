@@ -1,8 +1,0 @@
----
-title: "Codification to secure Indonesian peatlands: From policy to practices as revealed by remote sensing analysis"
-collection: publications
-category: conferences
-permalink: /publication/2010-10-01-paper-title-number-2
-date: 2024-02-17
-paperurl: https://doi.org/10.52939/ijg.v17i2.1763](https://doi.org/10.1016/j.soisec.2022.100080
----
