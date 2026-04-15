@@ -46,35 +46,5 @@
          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
         {% endif %}
     
-<details>
-  <summary style="cursor:pointer; color:#4ea1ff; font-size:0.95em;">
-    ▶ Details
-  </summary>
-
-  <div style="margin-top:10px;">
-    
-    {% if post.excerpt %}
-      <p><strong>Abstract:</strong> {{ post.excerpt | markdownify }}</p>
-    {% endif %}
-
-    {% if post.citation %}
-      <p><strong>Citation:</strong> {{ post.citation }}</p>
-    {% endif %}
-
-    {% if post.paperurl %}
-      <p><a href="{{ post.paperurl }}">Download Paper</a></p>
-    {% endif %}
-
-    {% if post.slidesurl %}
-      <p><a href="{{ post.slidesurl }}">Download Slides</a></p>
-    {% endif %}
-
-    {% if post.bibtexurl %}
-      <p><a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
-    {% endif %}
-
-  </div>
-</details>
-
   </article>
 </div>
