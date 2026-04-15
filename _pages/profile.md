@@ -27,8 +27,8 @@ Researh Assistant, Faculty of Geography Universitas Gadjah Mada
 ## Skills
 
 ### Geospatial Data Processing
-![Python](https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=white)
-![R](https://img.shields.io/badge/-R-276DC3?style=flat&logo=r&logoColor=white)
+<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" height="40">
+<img src="https://img.shields.io/badge/R-276DC3?style=for-the-badge&logo=r&logoColor=white" height="40">
 - **Python libraries:** Rasterio, GeoPandas, GEEMap, Matplotlib, TensorFlow, FilterPy, Seaborn  
 - **R packages:** raster, lidR, TreeLS, sf, ggplot2, rgeos, randomForest, MatchIt  
 - Experience with image processing software: SNAP, PolSARPro, ENVI, IDRISI  
