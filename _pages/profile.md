@@ -1,10 +1,9 @@
 ---
 layout: single
+title: "Profile"
 permalink: /profile/
 author_profile: true
-redirect_from:
-  - /profile
-  - /profile.html
+classes: wide
 ---
 
 ## About Me
