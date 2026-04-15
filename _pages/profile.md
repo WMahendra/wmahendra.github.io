@@ -1,6 +1,5 @@
 ---
 layout: single
-title: Kulo William
 permalink: /profile/
 author_profile: true
 redirect_from:
@@ -22,8 +21,35 @@ M.Sc Physical Geography and Ecosystem Science, Faculty of Science, Lund Universi
 B.Sc in Geographic Information Science, Faculty of Geography, Universitas Gadjah Mada
 
 ## Experience
-- Role – Organization
+- 08/2024 - Present
+GIS and Forestry Consultant, Form International
+- 01/2024 - 06/2024
+Remote Sensing Intern, Acorn Rabobank
+- 04/2021 - 05/2022
+Researh Assistant, Faculty of Geography Universitas Gadjah Mada
 
 ## Skills
-- GIS, Remote Sensing
-- Python, GEE
+
+### Geospatial Data Processing
+- Proficient in analyzing geospatial raster data using **Python** and **R**
+- **Python libraries:** Rasterio, GeoPandas, GEEMap, Matplotlib, TensorFlow, FilterPy, Seaborn  
+- **R packages:** raster, lidR, TreeLS, sf, ggplot2, rgeos, randomForest, MatchIt  
+- Experience with image processing software: SNAP, PolSARPro, ENVI, IDRISI  
+- Skilled in LiDAR processing and visualization using Fusion and Agisoft Metashape  
+
+### Google Earth Engine (GEE)
+- Competent in:
+  - Data collection and preprocessing  
+  - Image classification and regression  
+  - Time series analysis  
+
+### Time Series & Ecosystem Modelling
+- Intermediate proficiency in TIMESAT and LPJ-GUESS  
+- Experience in:
+  - Satellite time-series analysis  
+  - Dynamic vegetation and ecosystem modelling  
+
+### Data Analysis & Visualization
+- Proficient with:
+  - QGIS  
+  - ArcGIS products  
