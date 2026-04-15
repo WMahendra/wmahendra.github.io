@@ -5,8 +5,6 @@ permalink: /profile/
 author_profile: true
 classes: wide
 ---
-
-## About Me
 Geospatial professional with experience in geographic information system (GIS), remote sensing, geodatabase management, and carbon project calculation delivery across Africa, Latin America, and Asia. Skilled in applying machine learning, deep learning and AI to multisource satellite data for land-use change detection, deforestation mapping, and biomass modelling, alongside FME-based data integration, workflow automation, and spatial analysis. I Bring a cross-disciplinary approach by combining technical expertise, field observations, and discussions to address complex environmental and land-use issues. Experienced in translating spatial outputs into clear, actionable insights for clients, partners, and non-technical audiences.
 
 ## Education
