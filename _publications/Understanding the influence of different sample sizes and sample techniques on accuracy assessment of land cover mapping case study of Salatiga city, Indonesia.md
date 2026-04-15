@@ -1,20 +1,31 @@
 ---
-title: "Mangroves change detection using support vector machine algorithm on Google Earth Engine (A case study in Part of Gulf of Bone, South Sulawesi, Indonesia)"
+title: "Understanding the influence of different sample sizes and sample techniques on accuracy assessment of land cover mapping: case study of Salatiga city, Indonesia"
 collection: publications
 category: conferences
-date: 2019-10-14
-venue: "Asian Conference on Remote Sensing (ACRS)"
+date: 2024-01-29
+venue: "Eighth Geoinformation Science Symposium 2023"
 paperurl: "https://acrs-aars.org/proceeding/ACRS2019/ThC1-3.pdf"
 ---
 ## Abstract
-Remote sensing data have been proven to be efficient as data source for mangrove mapping and monitoring to support decision making and policy
-related to mangrove management. One of the key advantages of remote sensing is the temporal availability of the data which allow monitoring of mangrove status from different time period. In line with this advantage, the recent development of Google Earth Engine (GEE) has open wider possibility to work with large image datasets in an online platform for mangrove monitoring. This study aims to develop a method to monitor mangrove cover changes at some parts of Gulf of Bone, South Sulawesi, Indonesia from 2014 to 2018 using a combination of GEE and Support
-Vector Machine (SVM) algorithm applied to Landsat 8 OLI (30 m pixel size). We used region of interest (ROI) technique to distinguish mangroves, non -mangroves, open area, water bodies, and cloud objects. The result of five classes ROI was for defining all the dataset for data model. The algorithm implementation result shows that the mangrove cover from 2014 to 2015 had decreased significantly along the beach and in several side of fishponds. However, from 2016 to 2018 the mangrove cover had increased especially in the south side of the study area. This change
-pattern shows the dynamic of mangrove cover in the study area, mainly caused by the development of fish or shrimp ponds and some mangrove restoration efforts. The result shows the potential of SVM and GEE for spatio-temporal data analysis based on Landsat 8 OLI to monitor the mangrove cover changes over the time. Nevertheless, the spectral characteristics of mangroves which is influenced by water bodies or unconsolidated sediment background make the identification of mangroves or non-mangroves area remains challenging.
+Remote sensing data has been proven capable and efficient as a powerful resource for large-scale land cover mapping.
+However, a map is considered acceptable with the required accuracy value. The problem related to sampling is how
+the sample amount and sample technique affect the accuracy of the land cover mapping. Furthermore, the accuracy
+assessment for mapping usually only utilizes accuracy measurement standards, which are commonly used. This research was
+conducted to measure the effect of the different sampling sizes and sampling methods on the accuracy value of largescale land cover mapping using area based assessment approach. A visual interpretation was used as a reference while
+multispectral classification was carried outindependently as an object to be tested for accuracy assessment. The number
+of classes interpreted was 25 and 9. We demonstrated the sampling methods applied were random sampling, stratified
+random sampling, and systematic grid sampling. A confusion matrix method was used to gain the overall accuracy.
+The result of this study showed that the number of 200 samples for land cover with 25 classes and 36 sample for nine
+classes could start the regularity against the actual accuracy. While the sample number below 200 and 36 for both land
+cover classes showed irregular fluctuations in the accuracy value. Using stratified random sampling was satisfactory
+for modeling the accuracy compared to random and systematic grid sampling. Thus, those results could be used to
+indicate accuracy value against different scenarios and gain a recommendation for assessing the accuracy ofland cover
+on a large scale.
+
 
 
 ## Citation
-Mahendra W K, Jamaluddin I and Kamal M 2019 Mangroves change detection using support vector machine algorithm on Google Earth Engine (A case study in Part of Gulf of Bone, South Sulawesi, Indonesia); Proceedings of the 40th Asian Conference on Remote Sensing (ACRS 2019) October 14–18, 2019, Daejeon Convention Center (DCC), Daejeon, Korea, https://a-a-r-s.org/proceeding/ACRS2019/ThC1-3.pdf.
+Mahendra, W. K., & Danoedoro, P. (2024). Understanding the influence of different sample sizes and sample techniques on accuracy assessment of land cover mapping: Case study of Salatiga City, Indonesia. Proceedings of SPIE, 12977, Article 129770E. https://doi.org/10.1117/12.3009445
 
 ## Access
-👉 [Read full paper](http://acrs-aars.org/proceeding/ACRS2019/ThC1-3.pdf)
+👉 [Read full paper](https://doi.org/10.1117/12.3009445)
