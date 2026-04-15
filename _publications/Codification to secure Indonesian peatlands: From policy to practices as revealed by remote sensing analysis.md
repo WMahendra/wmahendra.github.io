@@ -13,4 +13,4 @@ Indonesian peatlands are facing severe environmental challenges due to unsustain
 Widyatmanti, W., B. Minasny, D. Awanda, et al. 2022. “Codification to Secure Indonesian Peatlands: From Policy to Practices as Revealed by Remote Sensing Analysis.” Soil Security 9: 100080.
 
 ## Access
-👉 [Read full paper](https://doi.org/10.52939/ijg.v17i2.1763)
+👉 [Read full paper](https://doi.org/10.1016/j.soisec.2022.100080)
