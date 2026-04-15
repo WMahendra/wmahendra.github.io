@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Profile"
+title: 
 permalink: /profile/
 author_profile: true
 classes: wide
