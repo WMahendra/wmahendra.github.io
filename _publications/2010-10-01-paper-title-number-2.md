@@ -1,14 +1,10 @@
 ---
-title: "Paper Title Number 2"
+title: "Mapping Paddy Field Extent and Temporal Pattern Variation in a Complex Terrain Area using Sentinel 1-Time Series Data: Case Study of Magelang District, Indonesia"
 collection: publications
 category: manuscripts
 permalink: /publication/2010-10-01-paper-title-number-2
-excerpt: 'This paper is about the number 2. The number 3 is left for future work.'
-date: 2010-10-01
-venue: 'Journal 1'
-slidesurl: 'https://academicpages.github.io/files/slides2.pdf'
-paperurl: 'https://academicpages.github.io/files/paper2.pdf'
-citation: 'Your Name, You. (2010). &quot;Paper Title Number 2.&quot; <i>Journal 1</i>. 1(2).'
+date: 2021-04-02
+citation: 'Arjasakusuma, S., Kusuma, S., Mahendra, W., & Astriviany, N. (2021). Mapping Paddy Field Extent and Temporal Pattern Variation in a Complex Terrain Area using Sentinel 1-Time Series Data: Case Study of Magelang District, Indonesia. International Journal of Geoinformatics, 17(2), 79–88. https://doi.org/10.52939/ijg.v17i2.1763'
 ---
 
-The contents above will be part of a list of publications, if the user clicks the link for the publication than the contents of section will be rendered as a full page, allowing you to provide more information about the paper for the reader. When publications are displayed as a single page, the contents of the above "citation" field will automatically be included below this section in a smaller font.
+The availability of free Synthetic Aperture Radar (SAR) data of Sentinel 1A/B, with the high temporal resolution, has provoked the usage of time-series backscatter values from the SAR data for mapping paddy field extent and crop phenology. However, paddy field extent mapping over complex terrain areas is rarely conducted, and the effect of terrain shadows on the accuracy of paddy field classification has not been addressed yet. This study attempted to identify the effect of terrain shadows on the paddy field mapping accuracy using monthly median composites Sentinel S1A data in 2018 and to perform the effort to minimize the misclassification by incorporating dem-derived terrain ruggedness index (TRI) in the random forest classifier. Lastly, this research also aimed to identify the general variation of the time-series backscatter of VV-and-VH polarization in the paddy field by employing unsupervised K-means classification. Our study showed that terrain shadow contributed to the misclassification of the identified paddy field due to the similar low backscatter values to the paddy field. Incorporating TRI can eliminate the misclassified paddy field, which subsequently increased the accuracy of paddy field mapping by 8 – 9% (user accuracy) and 4 – 5% (producer accuracy). In addition, means of clustered classes from unsupervised classification over paddy field areas generated temporal patterns related to the cropping frequencies and agreement with the weather pattern of the study area. This indicated that the cropping phase of paddy could be identified using the temporal pattern from 12-month median composites of the radar backscatter.
