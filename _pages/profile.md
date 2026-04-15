@@ -25,7 +25,6 @@ Remote Sensing Intern, Acorn Rabobank
 Researh Assistant, Faculty of Geography Universitas Gadjah Mada
 
 ## Skills
-
 ### Geospatial Data Processing
 <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" height="40">
 <img src="https://img.shields.io/badge/R-276DC3?style=for-the-badge&logo=r&logoColor=white" height="40">
