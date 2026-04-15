@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: double
 permalink: /profile/
 author_profile: true
 redirect_from:
