@@ -4,4 +4,165 @@ excerpt: "Flooded areas were mapped using recent satellite imagery and historica
 collection: portfolio
 ---
 
-This is an item in your portfolio. It can be have images or nice text. If you name the file .md, it will be parsed as markdown. If you name the file .html, it will be parsed as HTML. 
+## 🌍 Project Overview
+
+This assessment supports an Afforestation, Reforestation, and Revegetation (ARR) project funded by the Global Environment Facility and implemented by Form International. The objective is to identify and quantify restorable land within flood-affected landscapes in alignment with the Verra ARR methodology. By focusing on hydrologically dynamic areas, the project aims to unlock restoration potential while ensuring environmental integrity and carbon accounting compliance.
+
+Flooded areas were delineated using a combination of recent satellite imagery, historical flood records, and hydrological datasets to capture both seasonal and permanent inundation patterns. This analysis enables the distinction between eligible restoration zones and non-eligible water bodies, such as permanent rivers, lakes, and wetlands that fall outside ARR criteria. The approach ensures a conservative and transparent estimation of restorable land, minimizing overestimation risks and aligning with methodological requirements.
+
+The resulting spatial assessment forms a robust basis for defining project boundaries and estimating eligible hectares for restoration interventions. It also supports decision-making on species selection, planting strategies, and long-term monitoring by identifying areas with suitable hydrological conditions. Overall, this work contributes to scalable, climate-resilient landscape restoration while meeting the standards required for carbon certification under ARR frameworks.
+
+---
+
+## 🛰️ Methodology
+
+The flood mapping workflow was implemented in Google Earth Engine using Sentinel-1 Synthetic Aperture Radar (SAR) data, which enables reliable surface water detection under cloud-free and all-weather conditions. Image collections were filtered by acquisition mode (IW), dual polarization (VV and VH), date range, and area of interest. To improve signal consistency and reduce noise, data were separated into ascending and descending orbits, temporally averaged for each orbit, and then combined into a single seasonal composite clipped to the project boundary.
+
+The analysis was conducted across four annual periods (2021–2024), generating seasonal backscatter composites for each year. Bands were standardized and renamed to maintain temporal consistency, allowing for multi-year comparison. Flood detection was based on the VV polarization channel, where low backscatter values are indicative of open water surfaces. A threshold of VV < -10 dB was applied to classify flooded pixels, producing binary flood masks for each time period.
+
+All seasonal flood masks were aggregated into a multi-band dataset to enable temporal analysis of flood extent and frequency. The outputs were visualized within the GEE environment and exported as GeoTIFF files at 10-meter resolution for further use. Additionally, summary statistics were computed by counting flooded pixels within the area of interest, providing quantitative insights into flood dynamics to support restoration planning and ARR eligibility assessment.
+
+---
+
+## 💻 GEE Implementation
+
+// Function to process Sentinel-1 data for any time period
+function processSeason(startDate, endDate, seasonName) {
+  // Load Sentinel-1 data for the season
+  var s1 = ee.ImageCollection('COPERNICUS/S1_GRD')
+    .filter(ee.Filter.eq('instrumentMode', 'IW'))
+    .filter(ee.Filter.listContains('transmitterReceiverPolarisation', 'VV'))
+    .filter(ee.Filter.listContains('transmitterReceiverPolarisation', 'VH'))
+    .filterDate(startDate, endDate)
+    .filterBounds(roi);
+
+  // Split into ascending/descending orbits
+  var asc = s1.filter(ee.Filter.eq('orbitProperties_pass', 'ASCENDING'));
+  var desc = s1.filter(ee.Filter.eq('orbitProperties_pass', 'DESCENDING'));
+
+  // Temporal averaging for each orbit
+  var ascMean = asc.mean();
+  var descMean = desc.mean();
+
+  // Combine orbits and clip
+  var combined = ee.ImageCollection([ascMean, descMean]).mean().clip(roi);
+
+  // Rename bands to include season name
+  combined = combined
+    .select('VV').rename(seasonName + '_VV')
+    .addBands(combined.select('VH').rename(seasonName + '_VH'));
+
+  return combined;
+}
+
+// Process three time periods
+var Q1 = processSeason('2021-09-01', '2021-12-30', 'Q1'); // Jan-Des
+var Q2 = processSeason('2022-09-01', '2022-12-30', 'Q2'); // Jan-Des
+var Q3 = processSeason('2023-09-01', '2023-12-30', 'Q3'); // Jan-Des
+var Q4 = processSeason('2024-09-01', '2024-12-30', 'Q4'); // Jan-Des
+
+// Combine all seasons into one image
+var finalImage = ee.Image.cat([Q1, Q2, Q3, Q4]);
+
+// Visualize all bands
+Map.centerObject(roi, 10);
+var visParams = {min: -25, max: 5};
+Map.addLayer(finalImage.select('Q1_VV'), visParams, 'Q1 VV');
+Map.addLayer(finalImage.select('Q2_VV'), visParams, 'Q2 VV');
+Map.addLayer(finalImage.select('Q3_VV'), visParams, 'Q3 VV');
+Map.addLayer(finalImage.select('Q4_VV'), visParams, 'Q4 VV');
+
+// Function to identify flooded pixels (VV < -11 dB)
+function getFloodMask(seasonImage, seasonName) {
+  var vvBand = seasonImage.select(seasonName + '_VV'); // VV polarization
+  var floodMask = vvBand.lt(-10).rename(seasonName + '_Flood'); // 1=Flooded, 0=Non-flooded
+  return floodMask;
+}
+
+// Generate flood masks for all seasons
+var floodQ1 = getFloodMask(Q1, 'Q1');
+var floodQ2 = getFloodMask(Q2, 'Q2');
+var floodQ3 = getFloodMask(Q3, 'Q3');
+var floodQ4 = getFloodMask(Q4, 'Q4');
+
+// Combine all flood masks into one image
+var allFloods = ee.Image.cat([floodQ1, floodQ2, floodQ3, floodQ4]);
+
+// ==============================
+// VISUALIZATION
+// ==============================
+Map.centerObject(roi, 10);
+Map.addLayer(allFloods.select('Q1_Flood'), {min: 0, max: 1, palette: ['00000000', 'blue']}, '2021 Floods');
+Map.addLayer(allFloods.select('Q2_Flood'), {min: 0, max: 1, palette: ['00000000', 'blue']}, '2022 Floods');
+Map.addLayer(allFloods.select('Q3_Flood'), {min: 0, max: 1, palette: ['00000000', 'blue']}, '2023 Floods');
+Map.addLayer(allFloods.select('Q4_Flood'), {min: 0, max: 1, palette: ['00000000', 'blue']}, '2024 Floods');
+
+// ==============================
+// EXPORT FLOOD MASKS
+// ==============================
+Export.image.toDrive({
+  image: allFloods,
+  description: 'Annual_Flood_Masks',
+  scale: 10,
+  region: roi,
+  crs: 32636,
+  maxPixels: 1e13,
+  fileFormat: 'GeoTIFF'
+});
+
+// ==============================
+// STATISTICS (OPTIONAL)
+// ==============================
+function printFloodStats(floodMask, name) {
+  var stats = floodMask.reduceRegion({
+    reducer: ee.Reducer.sum(),
+    geometry: roi,
+    scale: 10,
+    maxPixels: 1e13
+  });
+  print(name + ' Flooded Pixels:', stats.get(name + '_Flood'));
+}
+
+printFloodStats(floodQ1, 'Q1');
+printFloodStats(floodQ2, 'Q2');
+printFloodStats(floodQ3, 'Q3');
+printFloodStats(floodQ4, 'Q4');
+
+Export.image.toDrive({
+  image: floodQ1,
+  description: 'Flood_Masks_2021',
+  scale: 10,
+  region: roi,
+  crs: 'EPSG:32636',
+  maxPixels: 1e13,
+  fileFormat: 'GeoTIFF'
+});
+Export.image.toDrive({
+  image: floodQ2,
+  description: 'Flood_Masks_2022',
+  scale: 10,
+  region: roi,
+  crs: 'EPSG:32636',
+  maxPixels: 1e13,
+  fileFormat: 'GeoTIFF'
+});
+Export.image.toDrive({
+  image: floodQ3,
+  description: 'Flood_Masks_2023',
+  scale: 10,
+  region: roi,
+  crs: 'EPSG:32636',
+  maxPixels: 1e13,
+  fileFormat: 'GeoTIFF'
+});
+Export.image.toDrive({
+  image: floodQ4,
+  description: 'Flood_Masks_2024',
+  scale: 10,
+  region: roi,
+  crs: 'EPSG:32636',
+  maxPixels: 1e13,
+  fileFormat: 'GeoTIFF'
+});
+
+👉 [Open GEE Flood Mapping Script](https://code.earthengine.google.com/fc8e3f0c3d01c5a16013fe5b9fc17b06)
