@@ -16,3 +16,11 @@ Currently, I serve as a GIS and Forestry consultant at Form International. My ro
     <strong>Figure 1.</strong> Carbon Cycle Illustration. Source: Center for Global Development, 2014.
   </figcaption>
 </figure>
+
+
+<figure>
+  <img src="../images/GISWorkflow.png" alt="AFOLU Carbon" style="width:100%">
+  <figcaption>
+    <strong>Figure 2.</strong> GIS Workflow for AFOLU Studies. 
+  </figcaption>
+</figure>
