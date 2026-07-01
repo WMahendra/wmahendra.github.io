@@ -36,3 +36,11 @@ My research lies at the intersection of geospatial science, forestry, and climat
 </figure>
 
 
+
+Selected References
+
+Sist, P., Chave, J., & Rutishauser, E. (2015). Tropical forest degradation in the context of climate change: Increasing role and research challenges. Our Common Future under Climate Change, 260-271.
+Siahaan, H., et al. (2020). Carbon loss affected by fires on various forests and land types in South Sumatera. Indonesian Journal of Forestry Research, 7(1), 15–25.
+Thompson, I. D., et al. (2012). Forest biodiversity, carbon and other ecosystem services: Relationships and impacts of deforestation and forest degradation.
+
+
