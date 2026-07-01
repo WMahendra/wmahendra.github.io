@@ -70,3 +70,19 @@
 .archive__item p {
   font-size: 1rem;
 }
+
+/* Sticky footer */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.initial-content {
+  flex: 1;
+}
