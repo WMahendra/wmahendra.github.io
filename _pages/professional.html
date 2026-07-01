@@ -1,1 +1,13 @@
+---
+layout: archive
+title: "Professional Portfolio"
+permalink: /professional/
+author_profile: true
+---
+{% include base_path %}
 
+{% assign professional = site.portfolio | where:"category","professional" %}
+
+{% for post in professional %}
+  {% include archive-single.html %}
+{% endfor %}
