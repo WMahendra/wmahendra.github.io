@@ -26,9 +26,9 @@ Following the interesting topic, I found my passion on research, specifically at
 - Carbon stock estimation and greenhouse gas accounting
 - Geospatial and AI for environmental monitoring
 - Biodiversity assessment and ecosystem service
-- Nature-based solutions
+- Nature-based solutions (NbS)
 
-The integration of remote sensing, field observation, and artificial intelligence (AI) is crucial in solving complex tropical forest management problems such as the loss of carbon stocks, biodiversity and community resources (A. U. Gabi and N. M. Abdullah, 2024; Liang et al., 2025). This entails the use of multi-source imagery such as optical, Synthetic Aperture Radar (SAR) and light detecting and ranging (LiDAR) to map and monitor the land surfaces over a wide areas. This integrated concept is critical both for scientific discovery and for operationalizing policy-relevant frameworks such as REDD+, voluntary carbon markets (VCM), and national carbon accounting systems (J. Mascaro et al, 2014) (Figure 2).
+The integration of remote sensing, field observation, and artificial intelligence (AI) is crucial in solving complex tropical forest management problems (A. U. Gabi and N. M. Abdullah, 2024; Liang et al., 2025). This provides the opportunity of multi-source imagery such as optical, Synthetic Aperture Radar (SAR) and light detecting and ranging (LiDAR) to map and monitor the land surfaces over a wide areas. This integrated framework is critical both for scientific discovery and for operationalizing policy-relevant frameworks such as REDD+, voluntary carbon markets (VCM), and national carbon accounting systems (J. Mascaro et al, 2014) (Figure 2).
 
 <figure>
   <img src="../images/GISWorkflow.png" alt="AFOLU Carbon" style="width:100%">
