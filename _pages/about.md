@@ -18,6 +18,8 @@ One particular consequences of forest degradation is the impact of forest and pe
   </figcaption>
 </figure>
 
+Tropical forests differ fundamentally from temperate or other type of forests in their ecological complexity, biodiversity, and responses to disturbance. Although tropical forests has the ability to recover aboveground carbon following disturbance, biodiversity recovery often occurs much more slowly, contributing the conservation of intact forests essential for maintaining ecosystem integrity (Thompson et al., 2012). On top of that, tropical landscapes are increasingly characterized by a significant influenced by human activities, creating challenges for monitoring, restoration, and sustainable management (Chave & Rutishauser, 2015).
+
 My research lies at the intersection of geospatial science, forestry, and climate change, with particular interests in:
 
 - Tropical forest degradation and deforestation
@@ -33,4 +35,4 @@ My research lies at the intersection of geospatial science, forestry, and climat
   </figcaption>
 </figure>
 
-Tropical forests differ fundamentally from temperate or other type of forests in their ecological complexity, biodiversity, and responses to disturbance. Although tropical forests has the ability to recover aboveground carbon following disturbance, biodiversity recovery often occurs much more slowly, contributing the conservation of intact forests essential for maintaining ecosystem integrity (Thompson et al., 2012). Furthermore, tropical landscapes are increasingly characterized by a significant influenced by human activities, creating challenges for monitoring, restoration, and sustainable management (Chave & Rutishauser, 2015).
+
