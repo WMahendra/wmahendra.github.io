@@ -6,13 +6,11 @@ author_profile: true
 ---
 {% include base_path %}
 
-# Portfolio
-
-Welcome to my portfolio. My work is organized into two categories.
+My work is organized into two categories:
 
 ##  Academic Portfolio
 
-Research projects conducted during my academic career, including remote sensing, GIS, machine learning, environmental modelling, and scientific publications.
+Research projects conducted during my academic journey, including remote sensing, GIS, machine learning, environmental modelling
 
 **[View Academic Portfolio →](/academic/)**
 
