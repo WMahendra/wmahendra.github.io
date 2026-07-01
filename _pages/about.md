@@ -38,7 +38,7 @@ The application of remote sensing, Geographic Information Systems (GIS) and arti
 </figure>
 
 
-Selected References
+## Selected References
 
 Gabi, A. U., & Abdullah, N. M. (2024). Optimizing biodiversity conservation in Sundaland through advanced geospatial techniques and remote sensing technologies. BIO Web of Conferences. https://doi.org/10.1051/bioconf/20249407002
 
