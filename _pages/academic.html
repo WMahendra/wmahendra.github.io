@@ -1,1 +1,14 @@
+---
+layout: archive
+title: "Academic Portfolio"
+permalink: /academic/
+author_profile: true
+---
 
+{% include base_path %}
+
+{% assign academic = site.portfolio | where:"category","academic" %}
+
+{% for post in academic %}
+  {% include archive-single.html %}
+{% endfor %}
