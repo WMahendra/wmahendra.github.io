@@ -7,9 +7,9 @@ redirect_from:
   - /about.html
 ---
 
-Tropical forests are among the richest ecosystems on earth, playing an instrumental role in regulating gobal climate, conserving biodiversity and sustaining ecosystem services. Unfortunately, beyond deforestation, forest degradation has emerged as a major environmental challenge. Activities such as selective logging, forest fires and built-up area development, altering forest compostion and ecological functions. Recent studies estimate that degraded forests now comprise nearly half of tropical forest landscapes, pinpointing their growing importance in climate change mitigation and sustainable forest management (Chave & Rutishauser, 2015)
+Tropical forests are one of the richest ecosystems on earth playing an instrumental role in regulating global climate, conserving biodiversity and sustaining ecosystem services. Unfortunately, along with deforestation, forest degradation has become a major environmental problem. Forest composition and ecological functions are changing due to selective logging, forest fires and development of built-up areas. Recent estimates indicate that degraded forests account for almost half of all tropical forest landscapes, emphasizing their increasing significance for climate change mitigation and sustainable forest management (Chave & Rutishauser, 2015).
 
-One particular consequences of forest degradation is the impact of forest and peat fires in South Sumatera, Indonesia. In 2015 fire events due to the El Nino event, secondary peat swamp forests experienced carbon losses of 94.2 Mg C ha⁻¹, corresponding to greenhouse gas emissions of approximately 345.4 t CO₂eq ha⁻¹, while secondary dryland forests, forest plantations, and swamp shrublands also suffered substantial reductions in carbon stocks (Siahaan et al., 2020). These findings demonstrate how disturbances transform tropical forests from long-term carbon sinks into significant carbon emission sources (Figure 1).
+One of the effects of forest degradation is the effect of forest and peat fires in south Sumatera, Indonesia. During the 2015 El Niño event, fires resulted in carbon losses of 94.2 Mg C ha⁻¹ in secondary peat swamp forests, equivalent to emissions of about 345.4 t CO₂eq ha⁻¹. Moreover, secondary dryland forests, forest plantations and swamp shrublands experienced significant declines in carbon stocks (Siahaan et al., 2020). These results show the role of disturbances in turning tropical forests from a long-term carbon sink into a major source of carbon emissions (Figure 1).
 
 <figure>
   <img src="../images/AFOLU_Carbon.jpg" alt="AFOLU Carbon" style="width:100%">
@@ -18,7 +18,7 @@ One particular consequences of forest degradation is the impact of forest and pe
   </figcaption>
 </figure>
 
-Tropical forests differ fundamentally from temperate or other type of forests in their ecological complexity, biodiversity, and responses to disturbance. Although tropical forests has the ability to recover aboveground carbon following disturbance, biodiversity recovery often occurs much more slowly, contributing the conservation of intact forests essential for maintaining ecosystem integrity (Thompson et al., 2012). On top of that, tropical landscapes are increasingly characterized by a significant influenced by human activities, creating challenges for monitoring, restoration, and sustainable management (Chave & Rutishauser, 2015).
+The tropical forest is fundamentally different from temperate or other type of forests in terms of complexity of ecology, diversity and responses to disturbances. Tropical forests have the potential to recover aboveground carbon following disturbance, but recovery of biodiversity often lags considerably behind, leading to the conservation of intact forests that are critical for ecosystem integrity (Thompson et al., 2012). In addition, the tropical landscapes are increasingly characterized by a significant imprint of human activities, which poses challenges for monitoring, restoration and sustainable management (Chave & Rutishauser, 2015).
 
 My research lies at the intersection of geospatial science, forestry, and climate change, with particular interests in:
 
@@ -28,6 +28,8 @@ My research lies at the intersection of geospatial science, forestry, and climat
 - Biodiversity assessment and ecosystem service
 - Nature-based solutions
 
+The application of remote sensing, Geographic Information Systems (GIS) and artificial intelligence (AI) is crucial to solving complex tropical forest management problems such as the loss of carbon stocks, biodiversity and community resources (A. U. Gabi and N. M. Abdullah, 2024; Liang et al., 2025. This entails the use of multi-source imagery such as optical, Synthetic Aperture Radar (SAR) and light detecting and ranging (LiDAR) to monitor large inaccessible tropical areas where traditional field-based measurements are often expensive or physically impossible. This integrated paradigm is critical both for scientific discovery and for operationalizing policy-relevant frameworks such as REDD+, voluntary carbon markets (VCM), and national carbon accounting systems (J. Mascaro et al, 2014) (Figure 2).
+
 <figure>
   <img src="../images/GISWorkflow.png" alt="AFOLU Carbon" style="width:100%">
   <figcaption>
@@ -36,11 +38,17 @@ My research lies at the intersection of geospatial science, forestry, and climat
 </figure>
 
 
-
 Selected References
 
-Sist, P., Chave, J., & Rutishauser, E. (2015). Tropical forest degradation in the context of climate change: Increasing role and research challenges. Our Common Future under Climate Change, 260-271.
-Siahaan, H., et al. (2020). Carbon loss affected by fires on various forests and land types in South Sumatera. Indonesian Journal of Forestry Research, 7(1), 15–25.
-Thompson, I. D., et al. (2012). Forest biodiversity, carbon and other ecosystem services: Relationships and impacts of deforestation and forest degradation.
+Gabi, A. U., & Abdullah, N. M. (2024). Optimizing biodiversity conservation in Sundaland through advanced geospatial techniques and remote sensing technologies. BIO Web of Conferences. https://doi.org/10.1051/bioconf/20249407002
 
+Liang, X., et al. (2025). Multi-source remote sensing and GIS-driven forest carbon monitoring for carbon neutrality: Integrating data, modeling, and policy applications (Preprint). https://doi.org/10.20944/preprints202505.0246.v1
+
+Mascaro, J., et al. (2014). A tale of two "forests": Random forest machine learning aids tropical forest carbon mapping. PLOS ONE, 9(1), e85993. https://doi.org/10.1371/journal.pone.0085993
+
+Siahaan, H., et al. (2020). Carbon loss affected by fires on various forests and land types in South Sumatera. Indonesian Journal of Forestry Research, 7(1), 15–25. https://doi.org/10.59465/ijfr.2020.7.1.15-25
+
+Sist, P., Chave, J., & Rutishauser, E. (2015). Tropical forest degradation in the context of climate change: Increasing role and research challenges. In Our Common Future Under Climate Change (pp. 260–271).
+
+Thompson, I. D., et al. (2012). Forest biodiversity, carbon and other ecosystem services: Relationships and impacts of deforestation and forest degradation.
 
