@@ -46,3 +46,27 @@
   text-align: justify;
   hyphens: auto;
 }
+
+/* === Publications === */
+
+/* Publication title */
+.archive__item-title {
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.archive__item-title a {
+  color: #000 !important;
+  text-decoration: none;
+}
+
+.archive__item-title a:hover {
+  color: #000 !important;
+  text-decoration: underline;
+}
+
+/* Journal and year text */
+.archive__item-excerpt,
+.archive__item p {
+  font-size: 1rem;
+}
