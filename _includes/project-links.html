@@ -7,16 +7,16 @@
 {% if page.publication_url or page.github_url or page.gee_url or page.demo_url %}
 <p class="project-links">
   {% if page.publication_url %}
-  <a class="btn btn--primary" href="{{ page.publication_url }}" target="_blank" rel="noopener noreferrer">View publication <span aria-hidden="true">&#8599;</span><span class="sr-only">(opens in a new tab)</span></a>
+  <a class="action action--primary" href="{{ page.publication_url }}" target="_blank" rel="noopener noreferrer">View publication <span aria-hidden="true">&#8599;</span><span class="sr-only">(opens in a new tab)</span></a>
   {% endif %}
   {% if page.github_url %}
-  <a class="btn btn--inverse" href="{{ page.github_url }}" target="_blank" rel="noopener noreferrer">View code <span aria-hidden="true">&#8599;</span><span class="sr-only">(opens in a new tab)</span></a>
+  <a class="action" href="{{ page.github_url }}" target="_blank" rel="noopener noreferrer">View code <span aria-hidden="true">&#8599;</span><span class="sr-only">(opens in a new tab)</span></a>
   {% endif %}
   {% if page.gee_url %}
-  <a class="btn btn--inverse" href="{{ page.gee_url }}" target="_blank" rel="noopener noreferrer">Open in Google Earth Engine <span aria-hidden="true">&#8599;</span><span class="sr-only">(opens in a new tab)</span></a>
+  <a class="action" href="{{ page.gee_url }}" target="_blank" rel="noopener noreferrer">Open in Google Earth Engine <span aria-hidden="true">&#8599;</span><span class="sr-only">(opens in a new tab)</span></a>
   {% endif %}
   {% if page.demo_url %}
-  <a class="btn btn--inverse" href="{{ page.demo_url }}" target="_blank" rel="noopener noreferrer">Open demo <span aria-hidden="true">&#8599;</span><span class="sr-only">(opens in a new tab)</span></a>
+  <a class="action" href="{{ page.demo_url }}" target="_blank" rel="noopener noreferrer">Open demo <span aria-hidden="true">&#8599;</span><span class="sr-only">(opens in a new tab)</span></a>
   {% endif %}
 </p>
 {% endif %}

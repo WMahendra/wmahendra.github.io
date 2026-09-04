@@ -1,0 +1,107 @@
+---
+title: "Long-Term Forest Loss Monitoring for REDD+ Using Google Earth Engine"
+excerpt: "Annual tree-cover loss analysis with Hansen Global Forest Change, 2001–2023, mapping loss year and quantifying affected area inside a region of interest."
+collection: portfolio
+category: technical
+featured: false
+# date: NEEDS USER CONFIRMATION - the date this exploration was carried out is
+# not established. The Hansen dataset year is not the project date. Adding a
+# date here sets the ordering on /portfolio/ and shows the year on the card.
+gee_url: "https://code.earthengine.google.com/bb20280ba984942e57e5366b4a4afa10"
+---
+
+**Technical exploration · Google Earth Engine · Hansen Global Forest Change, 2001–2023**
+
+## REDD+ context
+
+REDD+ projects require an understanding of where, when and how rapidly forest loss has
+occurred within and around a project area. Historical forest-loss patterns can support
+early baseline assessment, risk screening and the identification of periods or locations
+experiencing elevated pressure.
+
+This technical exploration uses Hansen Global Forest Change in Google Earth Engine to map
+annual tree-cover loss from 2001–2023, quantify affected area by year and examine
+cumulative change through time.
+
+## Objective
+
+To examine long-term tree-cover-loss dynamics within a defined region of interest by
+mapping annual loss, quantifying affected area and evaluating annual and cumulative
+temporal patterns from 2001–2023.
+
+## Dataset
+
+- `UMD/hansen/global_forest_change_2023_v1_11` — Hansen Global Forest Change v1.11
+- Bands used: `treecover2000`, `loss`, `lossyear`
+- Loss-year codes run 1–23, where 1 corresponds to 2001 and 23 to 2023
+- Extent: a defined region of interest supplied to the script
+
+Hansen Global Forest Change identifies tree-cover loss rather than confirmed permanent
+forest-to-non-forest conversion. Tree-cover loss may reflect several disturbance processes,
+so additional land-cover and persistence information would be required for a
+methodology-specific deforestation assessment.
+
+## Workflow
+
+<figure>
+  <img src="/images/diagrams/hansen-forest-loss-workflow.svg" alt="Workflow: Hansen Global Forest Change bands treecover2000, loss and lossyear are masked to pixels with detected tree-cover loss and clipped to a region of interest, giving an annual loss map for 2001–2023. Pixel area is converted from square metres to hectares and summed per loss-year code, producing annual statistics, a cumulative running total, and GeoTIFF and CSV exports.">
+  <figcaption>Processing chain implemented in the Earth Engine script.</figcaption>
+</figure>
+
+Pixels without detected tree-cover loss are masked out, and the loss-year layer is clipped
+to the region of interest, giving a map of the year in which loss was detected. A list of
+Hansen loss-year codes from 1 to 23 drives the per-year statistics.
+
+## Annual tree-cover loss
+
+Affected area is derived from `ee.Image.pixelArea()`, which returns pixel area in square
+metres. Dividing by 10,000 converts it to hectares. For each Hansen loss-year code, the
+hectare values are summed inside the region of interest, and the code is converted to its
+calendar year — 1 to 2001, through to 23 to 2023. The script produces annual statistics
+along with bar and line charts of the annual series.
+
+*No hectare values are reported here, because no exported results are available in this
+repository yet — see Explore the result.*
+
+## Cumulative tree-cover loss
+
+Total affected area across 2001–2023 is calculated, along with a running cumulative area
+that accumulates each year's loss in sequence, and a cumulative chart of that series.
+
+## Relevance to REDD+
+
+Knowing when and where tree-cover loss occurred, and how the annual pattern changes,
+supports early screening: identifying periods of elevated pressure, comparing activity
+inside and around an area of interest, and deciding where more detailed assessment is
+warranted.
+
+This workflow does not provide a REDD+ reference level, baseline emissions, an
+additionality assessment, a leakage assessment or a methodology-compliant deforestation
+analysis. It is a screening step that precedes that work.
+
+## Limitations
+
+These describe the scope of the current workflow rather than faults in it.
+
+- Hansen tree-cover loss does not automatically equal permanent deforestation.
+- The workflow does not classify post-loss land cover.
+- The workflow does not test whether forest conversion persists.
+- Loss drivers are not attributed.
+- The optional `treecover2000 >= 30%` baseline tree-cover mask is present in the script but
+  is commented out, so **no baseline canopy threshold is applied** in the current version.
+- No methodology-specific REDD+ forest definition is applied.
+- Results depend entirely on the region of interest supplied to the script.
+- No REDD+ reference level or baseline emission estimate is calculated.
+
+## Explore the result
+
+An interactive map of the loss-year layer, together with annual and cumulative
+tree-cover-loss charts, will be published here from the exported analysis output. The
+exports have not been added to this repository yet, so nothing is displayed in this
+section — no map, statistics or charts are shown, rather than showing placeholder values.
+
+## Open in Google Earth Engine
+
+The full workflow, including the export steps, is available in the Earth Engine Code
+Editor via the link at the top of this page. It runs in the Code Editor rather than being
+distributed as a repository, so there is no separate code download.
