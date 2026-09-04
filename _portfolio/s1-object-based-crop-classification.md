@@ -1,10 +1,12 @@
 ---
 title: "Object-Based Crop Classification from Seasonal Sentinel-1 Time Series"
-excerpt: "Testing whether multi-period Sentinel-1 VV/VH backscatter combined with SNIC object segmentation can separate crop from non-crop in Google Earth Engine."
+excerpt: "Exploring whether multi-period Sentinel-1 backscatter and object-based segmentation can support crop/non-crop classification in Google Earth Engine."
 collection: portfolio
 category: technical
 featured: false
-date: 2026-09-04
+# date: NEEDS USER CONFIRMATION - the date the work was carried out is not
+# established, so no date is published. Adding one here sets the ordering on
+# /portfolio/ and displays the year on the project card.
 gee_url: "https://code.earthengine.google.com/5f29a0390ddc8fbad9b742d577a6572f"
 ---
 
@@ -12,111 +14,118 @@ gee_url: "https://code.earthengine.google.com/5f29a0390ddc8fbad9b742d577a6572f"
 
 ## Objective
 
-Test whether multi-period Sentinel-1 VV and VH backscatter, summarised into seasonal
-composites and segmented into image objects, can support a binary crop / non-crop
-classification. The workflow is written end-to-end in Google Earth Engine and is runnable
-from the link at the top of this page.
+To explore whether multi-period Sentinel-1 backscatter and object-based segmentation can
+support crop/non-crop classification in Google Earth Engine.
 
 ## Why I explored it
 
-Crop mapping in the tropics is constrained by cloud cover, which limits how often optical
-sensors return a usable observation. Sentinel-1 is unaffected by cloud, so the question is
-how much can be recovered from radar backscatter alone. Two things seemed worth testing
-together: whether a small number of wide seasonal windows carries enough of the growth
-signal to separate cropland, and whether classifying image objects rather than individual
-pixels produces a more coherent result from inherently speckled radar data.
+The workflow brings together three things that are usually treated separately: summarising
+a year of radar acquisitions into a small number of temporal composites, segmenting that
+temporal stack into objects rather than classifying pixels, and training a classifier on
+the resulting object-level values. This exploration was about establishing whether that
+chain runs end to end in Earth Engine and what it produces.
 
 ## Dataset
 
 - `COPERNICUS/S1_GRD` — Sentinel-1 Ground Range Detected
 - Interferometric Wide (IW) acquisition mode
 - Scenes carrying both VV and VH polarisation
-- Restricted to a region of interest defined in the script
+- Filtered to a region of interest defined in the script
+- Ascending and descending acquisitions handled separately
 - Year: 2023
 
 ## Temporal design
 
-The year is divided into three four-month windows rather than conventional three-month
-calendar quarters:
+The year is divided into three periods:
 
-| Period | Months |
+| Period | Date range |
 | --- | --- |
-| Q1 | January – April |
-| Q2 | May – August |
-| Q3 | September – December |
+| Period 1 | 1 January – 30 April 2023 |
+| Period 2 | 1 May – 31 August 2023 |
+| Period 3 | 1 September – 31 December 2023 |
 
-Within each period, ascending and descending acquisitions are handled separately, and a
-temporal mean backscatter image is calculated for each orbit direction. The two are then
-combined into a single composite per period.
+Within each period, the ascending images are reduced to a temporal mean and the descending
+images are reduced to a temporal mean separately. Those two mean images are then averaged
+together to give a single composite for that period.
 
 ## Technical workflow
 
 <figure>
-  <img src="/images/diagrams/s1-crop-classification-workflow.svg" alt="Workflow: Sentinel-1 GRD scenes are filtered to IW mode with VV and VH over a region of interest, split into three 2023 periods, averaged per orbit direction, and combined into composites; VV and VH temporal stacks feed a seasonal RGB visualisation and a SNIC segmentation of the VV stack; object-level mean VV values and crop/non-crop training points train a Random Forest of 50 trees, producing a crop/non-crop classification.">
+  <img src="/images/diagrams/s1-crop-classification-workflow.svg" alt="Workflow: Sentinel-1 GRD filtered to IW mode with VV and VH over a region of interest, split into three 2023 periods; per period an ascending mean and a descending mean are computed and then averaged. The VV temporal stack feeds SNIC segmentation and object-level mean VV via reduceConnectedComponents; the VH temporal stack is used for RGB visualisation only. Merged crop and non_crop training points with a class property train smileRandomForest with 50 trees, producing a binary crop / non-crop classification.">
   <figcaption>Processing chain implemented in the Earth Engine script.</figcaption>
 </figure>
 
-The composites are assembled into VV and VH temporal stacks, which are also rendered as
-seasonal RGB visualisations — mapping the three periods to the three colour channels, so
-that areas changing between seasons stand out from areas that do not.
+## Seasonal RGB visualisations
+
+Two three-band composites are built, each mapping the three periods to the colour channels:
+
+- **VV composite** — R / G / B = Period 1 VV, Period 2 VV, Period 3 VV
+- **VH composite** — R / G / B = Period 1 VH, Period 2 VH, Period 3 VH
+
+These are intended to visually highlight temporal differences in backscatter across the
+year. They are a display aid: colour variation indicates that backscatter differs between
+periods, and is not by itself evidence of change on the ground.
 
 ## SNIC object segmentation
 
-The VV temporal stack is segmented using SNIC (Simple Non-Iterative Clustering), which
-groups neighbouring pixels with similar multi-temporal backscatter into objects. Mean VV
-backscatter is then calculated per object using the connected-components output of the
-segmentation, so the classifier sees one value per segment rather than per pixel.
+SNIC (Simple Non-Iterative Clustering) segmentation is run on the complete three-period VV
+stack — Period 1 VV, Period 2 VV and Period 3 VV. **VH is not used in the segmentation.**
+
+Object-level mean backscatter is then calculated from the VV temporal stack using the SNIC
+cluster labels together with `reduceConnectedComponents()`, so that each segment carries a
+single mean value per period rather than a per-pixel value.
 
 ## Random Forest classification
 
-Crop and non-crop training points are sampled and used to train a Random Forest classifier
-with 50 trees, which is applied to produce a binary crop / non-crop map.
+The classifier is trained on the **object-level VV features**. This is the important
+distinction in this version of the script: VH contributes to the RGB visualisations only,
+and is not part of the feature stack used for either segmentation or classification.
+
+Training uses `crop` and `non_crop` feature collections, merged into a single collection,
+with `class` as the training property. The classifier is `smileRandomForest(50)` — a Random
+Forest of 50 trees.
 
 ## Outputs
 
-- Seasonal RGB visualisations of VV and VH backscatter across the three periods
-- A SNIC segmentation of the VV temporal stack
+- Seasonal RGB composites of VV and of VH across the three periods
+- A SNIC segmentation of the three-period VV stack
 - Object-level mean VV backscatter
 - A binary crop / non-crop classification
 
-No accuracy figures are reported, because the script does not compute any — see
-Limitations.
-
 ## Technical observations
 
-The exploration is structural rather than quantitative: it establishes that the chain from
-Sentinel-1 GRD through seasonal compositing, SNIC segmentation and object-level Random
-Forest classification runs end-to-end within Earth Engine, and produces a crop / non-crop
-surface from radar input alone. Whether that surface is *correct* is not established by
-this script, and nothing here should be read as a validated result.
+The exploration is structural rather than quantitative. It establishes that the chain from
+`COPERNICUS/S1_GRD` through per-period orbit-wise averaging, SNIC segmentation of the VV
+stack and object-level Random Forest classification runs end to end in Earth Engine and
+produces a crop / non-crop surface from radar input alone. Whether that surface is correct
+is not established by this script, and no part of it should be read as a validated result.
 
 ## Limitations
 
-These are characteristics of an exploratory workflow, not defects, but they bound what the
-output can be used for:
+These bound what the current output can be used for. They are the scope of an exploratory
+workflow rather than defects in it.
 
-- **No independent validation is implemented.** The script contains no accuracy assessment,
-  so no classification accuracy is reported and none should be inferred.
-- **No explicit speckle filtering.** Radar speckle is not filtered before analysis; the
-  temporal averaging and the object-level aggregation reduce it incidentally, but neither
-  is a substitute for a speckle filter.
-- **No explicit radiometric terrain correction or terrain flattening.** Backscatter is not
-  corrected for terrain effects, so results in areas of relief should be treated with
-  caution.
-- **Ascending and descending observations are combined by averaging.** The two orbit
-  directions view the surface from different geometries; averaging them mixes those
-  geometries rather than modelling them separately.
-- **The three periods are four-month windows**, not three-month calendar quarters, so they
-  do not align with conventional seasonal or phenological definitions.
-- The classification is binary crop / non-crop; no crop type is distinguished.
+- **No independent validation** is implemented.
+- **No confusion matrix** is computed.
+- **No accuracy assessment**, and therefore **no classification accuracy is reported** — none
+  should be inferred.
+- **No explicit speckle filtering** is applied.
+- **No explicit radiometric terrain correction or terrain flattening** is applied.
+- Ascending and descending observations are combined by averaging the two orbit-wise mean
+  images, which mixes the two viewing geometries rather than modelling them separately.
+- The three periods are fixed four-month windows, not derived from a crop calendar or
+  observed phenology.
+- Only VV information reaches the classifier; the VH signal is visualised but unused.
+- The output is binary crop / non-crop — no crop type is distinguished.
 
 ## Tools
 
-Google Earth Engine (JavaScript API) — `ee.Algorithms.Image.Segmentation.SNIC` for
-segmentation and a Random Forest classifier for the classification step.
+Google Earth Engine (JavaScript API), using `ee.Algorithms.Image.Segmentation.SNIC` for
+segmentation, `reduceConnectedComponents()` for object-level statistics, and
+`ee.Classifier.smileRandomForest` for classification.
 
 ## Source and executable analysis
 
-The complete analysis is the Earth Engine script itself, linked at the top of this page.
-It is executable in the Code Editor rather than distributed as a repository, so there is no
-separate code download.
+The complete analysis is the Earth Engine script linked at the top of this page. It runs in
+the Code Editor rather than being distributed as a repository, so there is no separate code
+download.
