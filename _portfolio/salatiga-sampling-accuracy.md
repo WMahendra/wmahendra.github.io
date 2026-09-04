@@ -46,8 +46,8 @@ Symposium in 2023. The paper is co-authored with my supervisor.
 - Accuracy estimates became more stable at around **200 samples for the 25-class scheme**
   and **36 samples for the 9-class scheme**. Below those sample numbers, the study observed
   irregular fluctuation in the accuracy value.
-- **Stratified random sampling** was satisfactory for modelling the accuracy compared with
-  random and systematic grid sampling.
+- **Stratified random sampling** performed better than random and systematic grid sampling
+  for estimating map accuracy.
 - The more complex class scheme required the larger number of reference samples before the
   accuracy estimate settled.
 

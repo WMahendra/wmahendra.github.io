@@ -10,13 +10,12 @@ redirect_from:
 Earth Observation · Forestry and Nature-based Solutions · Geospatial Data Science ·
 AI-enabled spatial workflows
 
-I work with optical and SAR satellite data to map land cover, land-use change and forest
-and peatland condition in tropical landscapes. My published work is methodological: how
-sampling design determines whether a map's reported accuracy can be trusted, and how
-three decades of satellite records line up against the policy meant to govern the land
-they cover. I hold an MSc in Geoinformation Science and Earth Observation from the
-University of Twente, where my thesis used Sentinel-1 time series to detect canopy height
-loss in Jambi, Indonesia.
+I am a geospatial and remote sensing specialist working with optical and SAR satellite
+data to analyse land-cover change, forest dynamics and peatland condition in tropical
+landscapes. My work combines Earth observation, spatial analysis and accuracy assessment
+for forest monitoring, environmental research and nature-based solutions. I hold an MSc in
+Geoinformation Science and Earth Observation from the University of Twente, where my
+thesis used Sentinel-1 time series to assess canopy height loss in Jambi, Indonesia.
 
 ## Selected projects
 

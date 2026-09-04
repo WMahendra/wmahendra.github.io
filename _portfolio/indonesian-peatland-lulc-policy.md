@@ -42,10 +42,10 @@ evaluated with the standard error of estimate.
 
 ## My contribution
 
-This was collaborative research between Universitas Gadjah Mada and the University of
-Sydney, led by others: Widyatmanti et al. in *Soil Security* and Ambhika et al. in the
-*International Journal of Geoinformatics*. I took part as a Research Assistant at the
-Faculty of Geography, Universitas Gadjah Mada, and I am a co-author on both papers.
+This work was conducted collaboratively between Universitas Gadjah Mada and the
+University of Sydney and resulted in two peer-reviewed publications. I contributed as a
+Research Assistant at the Faculty of Geography, Universitas Gadjah Mada, and am a
+co-author on both studies.
 
 My contribution included:
 
@@ -71,11 +71,11 @@ my contribution alone.
 
 On Bengkalis Island, vegetation indices and NDSI proved unreliable for modelling peat
 thickness because of unstable vegetation and land-cover change over the study period. The
-best-performing NDWI-based approach achieved **41.96% accuracy**, highlighting limitations
-for operational peat-thickness estimation. The study is reported as a preliminary
-investigation, and the published work recommends improved sampling design, better
-distribution of samples across preserved land covers, and the inclusion of additional
-environmental variables.
+best-performing NDWI-based approach achieved **41.96% accuracy**, indicating limited
+predictive performance for peat-thickness estimation in the study setting. The study is
+reported as a preliminary investigation, and the published work recommends improved
+sampling design, better distribution of samples across preserved land covers, and the
+inclusion of additional environmental variables.
 
 ## Publications
 
