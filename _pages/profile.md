@@ -41,13 +41,16 @@ partners and non-technical audiences.
 
 ## Education
 
-{% assign logo_twente_f = site.static_files | where: "path", "/images/logos/university-of-twente-itc.png" | first %}
-{% assign logo_lund_f = site.static_files | where: "path", "/images/logos/lund-university.png" | first %}
-{% assign logo_ugm_f = site.static_files | where: "path", "/images/logos/universitas-gadjah-mada.png" | first %}
-<div class="timeline timeline--edu{% unless logo_twente_f or logo_lund_f or logo_ugm_f %} timeline--nologo{% endunless %}">
-  {% assign logo_twente = site.static_files | where: "path", "/images/logos/university-of-twente-itc.png" | first %}
+{% assign logo_twente = site.static_files | where: "path", "/images/logos/university-of-twente.png" | first %}
+{% unless logo_twente %}{% assign logo_twente = site.static_files | where: "path", "/images/logos/university-of-twente.svg" | first %}{% endunless %}
+{% assign logo_lund = site.static_files | where: "path", "/images/logos/lund-university.png" | first %}
+{% unless logo_lund %}{% assign logo_lund = site.static_files | where: "path", "/images/logos/lund-university.svg" | first %}{% endunless %}
+{% assign logo_ugm = site.static_files | where: "path", "/images/logos/universitas-gadjah-mada.png" | first %}
+{% unless logo_ugm %}{% assign logo_ugm = site.static_files | where: "path", "/images/logos/universitas-gadjah-mada.svg" | first %}{% endunless %}
+
+<div class="timeline timeline--edu{% unless logo_twente or logo_lund or logo_ugm %} timeline--nologo{% endunless %}">
   <div class="timeline__row">
-    <div class="timeline__logo">{% if logo_twente %}<img src="{{ logo_twente.path }}" alt="University of Twente logo">{% endif %}</div>
+    <div class="timeline__logo">{% if logo_twente %}<img src="{{ logo_twente.path }}" alt="University of Twente logo" loading="lazy">{% endif %}</div>
     <div class="timeline__date">08/2023 – 07/2024</div>
     <div class="timeline__body">
       <span class="timeline__role">MSc Geoinformation Science and Earth Observation</span>
@@ -55,18 +58,16 @@ partners and non-technical audiences.
       <span class="timeline__note">Erasmus Mundus Joint Master scholarship</span>
     </div>
   </div>
-  {% assign logo_lund = site.static_files | where: "path", "/images/logos/lund-university.png" | first %}
   <div class="timeline__row">
-    <div class="timeline__logo">{% if logo_lund %}<img src="{{ logo_lund.path }}" alt="Lund University logo">{% endif %}</div>
+    <div class="timeline__logo">{% if logo_lund %}<img src="{{ logo_lund.path }}" alt="Lund University logo" loading="lazy">{% endif %}</div>
     <div class="timeline__date">08/2022 – 06/2023</div>
     <div class="timeline__body">
       <span class="timeline__role">MSc Physical Geography and Ecosystem Science</span>
       <span class="timeline__org">Lund University</span>
     </div>
   </div>
-  {% assign logo_ugm = site.static_files | where: "path", "/images/logos/universitas-gadjah-mada.png" | first %}
   <div class="timeline__row">
-    <div class="timeline__logo">{% if logo_ugm %}<img src="{{ logo_ugm.path }}" alt="Universitas Gadjah Mada logo">{% endif %}</div>
+    <div class="timeline__logo">{% if logo_ugm %}<img src="{{ logo_ugm.path }}" alt="Universitas Gadjah Mada logo" loading="lazy">{% endif %}</div>
     <div class="timeline__date">09/2016 – 11/2020</div>
     <div class="timeline__body">
       <span class="timeline__role">BSc Geographic Information Science</span>

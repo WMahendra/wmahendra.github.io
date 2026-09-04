@@ -5,6 +5,7 @@ category: conferences
 date: 2019-10-14
 venue: "Asian Conference on Remote Sensing (ACRS)"
 paperurl: "https://acrs-aars.org/proceeding/ACRS2019/ThC1-3.pdf"
+author_role: "First author"
 ---
 ## Abstract
 Remote sensing data have been proven to be efficient as data source for mangrove mapping and monitoring to support decision making and policy

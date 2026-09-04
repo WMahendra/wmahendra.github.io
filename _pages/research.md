@@ -27,9 +27,10 @@ author_profile: true
     them, and how far those indicators can be pushed before the uncertainty outgrows their
     usefulness. Low-biomass and heterogeneous landscapes are where structural estimates are
     weakest and where the question is most open.</p>
-    <p>The area of interest is combining structural observations from LiDAR and spaceborne
-    sources such as GEDI with SAR and optical imagery, anchored to field measurements.</p>
-    <p class="focus-card__meta">LiDAR · GEDI · SAR and optical integration · field observations</p>
+    <p>LiDAR and spaceborne structure observations such as GEDI are areas I am interested in
+    developing further for forest-structure and biomass analysis, alongside SAR and optical
+    imagery and field measurements.</p>
+    <p class="focus-card__meta">Interest areas: LiDAR · GEDI · SAR and optical integration · field observations</p>
   </article>
 
   <article class="focus-card">

@@ -258,23 +258,30 @@ body {
 }
 
 .timeline--edu .timeline__row {
-  grid-template-columns: 3.4em 10.5em 1fr;
+  grid-template-columns: 112px 10.5em 1fr;
+  align-items: start;
 }
 
 /* Until logo assets are added, drop the empty column so dates stay flush left */
 .timeline--nologo .timeline__row { grid-template-columns: 10.5em 1fr; }
 .timeline--nologo .timeline__logo { display: none; }
 
+/* Logos are constrained by HEIGHT with a generous width allowance, so a wide
+   wordmark and a square crest end up with comparable visual mass. A square
+   logo renders 46x46; a 5:1 wordmark renders 112x22. Contained inside the box,
+   so nothing is stretched or cropped. */
 .timeline__logo {
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  width: 112px;
+  height: 46px;
 
   img {
+    max-width: 112px;
+    max-height: 46px;
     width: auto;
     height: auto;
-    max-width: 44px;
-    max-height: 44px;
     object-fit: contain;
   }
 }
@@ -333,6 +340,10 @@ body {
   font-size: 0.85em !important;
   color: var(--muted);
 }
+
+.pub-item__role { color: var(--muted); }
+
+.pub-item__role + .pub-item__venue::before { content: " · "; }
 
 .pub-item__venue { font-style: italic; }
 
@@ -438,13 +449,14 @@ body {
   .timeline__row { grid-template-columns: 1fr; gap: 0.25em; }
 
   .timeline--edu .timeline__row {
-    grid-template-columns: 2.6em 1fr;
+    grid-template-columns: 84px 1fr;
 
     .timeline__date { grid-column: 2; }
     .timeline__body { grid-column: 2; }
   }
 
-  .timeline__logo img { max-width: 34px; max-height: 34px; }
+  .timeline__logo { width: 84px; height: 40px; }
+  .timeline__logo img { max-width: 84px; max-height: 40px; }
 
   .hero__actions .action { flex: 0 1 auto; }
 }
