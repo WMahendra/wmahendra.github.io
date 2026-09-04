@@ -5,6 +5,7 @@ collection: portfolio
 category: technical
 featured: false
 date: 2025-09-01   # September 2025; day set only so Jekyll can sort - not a factual day
+date_precision: month   # only the month is confirmed; suppresses day-level date metadata
 gee_url: "https://code.earthengine.google.com/bb20280ba984942e57e5366b4a4afa10"
 ---
 
@@ -34,6 +35,9 @@ temporal patterns from 2001–2023.
 - Loss-year codes run 1–23, where 1 corresponds to 2001 and 23 to 2023
 - Region of interest: **West Kalimantan (Kalimantan Barat) province, Indonesia**, supplied to
   the script as a single administrative boundary polygon covering roughly 148,000 km²
+
+*Study-area boundary: West Kalimantan provincial boundary derived from 2017 Kemendes
+village-boundary data and dissolved to the province level.*
 
 Hansen Global Forest Change identifies tree-cover loss rather than confirmed permanent
 forest-to-non-forest conversion. Tree-cover loss may reflect several disturbance processes,
