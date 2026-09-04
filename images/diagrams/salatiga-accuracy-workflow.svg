@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 200" role="img"
+     aria-labelledby="t d" style="width:100%;height:auto;color:inherit">
+  <title id="t">Accuracy assessment workflow</title>
+  <desc id="d">A classified map and a visual-interpretation reference are compared using three
+  sampling designs at varying sample sizes, producing a confusion matrix and overall accuracy,
+  which is then examined for the sample size at which accuracy stabilises.</desc>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="currentColor"/>
+    </marker>
+  </defs>
+  <g fill="none" stroke="currentColor" stroke-width="1.2">
+    <rect x="4" y="12" width="196" height="58" rx="4"/>
+    <rect x="4" y="130" width="196" height="58" rx="4"/>
+    <rect x="248" y="45" width="196" height="110" rx="4"/>
+    <rect x="492" y="45" width="180" height="110" rx="4"/>
+    <rect x="720" y="45" width="196" height="110" rx="4"/>
+  </g>
+  <g stroke="currentColor" stroke-width="1.2" marker-end="url(#a)">
+    <path d="M200 41 L240 80" fill="none"/>
+    <path d="M200 159 L240 120" fill="none"/>
+    <path d="M444 100 L484 100" fill="none"/>
+    <path d="M672 100 L712 100" fill="none"/>
+  </g>
+  <g fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Helvetica,Arial,sans-serif"
+     font-size="12.5" text-anchor="middle">
+    <text x="102" y="35">Multispectral<tspan x="102" dy="15">classification (tested)</tspan></text>
+    <text x="102" y="153">Visual interpretation<tspan x="102" dy="15">(reference)</tspan></text>
+    <text x="346" y="72" font-weight="600">Sampling designs</text>
+    <text x="346" y="93">Random<tspan x="346" dy="15">Stratified random</tspan><tspan x="346" dy="15">Systematic grid</tspan></text>
+    <text x="346" y="143" font-style="italic">sample size varied</text>
+    <text x="582" y="80" font-weight="600">Area-based<tspan x="582" dy="15">assessment</tspan></text>
+    <text x="582" y="118">Confusion matrix<tspan x="582" dy="15">Overall accuracy</tspan></text>
+    <text x="818" y="80" font-weight="600">Accuracy stability</text>
+    <text x="818" y="106">Sample size at which<tspan x="818" dy="15">the accuracy value</tspan><tspan x="818" dy="15">stops fluctuating</tspan></text>
+  </g>
+</svg>

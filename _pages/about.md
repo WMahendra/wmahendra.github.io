@@ -1,54 +1,74 @@
 ---
 permalink: /
-title: "Forests, Carbon, and Geospatial Intelligence"
+title: "Geospatial & Remote Sensing Specialist"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
 
-Tropical forests are one of the richest ecosystems on earth, playing an instrumental role in regulating global climate, conserving biodiversity and sustaining ecosystem services. Unfortunately, along with deforestation, forest degradation has become a major environmental challenges. Forest composition and ecological functions are changing due to selective logging, forest fires and development of built-up areas. Recent estimates indicate that degraded forests account for almost half of all tropical forest landscapes, emphasizing their increasing significance for climate change mitigation and sustainable forest management (Chave & Rutishauser, 2015).
+Earth Observation · Forestry and Nature-based Solutions · Geospatial Data Science ·
+AI-enabled spatial workflows
 
-One of the effects of forest degradation is the effect of forest and peat fires in south Sumatera, Indonesia. During the 2015 El Niño event, fires resulted in carbon losses of 94.2 Mg C ha⁻¹ in secondary peat swamp forests, equivalent to emissions of about 345.4 t CO₂eq ha⁻¹. Moreover, secondary dryland forests, forest plantations and swamp shrublands experienced significant declines in carbon stocks (Siahaan et al., 2020). These results show the role of disturbances in turning tropical forests from a long-term carbon sink into a major source of carbon emissions (Figure 1).
+I am a geospatial and remote sensing specialist working with optical and SAR satellite
+data to analyse land-cover change, forest dynamics and peatland condition in tropical
+landscapes. My work combines Earth observation, spatial analysis and accuracy assessment
+for forest monitoring, environmental research and nature-based solutions. I hold an MSc in
+Geoinformation Science and Earth Observation from the University of Twente, where my
+thesis used Sentinel-1 time series to assess canopy height loss in Jambi, Indonesia.
 
-<figure>
-  <img src="/images/AFOLU_Carbon.jpg" alt="AFOLU Carbon" style="width:100%">
-  <figcaption>
-    <strong>Figure 1.</strong> Carbon Cycle Illustration. Source: Center for Global Development, 2014.
-  </figcaption>
-</figure>
+## Selected projects
 
-The tropical forest is fundamentally different from temperate or other type of forests in terms of complexity of ecology, diversity and responses to disturbances. Tropical forests have the potential to recover aboveground carbon following disturbance, but recovery of biodiversity often lags considerably behind, leading to the conservation of intact forests that are critical for ecosystem integrity (Thompson et al., 2012). In addition, the tropical landscapes are increasingly characterized by a significant imprint of human activities, which poses challenges for monitoring, restoration and sustainable management (Chave & Rutishauser, 2015).
+**[Sampling Design and Accuracy Assessment for Land-Cover Mapping](/portfolio/salatiga-sampling-accuracy/)**  
+Accuracy estimates became more stable at around 200 reference samples for a 25-class
+scheme and 36 for a 9-class scheme. Stratified random sampling performed better than
+random and systematic grid sampling for estimating map accuracy. First author, published
+by SPIE.
 
-Following the interesting topic, I found my passion on research, specifically at the intersection of geospatial science, forestry, and climate change, with particular interests in:
+**[Three Decades of Land-Use Change Across Indonesian Peat Hydrological Units](/portfolio/indonesian-peatland-lulc-policy/)**  
+Land-cover maps at five-year intervals from 1990 to 2020 across four peat hydrological
+units, read against a compiled chronology of 115 regulations. Co-author, published in
+*Soil Security*.
 
-- Tropical forest degradation and deforestation
-- Carbon stock estimation and greenhouse gas accounting
-- Geospatial and AI for environmental monitoring
-- Biodiversity assessment and ecosystem service
-- Nature-based solutions (NbS)
+[All projects →](/portfolio/)
 
-The integration of remote sensing, field observation, and artificial intelligence (AI) is crucial in solving complex tropical forest management problems (A. U. Gabi and N. M. Abdullah, 2024; Liang et al., 2025). This provides the opportunity of multi-source imagery such as optical, Synthetic Aperture Radar (SAR) and light detecting and ranging (LiDAR) to map and monitor the land surfaces over a wide areas. This integrated framework is critical both for scientific discovery and for operationalizing policy-relevant frameworks such as REDD+, voluntary carbon markets (VCM), and national carbon accounting systems (J. Mascaro et al, 2014) (Figure 2).
+## Selected publications
 
-<figure>
-  <img src="/images/GISWorkflow_2.jpg" alt="AFOLU Carbon" style="width:100%">
-  <figcaption>
-    <strong>Figure 2.</strong> GIS Workflow for AFOLU Studies. 
-  </figcaption>
-</figure>
+Mahendra, W. K., & Danoedoro, P. (2024). Understanding the influence of different sample
+sizes and sample techniques on accuracy assessment of land cover mapping: Case study of
+Salatiga City, Indonesia. *Proceedings of SPIE*, 12977, 129770E.
+[doi:10.1117/12.3009445](https://doi.org/10.1117/12.3009445)
 
+Widyatmanti, W., Minasny, B., Awanda, D., Umarhadi, D. A., Fatma, Z. S. N., Mahendra, W. K.,
+& Field, D. J. (2022). Codification to secure Indonesian peatlands: From policy to practices
+as revealed by remote sensing analysis. *Soil Security*, 9, 100080.
+[doi:10.1016/j.soisec.2022.100080](https://doi.org/10.1016/j.soisec.2022.100080)
 
-## Selected References
+Arjasakusuma, S., Kusuma, S., Mahendra, W. K., & Astriviany, N. (2021). Mapping paddy field
+extent and temporal pattern variation in a complex terrain area using Sentinel-1 time series
+data: Case study of Magelang District, Indonesia. *International Journal of Geoinformatics*,
+17(2), 79–88. [doi:10.52939/ijg.v17i2.1763](https://doi.org/10.52939/ijg.v17i2.1763)
 
-Gabi, A. U., & Abdullah, N. M. (2024). Optimizing biodiversity conservation in Sundaland through advanced geospatial techniques and remote sensing technologies. BIO Web of Conferences. https://doi.org/10.1051/bioconf/20249407002
+[All publications →](/publications/)
 
-Liang, X., et al. (2025). Multi-source remote sensing and GIS-driven forest carbon monitoring for carbon neutrality: Integrating data, modeling, and policy applications (Preprint). https://doi.org/10.20944/preprints202505.0246.v1
+## Background
 
-Mascaro, J., et al. (2014). A tale of two "forests": Random forest machine learning aids tropical forest carbon mapping. PLOS ONE, 9(1), e85993. https://doi.org/10.1371/journal.pone.0085993
+**Education**  
+MSc Geoinformation Science and Earth Observation for Environmental Modelling and Management
+(GEM), University of Twente, 2024 — Erasmus Mundus Joint Master scholarship  
+MSc Physical Geography and Ecosystem Science, Lund University, 2023  
+BSc Geographic Information Science, Universitas Gadjah Mada, 2020 — cum laude
 
-Siahaan, H., et al. (2020). Carbon loss affected by fires on various forests and land types in South Sumatera. Indonesian Journal of Forestry Research, 7(1), 15–25. https://doi.org/10.59465/ijfr.2020.7.1.15-25
+**Earlier roles**  
+Remote Sensing Intern, Acorn (Rabobank), 2024  
+Research Assistant, Faculty of Geography, Universitas Gadjah Mada, 2021–2022  
+Mapping Surveyor, Directorate of Plantation, Ministry of Agriculture, 2020–2021
 
-Sist, P., Chave, J., & Rutishauser, E. (2015). Tropical forest degradation in the context of climate change: Increasing role and research challenges. In Our Common Future Under Climate Change (pp. 260–271).
+A fuller account of my research interests is on the [research](/research/) page.
 
-Thompson, I. D., et al. (2012). Forest biodiversity, carbon and other ecosystem services: Relationships and impacts of deforestation and forest degradation.
+## Links
 
+[CV (PDF)](/files/William Mahendra_CV.pdf) ·
+[GitHub](https://github.com/WMahendra) ·
+[LinkedIn](https://www.linkedin.com/in/wmahendra/) ·
+[Google Scholar](https://scholar.google.com/citations?user=MnYp-uQAAAAJ&hl=en)

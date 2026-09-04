@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 260" role="img"
+     aria-labelledby="t d" style="width:100%;height:auto;color:inherit">
+  <title id="t">Peatland land-use change and policy analysis workflow</title>
+  <desc id="d">Remote sensing imagery from 1990 to 2020 is mapped into land-use and land-cover maps at
+  five-year intervals and analysed for change; elevation data and field measurements support a peat
+  depth assessment; a compiled chronology of regulations is compared against the observed change.</desc>
+  <defs>
+    <marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="currentColor"/>
+    </marker>
+  </defs>
+  <g fill="none" stroke="currentColor" stroke-width="1.2">
+    <rect x="4" y="10" width="200" height="60" rx="4"/>
+    <rect x="4" y="100" width="200" height="60" rx="4"/>
+    <rect x="4" y="190" width="200" height="60" rx="4"/>
+    <rect x="252" y="10" width="196" height="60" rx="4"/>
+    <rect x="252" y="100" width="196" height="60" rx="4"/>
+    <rect x="252" y="190" width="196" height="60" rx="4"/>
+    <rect x="500" y="55" width="180" height="110" rx="4"/>
+    <rect x="728" y="55" width="188" height="110" rx="4"/>
+  </g>
+  <g stroke="currentColor" stroke-width="1.2" marker-end="url(#a2)" fill="none">
+    <path d="M204 40 L244 40"/>
+    <path d="M204 130 L244 130"/>
+    <path d="M204 220 L244 220"/>
+    <path d="M448 40 L492 90"/>
+    <path d="M448 130 L492 115"/>
+    <path d="M448 220 L492 135"/>
+    <path d="M680 110 L720 110"/>
+  </g>
+  <g fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Helvetica,Arial,sans-serif"
+     font-size="12.5" text-anchor="middle">
+    <text x="104" y="34">Remote sensing imagery<tspan x="104" dy="15">1990–2020</tspan></text>
+    <text x="104" y="124">Elevation data +<tspan x="104" dy="15">field measurements</tspan></text>
+    <text x="104" y="214">Peatland regulations<tspan x="104" dy="15">(115 compiled)</tspan></text>
+    <text x="350" y="34">LULC maps at<tspan x="350" dy="15">5-year intervals</tspan></text>
+    <text x="350" y="124">Peat depth<tspan x="350" dy="15">assessment</tspan></text>
+    <text x="350" y="214">Regulatory<tspan x="350" dy="15">chronology</tspan></text>
+    <text x="590" y="95" font-weight="600">Change analysis</text>
+    <text x="590" y="118">Land-use change read<tspan x="590" dy="15">against the years</tspan><tspan x="590" dy="15">regulations were made</tspan></text>
+    <text x="822" y="95" font-weight="600">Findings</text>
+    <text x="822" y="118">Change trajectory across<tspan x="822" dy="15">four peat hydrological</tspan><tspan x="822" dy="15">units, 1990–2020</tspan></text>
+  </g>
+</svg>

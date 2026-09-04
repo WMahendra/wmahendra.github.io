@@ -14,11 +14,11 @@ main:
   - title: "Publications"
     url: /publications/
     
-  # Temporarily hidden: the portfolio landing page and both category pages
-  # (/academic/, /professional/) have no published projects yet. Restore in
-  # Phase 2 once real project content is ready.
-  # - title: "Projects"
-  #   url: /portfolio/
+  - title: "Projects"
+    url: /portfolio/
+
+  - title: "Research"
+    url: /research/
 
   - title: "CV"
     url: /files/William Mahendra_CV.pdf
