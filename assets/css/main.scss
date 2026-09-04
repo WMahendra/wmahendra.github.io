@@ -13,7 +13,6 @@
 
     "themes",
     "theme/{{ site.site_theme | default: 'default' | append: '_light' }}",
-    "theme/{{ site.site_theme | default: 'default' | append: '_dark' }}",
 
     "include/mixins",
     "vendor/susy/susy",
@@ -85,4 +84,367 @@ body {
 
 .initial-content {
   flex: 1;
+}
+
+/* ==========================================================================
+   Portfolio refresh - light only, one accent colour
+   ========================================================================== */
+
+:root {
+  --accent: #17627a;
+  --accent-dark: #0f4a5e;
+  --accent-soft: #eef4f6;
+  --ink: #23282d;
+  --muted: #5c666f;
+  --line: #e3e7ea;
+}
+
+/* Readable measure for running text */
+.page__content > p,
+.page__content > ul,
+.page__content > ol {
+  max-width: 46em;
+}
+
+/* The theme justifies body text, which opens rivers at narrow widths */
+.page__content p {
+  text-align: left;
+  hyphens: manual;
+}
+
+/* --- Hero (homepage) --- */
+.hero__subhead {
+  font-size: 1.15em;
+  color: var(--muted);
+  margin: -0.4em 0 1.1em;
+  max-width: 40em;
+}
+
+.hero__lead {
+  font-size: 1.02em;
+  line-height: 1.7;
+  max-width: 44em;
+}
+
+.hero__actions {
+  margin: 1.8em 0 1.4em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6em;
+}
+
+.capability-strip {
+  list-style: none;
+  margin: 0 0 0.5em;
+  padding: 1.1em 0 0;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em 1.6em;
+
+  li {
+    margin: 0;
+    font-size: 0.78em;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+}
+
+/* --- Action buttons --- */
+.page__content a.action,
+.action {
+  display: inline-block;
+  padding: 0.5em 1em;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  font-size: 0.85em;
+  line-height: 1.4;
+  color: var(--ink);
+  text-decoration: none !important;
+  background: #fff;
+  transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+
+  &:hover,
+  &:focus {
+    border-color: var(--accent);
+    color: var(--accent);
+    text-decoration: none !important;
+  }
+}
+
+.page__content a.action--primary,
+.action--primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+
+  &:hover,
+  &:focus {
+    background: var(--accent-dark);
+    border-color: var(--accent-dark);
+    color: #fff;
+  }
+}
+
+.action--sm {
+  padding: 0.35em 0.75em;
+  font-size: 0.78em;
+}
+
+/* --- Section labels --- */
+.section-label {
+  margin: 2.4em 0 1.1em;
+  padding-bottom: 0.5em;
+  border-bottom: 2px solid var(--accent);
+  font-size: 0.85em !important;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+/* --- Research focus cards --- */
+.focus-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.3em;
+  margin: 1.8em 0;
+}
+
+.focus-card {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 1.3em 1.4em;
+  background: #fff;
+
+  h2 {
+    margin: 0 0 0.6em;
+    font-size: 1.05em !important;
+    line-height: 1.35;
+    border-bottom: 0;
+    color: var(--ink);
+  }
+
+  p {
+    font-size: 0.92em;
+    line-height: 1.65;
+    margin: 0 0 0.8em;
+    max-width: none;
+  }
+}
+
+.focus-card__meta {
+  margin: 0 !important;
+  padding-top: 0.7em;
+  border-top: 1px solid var(--line);
+  font-size: 0.78em !important;
+  color: var(--muted);
+}
+
+/* --- Timeline (experience and education) --- */
+.timeline {
+  margin: 1.2em 0 2em;
+}
+
+.timeline__row {
+  display: grid;
+  grid-template-columns: 10.5em 1fr;
+  gap: 0.4em 1.4em;
+  padding: 0.9em 0;
+  border-top: 1px solid var(--line);
+
+  &:last-child { border-bottom: 1px solid var(--line); }
+}
+
+.timeline--edu .timeline__row {
+  grid-template-columns: 3.4em 10.5em 1fr;
+}
+
+/* Until logo assets are added, drop the empty column so dates stay flush left */
+.timeline--nologo .timeline__row { grid-template-columns: 10.5em 1fr; }
+.timeline--nologo .timeline__logo { display: none; }
+
+.timeline__logo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  img {
+    width: auto;
+    height: auto;
+    max-width: 44px;
+    max-height: 44px;
+    object-fit: contain;
+  }
+}
+
+.timeline__date {
+  font-size: 0.85em;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  padding-top: 0.15em;
+}
+
+.timeline__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15em;
+}
+
+.timeline__role {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.timeline__org,
+.timeline__note {
+  font-size: 0.9em;
+  color: var(--muted);
+}
+
+.timeline__note { font-style: italic; }
+
+/* --- Publications --- */
+.pub-scholar { font-size: 0.9em; }
+
+.pub-list { margin-bottom: 1em; max-width: 52em; }
+
+.pub-item {
+  padding: 0.9em 0 0.9em 1em;
+  border-left: 2px solid var(--line);
+  margin-bottom: 0.4em;
+  transition: border-color 0.15s ease;
+
+  &:hover { border-left-color: var(--accent); }
+}
+
+.pub-item__title {
+  margin: 0 0 0.35em;
+  font-size: 1em !important;
+  line-height: 1.45;
+
+  a { color: var(--ink); text-decoration: none !important; }
+  a:hover { color: var(--accent); }
+}
+
+.pub-item__meta {
+  margin: 0 0 0.5em !important;
+  font-size: 0.85em !important;
+  color: var(--muted);
+}
+
+.pub-item__venue { font-style: italic; }
+
+.pub-item__year::before { content: " · "; }
+
+.pub-item__links { margin: 0 !important; }
+
+/* --- Project cards --- */
+.pcard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.3em;
+  margin: 1.4em 0 2.2em;
+}
+
+.pcard {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+  overflow: hidden;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+
+  &:hover {
+    border-color: var(--accent);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+  }
+}
+
+.pcard__thumb {
+  display: block;
+  border-bottom: 1px solid var(--line);
+
+  img { display: block; width: 100%; height: auto; }
+}
+
+.pcard__body {
+  padding: 1.15em 1.25em 1.25em;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.pcard__eyebrow {
+  margin: 0 0 0.5em !important;
+  font-size: 0.72em !important;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pcard__cat { color: var(--accent); font-weight: 700; }
+
+.pcard__year {
+  color: var(--muted);
+  &::before { content: " · "; }
+}
+
+.pcard__title {
+  margin: 0 0 0.5em;
+  font-size: 1.08em !important;
+  line-height: 1.35;
+
+  a { color: var(--ink); text-decoration: none !important; }
+  a:hover { color: var(--accent); }
+}
+
+.pcard__desc {
+  font-size: 0.9em !important;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0 0 0.9em !important;
+  max-width: none;
+}
+
+.pcard__meta {
+  font-size: 0.78em !important;
+  color: var(--muted);
+  margin: 0 0 0.9em !important;
+}
+
+.pcard__actions {
+  margin: auto 0 0 !important;
+  padding-top: 0.4em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45em;
+}
+
+/* --- Project page action buttons --- */
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  margin-bottom: 1.8em;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .focus-grid,
+  .pcard-grid { grid-template-columns: 1fr; }
+
+  .timeline__row { grid-template-columns: 1fr; gap: 0.25em; }
+
+  .timeline--edu .timeline__row {
+    grid-template-columns: 2.6em 1fr;
+
+    .timeline__date { grid-column: 2; }
+    .timeline__body { grid-column: 2; }
+  }
+
+  .timeline__logo img { max-width: 34px; max-height: 34px; }
+
+  .hero__actions .action { flex: 0 1 auto; }
 }
