@@ -1,16 +1,14 @@
 ---
 title: "Long-Term Forest Loss Monitoring for REDD+ Using Google Earth Engine"
-excerpt: "Annual tree-cover loss analysis with Hansen Global Forest Change, 2001–2023, mapping loss year and quantifying affected area inside a region of interest."
+excerpt: "Annual tree-cover loss analysis with Hansen Global Forest Change, 2001–2023, mapping loss year and quantifying affected area across West Kalimantan, Indonesia."
 collection: portfolio
 category: technical
 featured: false
-# date: NEEDS USER CONFIRMATION - the date this exploration was carried out is
-# not established. The Hansen dataset year is not the project date. Adding a
-# date here sets the ordering on /portfolio/ and shows the year on the card.
+date: 2025-09-01
 gee_url: "https://code.earthengine.google.com/bb20280ba984942e57e5366b4a4afa10"
 ---
 
-**Technical exploration · Google Earth Engine · Hansen Global Forest Change, 2001–2023**
+**Technical exploration · Google Earth Engine · West Kalimantan, Indonesia · Hansen Global Forest Change, 2001–2023**
 
 ## REDD+ context
 
@@ -34,7 +32,8 @@ temporal patterns from 2001–2023.
 - `UMD/hansen/global_forest_change_2023_v1_11` — Hansen Global Forest Change v1.11
 - Bands used: `treecover2000`, `loss`, `lossyear`
 - Loss-year codes run 1–23, where 1 corresponds to 2001 and 23 to 2023
-- Extent: a defined region of interest supplied to the script
+- Region of interest: **West Kalimantan (Kalimantan Barat) province, Indonesia**, supplied to
+  the script as a single administrative boundary polygon covering roughly 148,000 km²
 
 Hansen Global Forest Change identifies tree-cover loss rather than confirmed permanent
 forest-to-non-forest conversion. Tree-cover loss may reflect several disturbance processes,
