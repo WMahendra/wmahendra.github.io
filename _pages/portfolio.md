@@ -3,6 +3,7 @@ layout: archive
 title: ""
 permalink: /portfolio/
 author_profile: true
+sitemap: false  # temporary - no published projects yet; restore in Phase 2
 ---
 {% include base_path %}
 
