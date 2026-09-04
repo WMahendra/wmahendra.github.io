@@ -21,9 +21,9 @@ thesis used Sentinel-1 time series to assess canopy height loss in Jambi, Indone
 
 **[Sampling Design and Accuracy Assessment for Land-Cover Mapping](/portfolio/salatiga-sampling-accuracy/)**  
 Accuracy estimates became more stable at around 200 reference samples for a 25-class
-scheme and 36 for a 9-class scheme; stratified random sampling was satisfactory for
-modelling accuracy compared with random and systematic grid sampling. First author,
-published by SPIE.
+scheme and 36 for a 9-class scheme. Stratified random sampling performed better than
+random and systematic grid sampling for estimating map accuracy. First author, published
+by SPIE.
 
 **[Three Decades of Land-Use Change Across Indonesian Peat Hydrological Units](/portfolio/indonesian-peatland-lulc-policy/)**  
 Land-cover maps at five-year intervals from 1990 to 2020 across four peat hydrological
