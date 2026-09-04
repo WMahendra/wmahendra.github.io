@@ -1,52 +1,56 @@
 ---
 layout: single
-title: "Forests, Carbon, and Geospatial Intelligence"
+title: "Research Focus"
 permalink: /research/
 author_profile: true
 ---
 
-Tropical forests are one of the richest ecosystems on earth, playing an instrumental role in regulating global climate, conserving biodiversity and sustaining ecosystem services. Unfortunately, along with deforestation, forest degradation has become a major environmental challenges. Forest composition and ecological functions are changing due to selective logging, forest fires and development of built-up areas. Recent estimates indicate that degraded forests account for almost half of all tropical forest landscapes, emphasizing their increasing significance for climate change mitigation and sustainable forest management (Chave & Rutishauser, 2015).
+<p class="hero__lead">Four areas I work on and want to develop further.</p>
 
-One of the effects of forest degradation is the effect of forest and peat fires in south Sumatera, Indonesia. During the 2015 El Niño event, fires resulted in carbon losses of 94.2 Mg C ha⁻¹ in secondary peat swamp forests, equivalent to emissions of about 345.4 t CO₂eq ha⁻¹. Moreover, secondary dryland forests, forest plantations and swamp shrublands experienced significant declines in carbon stocks (Siahaan et al., 2020). These results show the role of disturbances in turning tropical forests from a long-term carbon sink into a major source of carbon emissions (Figure 1).
+<div class="focus-grid">
 
-<figure>
-  <img src="/images/AFOLU_Carbon.jpg" alt="AFOLU Carbon" style="width:100%">
-  <figcaption>
-    <strong>Figure 1.</strong> Carbon Cycle Illustration. Source: Center for Global Development, 2014.
-  </figcaption>
-</figure>
+  <article class="focus-card">
+    <h2>Forest &amp; Land-Use Dynamics</h2>
+    <p>Where land cover changes, when it changes, and whether a change is clearing,
+    regrowth or a gradual thinning of an intact canopy. Separating degradation from
+    outright deforestation is the harder half of that question, because the signal is
+    partial and easily confused with seasonal variation.</p>
+    <p>I approach it through satellite time series rather than single-date comparisons,
+    using optical and SAR observations together where cloud cover limits what optical
+    data alone can see.</p>
+    <p class="focus-card__meta">Optical and SAR time series · change detection · land-cover classification</p>
+  </article>
 
-The tropical forest is fundamentally different from temperate or other type of forests in terms of complexity of ecology, diversity and responses to disturbances. Tropical forests have the potential to recover aboveground carbon following disturbance, but recovery of biodiversity often lags considerably behind, leading to the conservation of intact forests that are critical for ecosystem integrity (Thompson et al., 2012). In addition, the tropical landscapes are increasingly characterized by a significant imprint of human activities, which poses challenges for monitoring, restoration and sustainable management (Chave & Rutishauser, 2015).
+  <article class="focus-card">
+    <h2>Forest Structure &amp; Carbon</h2>
+    <p>Canopy height, vertical structure and the biomass-related indicators derived from
+    them, and how far those indicators can be pushed before the uncertainty outgrows their
+    usefulness. Low-biomass and heterogeneous landscapes are where structural estimates are
+    weakest and where the question is most open.</p>
+    <p>The area of interest is combining structural observations from LiDAR and spaceborne
+    sources such as GEDI with SAR and optical imagery, anchored to field measurements.</p>
+    <p class="focus-card__meta">LiDAR · GEDI · SAR and optical integration · field observations</p>
+  </article>
 
-Following the interesting topic, I found my passion on research, specifically at the intersection of geospatial science, forestry, and climate change, with particular interests in:
+  <article class="focus-card">
+    <h2>Geospatial Evidence for Nature-based Solutions</h2>
+    <p>Forest-carbon and restoration projects depend on spatial evidence: which land is
+    eligible, what the baseline was, and what has actually changed since. Those questions
+    have to be answered in a form that survives review by people who did not produce the
+    maps.</p>
+    <p>My interest is in how spatial analysis is built into monitoring and environmental
+    decision-making, and in what makes the resulting evidence auditable.</p>
+    <p class="focus-card__meta">Eligibility mapping · baselines · monitoring · spatial evidence for decisions</p>
+  </article>
 
-- Tropical forest degradation and deforestation
-- Carbon stock estimation and greenhouse gas accounting
-- Geospatial and AI for environmental monitoring
-- Biodiversity assessment and ecosystem service
-- Nature-based solutions (NbS)
+  <article class="focus-card">
+    <h2>Reproducible Earth Observation Workflows</h2>
+    <p>An analysis that cannot be re-run is difficult to trust. I write processing chains
+    that are explicit end to end, from data selection through to the final map, so that the
+    steps and their assumptions can be inspected rather than taken on faith.</p>
+    <p>This covers time-series processing, machine learning for classification and
+    regression, and automating the repetitive parts of a workflow so that reruns are cheap.</p>
+    <p class="focus-card__meta">Python · Google Earth Engine · machine learning · time-series processing · automation</p>
+  </article>
 
-The integration of remote sensing, field observation, and artificial intelligence (AI) is crucial in solving complex tropical forest management problems (A. U. Gabi and N. M. Abdullah, 2024; Liang et al., 2025). This provides the opportunity of multi-source imagery such as optical, Synthetic Aperture Radar (SAR) and light detecting and ranging (LiDAR) to map and monitor the land surfaces over a wide areas. This integrated framework is critical both for scientific discovery and for operationalizing policy-relevant frameworks such as REDD+, voluntary carbon markets (VCM), and national carbon accounting systems (J. Mascaro et al, 2014) (Figure 2).
-
-<figure>
-  <img src="/images/GISWorkflow_2.jpg" alt="AFOLU Carbon" style="width:100%">
-  <figcaption>
-    <strong>Figure 2.</strong> GIS Workflow for AFOLU Studies. 
-  </figcaption>
-</figure>
-
-
-## Selected References
-
-Gabi, A. U., & Abdullah, N. M. (2024). Optimizing biodiversity conservation in Sundaland through advanced geospatial techniques and remote sensing technologies. BIO Web of Conferences. https://doi.org/10.1051/bioconf/20249407002
-
-Liang, X., et al. (2025). Multi-source remote sensing and GIS-driven forest carbon monitoring for carbon neutrality: Integrating data, modeling, and policy applications (Preprint). https://doi.org/10.20944/preprints202505.0246.v1
-
-Mascaro, J., et al. (2014). A tale of two "forests": Random forest machine learning aids tropical forest carbon mapping. PLOS ONE, 9(1), e85993. https://doi.org/10.1371/journal.pone.0085993
-
-Siahaan, H., et al. (2020). Carbon loss affected by fires on various forests and land types in South Sumatera. Indonesian Journal of Forestry Research, 7(1), 15–25. https://doi.org/10.59465/ijfr.2020.7.1.15-25
-
-Sist, P., Chave, J., & Rutishauser, E. (2015). Tropical forest degradation in the context of climate change: Increasing role and research challenges. In Our Common Future Under Climate Change (pp. 260–271).
-
-Thompson, I. D., et al. (2012). Forest biodiversity, carbon and other ecosystem services: Relationships and impacts of deforestation and forest degradation.
-
+</div>
