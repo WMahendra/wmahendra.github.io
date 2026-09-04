@@ -163,6 +163,7 @@ include:
   - _pages
   - files
 exclude:
+  - _templates
   - "*.sublime-project"
   - "*.sublime-workspace"
   - .asset-cache
@@ -260,7 +261,7 @@ defaults:
       path: ""
       type: portfolio
     values:
-      layout: single
+      layout: project
       author_profile: true
       share: true
       comment: true

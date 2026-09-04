@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 372" role="img"
+     aria-labelledby="t d" style="width:100%;height:auto;color:inherit">
+  <title id="t">Sentinel-1 object-based crop classification workflow</title>
+  <desc id="d">Sentinel-1 GRD scenes are filtered to IW mode with VV and VH polarisation over a
+  region of interest and split into three periods of 2023. Within each period an ascending mean and
+  a descending mean are computed and then averaged together. The VV temporal stack feeds SNIC
+  segmentation and object-level mean VV via reduceConnectedComponents, while the VH temporal stack
+  is used for RGB visualisation only. Merged crop and non_crop training points carrying a class
+  property train smileRandomForest with 50 trees, producing a binary crop / non-crop
+  classification.</desc>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="currentColor"/>
+    </marker>
+  </defs>
+  <g fill="none" stroke="currentColor" stroke-width="1.2">
+    <rect x="4" y="10" width="200" height="66" rx="4"/>
+    <rect x="236" y="10" width="200" height="66" rx="4"/>
+    <rect x="468" y="10" width="200" height="66" rx="4"/>
+    <rect x="686" y="10" width="230" height="66" rx="4"/>
+    <rect x="4" y="150" width="200" height="66" rx="4"/>
+    <rect x="236" y="150" width="200" height="66" rx="4"/>
+    <rect x="468" y="150" width="200" height="66" rx="4"/>
+    <rect x="700" y="150" width="216" height="66" rx="4"/>
+    <rect x="4" y="290" width="200" height="66" rx="4"/>
+    <rect x="236" y="290" width="200" height="66" rx="4"/>
+    <rect x="468" y="290" width="200" height="66" rx="4"/>
+  </g>
+  <g stroke="currentColor" stroke-width="1.2" marker-end="url(#ar)" fill="none">
+    <path d="M204 43 L232 43"/>
+    <path d="M436 43 L464 43"/>
+    <path d="M668 43 L682 43"/>
+    <path d="M801 76 L801 113 L104 113 L104 146"/>
+    <path d="M801 113 L801 146"/>
+    <path d="M204 183 L232 183"/>
+    <path d="M436 183 L464 183"/>
+    <path d="M568 216 L568 253 L104 253 L104 286"/>
+    <path d="M204 323 L232 323"/>
+    <path d="M436 323 L464 323"/>
+  </g>
+  <g fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Helvetica,Arial,sans-serif"
+     font-size="12.5" text-anchor="middle">
+    <text x="104" y="38">Sentinel-1 GRD<tspan x="104" dy="16">COPERNICUS/S1_GRD</tspan></text>
+    <text x="336" y="30">Filter<tspan x="336" dy="16">IW mode, VV + VH</tspan><tspan x="336" dy="16">region of interest</tspan></text>
+    <text x="568" y="30">Three periods, 2023<tspan x="568" dy="16">1 Jan–30 Apr · 1 May–31 Aug</tspan><tspan x="568" dy="16">1 Sep–31 Dec</tspan></text>
+    <text x="801" y="30">Per period<tspan x="801" dy="16">ascending mean, descending mean</tspan><tspan x="801" dy="16">then averaged together</tspan></text>
+    <text x="104" y="178">VV temporal stack<tspan x="104" dy="16">Period 1 / 2 / 3</tspan></text>
+    <text x="336" y="178">SNIC segmentation<tspan x="336" dy="16">VV stack only</tspan></text>
+    <text x="568" y="170">Object-level mean VV<tspan x="568" dy="16">SNIC cluster labels +</tspan><tspan x="568" dy="16">reduceConnectedComponents()</tspan></text>
+    <text x="808" y="170">VH temporal stack<tspan x="808" dy="16">RGB visualisation only —</tspan><tspan x="808" dy="16">not segmented or classified</tspan></text>
+    <text x="104" y="310">Training points<tspan x="104" dy="16">crop + non_crop merged</tspan><tspan x="104" dy="16">property: class</tspan></text>
+    <text x="336" y="318">smileRandomForest(50)<tspan x="336" dy="16">object-level VV features</tspan></text>
+    <text x="568" y="318">Binary classification<tspan x="568" dy="16">crop / non-crop</tspan></text>
+  </g>
+</svg>
