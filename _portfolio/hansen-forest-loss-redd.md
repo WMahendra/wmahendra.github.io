@@ -4,11 +4,11 @@ excerpt: "Annual tree-cover loss analysis with Hansen Global Forest Change, 2001
 collection: portfolio
 category: technical
 featured: false
-date: 2025-09-01
+date: 2025-09-01   # September 2025; day set only so Jekyll can sort - not a factual day
 gee_url: "https://code.earthengine.google.com/bb20280ba984942e57e5366b4a4afa10"
 ---
 
-**Technical exploration · Google Earth Engine · West Kalimantan, Indonesia · Hansen Global Forest Change, 2001–2023**
+**Technical exploration · September 2025 · West Kalimantan, Indonesia · Hansen Global Forest Change, 2001–2023**
 
 ## REDD+ context
 
