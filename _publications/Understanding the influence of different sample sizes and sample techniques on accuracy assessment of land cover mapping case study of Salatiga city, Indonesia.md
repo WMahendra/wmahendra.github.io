@@ -5,6 +5,7 @@ category: conferences
 date: 2024-01-29
 venue: "Eighth Geoinformation Science Symposium 2023"
 paperurl: "https://doi.org/10.1117/12.3009445"
+author_role: "First author"
 ---
 ## Abstract
 Remote sensing data has been proven capable and efficient as a powerful resource for large-scale land cover mapping.

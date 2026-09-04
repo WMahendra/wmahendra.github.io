@@ -1,15 +1,36 @@
 {% include base_path %}
-{% comment %} One entry in a projects listing: title, excerpt, year. {% endcomment %}
-<div class="list__item">
-  <article class="archive__item">
-    <h2 class="archive__item-title" itemprop="headline">
-      <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ post.title }}</a>
-    </h2>
+{% comment %}
+  Project card. Renders a thumbnail only if `thumbnail` is set in front matter,
+  and an action link only if the matching URL exists.
+{% endcomment %}
+{% case post.category %}
+  {% when "research" %}{% assign cat_label = "Research" %}
+  {% when "technical" %}{% assign cat_label = "Technical exploration" %}
+  {% when "professional" %}{% assign cat_label = "Professional" %}
+  {% else %}{% assign cat_label = nil %}
+{% endcase %}
+<article class="pcard">
+  {% if post.thumbnail %}
+    <a class="pcard__thumb" href="{{ base_path }}{{ post.url }}">
+      <img src="{{ post.thumbnail }}" alt="{{ post.thumbnail_alt | default: post.title }}">
+    </a>
+  {% endif %}
+  <div class="pcard__body">
+    <p class="pcard__eyebrow">
+      {% if cat_label %}<span class="pcard__cat">{{ cat_label }}</span>{% endif %}
+      {% if post.date %}<span class="pcard__year">{{ post.date | date: "%Y" }}</span>{% endif %}
+    </p>
+    <h3 class="pcard__title"><a href="{{ base_path }}{{ post.url }}">{{ post.title }}</a></h3>
     {% if post.excerpt %}
-      <p class="archive__item-excerpt">{{ post.excerpt | markdownify | strip_html | strip_newlines }}</p>
+      <p class="pcard__desc">{{ post.excerpt | markdownify | strip_html | strip_newlines }}</p>
     {% endif %}
-    {% if post.date %}
-      <p class="page__meta"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y" }}</time></p>
-    {% endif %}
-  </article>
-</div>
+    {% if post.methods %}<p class="pcard__meta">{{ post.methods }}</p>{% endif %}
+    <p class="pcard__actions">
+      <a class="action action--sm action--primary" href="{{ base_path }}{{ post.url }}">View project</a>
+      {% if post.publication_url %}<a class="action action--sm" href="{{ post.publication_url }}" target="_blank" rel="noopener noreferrer">Publication <span aria-hidden="true">&#8599;</span><span class="sr-only">(opens in a new tab)</span></a>{% endif %}
+      {% if post.gee_url %}<a class="action action--sm" href="{{ post.gee_url }}" target="_blank" rel="noopener noreferrer">Google Earth Engine <span aria-hidden="true">&#8599;</span><span class="sr-only">(opens in a new tab)</span></a>{% endif %}
+      {% if post.github_url %}<a class="action action--sm" href="{{ post.github_url }}" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">&#8599;</span><span class="sr-only">(opens in a new tab)</span></a>{% endif %}
+      {% if post.demo_url %}<a class="action action--sm" href="{{ post.demo_url }}" target="_blank" rel="noopener noreferrer">Demo <span aria-hidden="true">&#8599;</span><span class="sr-only">(opens in a new tab)</span></a>{% endif %}
+    </p>
+  </div>
+</article>
