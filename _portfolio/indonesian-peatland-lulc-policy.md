@@ -2,8 +2,10 @@
 title: "Three Decades of Land-Use Change Across Indonesian Peat Hydrological Units"
 excerpt: "Thirty years of peatland land-use change mapped against the regulations meant to govern it — a UGM–University of Sydney collaboration, published in Soil Security."
 collection: portfolio
-category: academic
+category: research
+featured: false
 date: 2022-12-02
+publication_url: "https://doi.org/10.1016/j.soisec.2022.100080"
 ---
 
 **Sumatra and Kalimantan, Indonesia · Research Assistant, Faculty of Geography, Universitas Gadjah Mada · joint research with the University of Sydney (2021–2022)**

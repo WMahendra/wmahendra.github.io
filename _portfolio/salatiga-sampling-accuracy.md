@@ -2,8 +2,10 @@
 title: "Sampling Design and Accuracy Assessment for Land-Cover Mapping"
 excerpt: "How sample size and sampling technique change the measured accuracy of a land-cover map — Salatiga, Indonesia. First-author study, published by SPIE."
 collection: portfolio
-category: academic
+category: research
+featured: false
 date: 2024-01-29
+publication_url: "https://doi.org/10.1117/12.3009445"
 ---
 
 **Salatiga, Indonesia · BSc research, Universitas Gadjah Mada · published by SPIE (2024)**
