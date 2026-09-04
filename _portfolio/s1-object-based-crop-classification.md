@@ -4,9 +4,7 @@ excerpt: "Exploring whether multi-period Sentinel-1 backscatter and object-based
 collection: portfolio
 category: technical
 featured: false
-# date: NEEDS USER CONFIRMATION - the date the work was carried out is not
-# established, so no date is published. Adding one here sets the ordering on
-# /portfolio/ and displays the year on the project card.
+date: 2024-04-14
 gee_url: "https://code.earthengine.google.com/5f29a0390ddc8fbad9b742d577a6572f"
 ---
 
@@ -113,8 +111,8 @@ workflow rather than defects in it.
 - **No explicit radiometric terrain correction or terrain flattening** is applied.
 - Ascending and descending observations are combined by averaging the two orbit-wise mean
   images, which mixes the two viewing geometries rather than modelling them separately.
-- The three periods are fixed four-month windows, not derived from a crop calendar or
-  observed phenology.
+- The workflow uses three fixed four-month periods and does not explicitly model crop
+  calendars or phenological stages.
 - Only VV information reaches the classifier; the VH signal is visualised but unused.
 - The output is binary crop / non-crop — no crop type is distinguished.
 
