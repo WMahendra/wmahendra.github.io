@@ -59,8 +59,8 @@ hectare values are summed inside the region of interest, and the code is convert
 calendar year — 1 to 2001, through to 23 to 2023. The script produces annual statistics
 along with bar and line charts of the annual series.
 
-*No hectare values are reported here, because no exported results are available in this
-repository yet — see Explore the result.*
+*No hectare values are reported here: the exported statistics are not part of this
+repository, so no figures are quoted.*
 
 ## Cumulative tree-cover loss
 
@@ -91,13 +91,6 @@ These describe the scope of the current workflow rather than faults in it.
 - No methodology-specific REDD+ forest definition is applied.
 - Results depend entirely on the region of interest supplied to the script.
 - No REDD+ reference level or baseline emission estimate is calculated.
-
-## Explore the result
-
-An interactive map of the loss-year layer, together with annual and cumulative
-tree-cover-loss charts, will be published here from the exported analysis output. The
-exports have not been added to this repository yet, so nothing is displayed in this
-section — no map, statistics or charts are shown, rather than showing placeholder values.
 
 ## Open in Google Earth Engine
 
