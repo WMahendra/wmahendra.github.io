@@ -6,7 +6,7 @@ category: technical
 featured: false
 date: 2025-09-01   # September 2025; day set only so Jekyll can sort - not a factual day
 date_precision: month   # only the month is confirmed; suppresses day-level date metadata
-gee_url: "https://code.earthengine.google.com/bb20280ba984942e57e5366b4a4afa10"
+gee_url: "https://code.earthengine.google.com/65f9390439f9c2cea7df7080b47885d9"
 ---
 
 **Technical exploration · September 2025 · West Kalimantan, Indonesia · Hansen Global Forest Change, 2001–2023**
