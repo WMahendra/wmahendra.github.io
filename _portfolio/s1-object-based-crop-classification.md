@@ -10,6 +10,9 @@ gee_url: "https://code.earthengine.google.com/5f29a0390ddc8fbad9b742d577a6572f"
 
 **Technical exploration · Google Earth Engine**
 
+*Developed on 14 April 2024 as a technical exploration derived from my MSc thesis-related
+work with Sentinel-1 radar time series.*
+
 ## Objective
 
 To explore whether multi-period Sentinel-1 backscatter and object-based segmentation can
@@ -17,11 +20,11 @@ support crop/non-crop classification in Google Earth Engine.
 
 ## Why I explored it
 
-The workflow brings together three things that are usually treated separately: summarising
-a year of radar acquisitions into a small number of temporal composites, segmenting that
-temporal stack into objects rather than classifying pixels, and training a classifier on
-the resulting object-level values. This exploration was about establishing whether that
-chain runs end to end in Earth Engine and what it produces.
+This exploration grew out of the radar component of my MSc research, where I was working
+with Sentinel-1 time-series data and exploring different ways to extract useful temporal
+information from SAR imagery. Here, I tested an end-to-end workflow that combines
+multi-period Sentinel-1 composites, object-based segmentation and Random Forest
+classification in Google Earth Engine to explore crop/non-crop mapping.
 
 ## Dataset
 
