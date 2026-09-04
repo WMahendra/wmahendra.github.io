@@ -18,12 +18,11 @@ M.Sc Physical Geography and Ecosystem Science, Lund University
 B.Sc Geographic Information Science, Universitas Gadjah Mada
 
 ## Experience
-- 08/2024 - Present
-GIS and Forestry Consultant, Form International
+- Previously GIS and Forestry Consultant, Form International
 - 01/2024 - 06/2024
 Remote Sensing Intern, Acorn Rabobank
 - 04/2021 - 05/2022
-Researh Assistant, Faculty of Geography Universitas Gadjah Mada
+Research Assistant, Faculty of Geography Universitas Gadjah Mada
 
 ## Skills
 ### Geospatial Data Processing

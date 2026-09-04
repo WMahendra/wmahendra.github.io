@@ -43,13 +43,16 @@ Symposium in 2023. The paper is co-authored with my supervisor.
 
 ## Results
 
-- Accuracy values **fluctuated irregularly below roughly 200 samples** for the 25-class
-  scheme and **below roughly 36 samples** for the 9-class scheme. Above those sizes the
-  measured accuracy became regular against the actual accuracy.
-- **Stratified random sampling** modelled accuracy satisfactorily compared with random
-  and systematic grid sampling.
-- The more complex the class scheme, the more reference samples were needed before the
-  accuracy figure settled.
+- Accuracy estimates became more stable at around **200 samples for the 25-class scheme**
+  and **36 samples for the 9-class scheme**. Below those sample numbers, the study observed
+  irregular fluctuation in the accuracy value.
+- **Stratified random sampling** was satisfactory for modelling the accuracy compared with
+  random and systematic grid sampling.
+- The more complex class scheme required the larger number of reference samples before the
+  accuracy estimate settled.
+
+These sample numbers are the points at which the study observed the accuracy estimate
+becoming regular; the paper does not define them as statistically derived thresholds.
 
 ## Limitations
 

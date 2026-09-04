@@ -42,17 +42,20 @@ evaluated with the standard error of estimate.
 
 ## My contribution
 
-I worked on this as a Research Assistant at the Faculty of Geography, Universitas Gadjah
-Mada, on joint research between UGM and the University of Sydney. My contribution was
-monitoring land-use and land-cover change over the 30-year period across the four peat
-hydrological units, assessing peat depth from integrated elevation data and field
-measurements, and compiling and summarising the 115 regulations used for the policy
-analysis.
+This was collaborative research between Universitas Gadjah Mada and the University of
+Sydney, led by others: Widyatmanti et al. in *Soil Security* and Ambhika et al. in the
+*International Journal of Geoinformatics*. I took part as a Research Assistant at the
+Faculty of Geography, Universitas Gadjah Mada, and I am a co-author on both papers.
 
-I am a co-author on both resulting papers; the studies were led by others — Widyatmanti
-et al. in *Soil Security* and Ambhika et al. in the *International Journal of
-Geoinformatics* — and the findings below are those of the studies as a whole, not of my
-contribution alone.
+My contribution included:
+
+- monitoring land-use and land-cover change over the 30-year period across the four peat
+  hydrological units;
+- assessing peat depth from integrated elevation data and field measurements;
+- compiling and summarising the 115 regulations used for the policy analysis.
+
+The results reported below are the findings of the published studies as a whole, not of
+my contribution alone.
 
 ## Results
 
@@ -66,14 +69,13 @@ contribution alone.
 
 ## Limitations
 
-The peat thickness component did not reach an operationally useful accuracy. On Bengkalis
-Island, vegetation indices and NDSI proved unreliable for modelling peat thickness because
-of unstable vegetation and land-cover change over the study period. NDWI performed better
-than the alternatives but still reached only **41.96% accuracy** — well short of what
-would be needed to guide land-use decisions, and reported by the study as a preliminary
-result rather than a usable mapping product. The published work recommends improved
-sampling design, better distribution of samples across preserved land covers, and the
-inclusion of additional environmental variables before this approach is relied on.
+On Bengkalis Island, vegetation indices and NDSI proved unreliable for modelling peat
+thickness because of unstable vegetation and land-cover change over the study period. The
+best-performing NDWI-based approach achieved **41.96% accuracy**, highlighting limitations
+for operational peat-thickness estimation. The study is reported as a preliminary
+investigation, and the published work recommends improved sampling design, better
+distribution of samples across preserved land covers, and the inclusion of additional
+environmental variables.
 
 ## Publications
 

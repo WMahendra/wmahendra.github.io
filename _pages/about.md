@@ -21,9 +21,10 @@ loss in Jambi, Indonesia.
 ## Selected projects
 
 **[Sampling Design and Accuracy Assessment for Land-Cover Mapping](/portfolio/salatiga-sampling-accuracy/)**  
-Below roughly 200 reference samples for a 25-class scheme, measured accuracy fluctuated
-irregularly; stratified random sampling modelled accuracy better than random or systematic
-grid. First author, published by SPIE.
+Accuracy estimates became more stable at around 200 reference samples for a 25-class
+scheme and 36 for a 9-class scheme; stratified random sampling was satisfactory for
+modelling accuracy compared with random and systematic grid sampling. First author,
+published by SPIE.
 
 **[Three Decades of Land-Use Change Across Indonesian Peat Hydrological Units](/portfolio/indonesian-peatland-lulc-policy/)**  
 Land-cover maps at five-year intervals from 1990 to 2020 across four peat hydrological
