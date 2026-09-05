@@ -1,15 +1,12 @@
 ---
 title: "Long-Term Forest Loss Monitoring for REDD+ Using Google Earth Engine"
-excerpt: "Annual tree-cover loss analysis with Hansen Global Forest Change, 2001–2023, mapping loss year and quantifying affected area across West Kalimantan, Indonesia."
+excerpt: "Annual tree-cover loss analysis with Hansen Global Forest Change, 2001–2023, mapping loss year and quantifying affected area across an analysis extent within West Kalimantan, Indonesia."
 collection: portfolio
 category: technical
 featured: false
 date: 2025-09-01   # September 2025; day set only so Jekyll can sort - not a factual day
 date_precision: month   # only the month is confirmed; suppresses day-level date metadata
-# Results are withheld until the corrected full-province exports arrive. The
-# implementation below stays in place; set this to true to re-enable the map,
-# summary metrics and charts.
-results_published: false
+results_published: true
 page_scripts:
   - /assets/lib/leaflet/leaflet.js
   - /assets/js/portfolio-viz.js
@@ -18,7 +15,7 @@ page_styles:
 gee_url: "https://code.earthengine.google.com/46d383bb33a5de1bf3abb4a49ce8cb88"
 ---
 
-**Technical exploration · September 2025 · West Kalimantan, Indonesia · Hansen Global Forest Change, 2001–2023**
+**Technical exploration · September 2025 · an analysis extent within West Kalimantan, Indonesia · Hansen Global Forest Change, 2001–2023**
 
 ## REDD+ context
 
@@ -33,7 +30,7 @@ cumulative change through time.
 
 ## Objective
 
-To examine long-term tree-cover-loss dynamics within a defined region of interest by
+To examine long-term tree-cover-loss dynamics within a defined analysis area by
 mapping annual loss, quantifying affected area and evaluating annual and cumulative
 temporal patterns from 2001–2023.
 
@@ -48,7 +45,7 @@ temporal patterns from 2001–2023.
    legend_title="Tree-cover loss year"
    legend_from="2001"
    legend_to="2023"
-   caption="Year of detected tree-cover loss across the analysis extent. Colour encodes when loss was detected, not how much was lost. This is a 100 m web version of the analysis output, generalised for browser delivery; the analysis itself uses the native 30 m Hansen data. The dashed outline is the West Kalimantan provincial boundary, shown for geographic context." %}
+   caption="Year of detected tree-cover loss across the analysis extent. Colour encodes when loss was detected, not how much was lost. This is a 100 m web version of the analysis output, generalised for browser delivery; the analysis itself uses the native 30 m Hansen data. The dashed outline is the West Kalimantan provincial boundary, shown for geographic context — it is not the analysis boundary." %}
 
 Hansen Global Forest Change identifies tree-cover loss. Loss may result from several
 disturbance processes and should not automatically be read as permanent
@@ -63,8 +60,9 @@ forest-to-non-forest conversion.
   <div><dt>Mean annual</dt><dd>14,610 ha</dd></div>
 </dl>
 
-All four figures come directly from the exported statistics: the total is the final
-cumulative value, and the mean is that total divided by the 23 years.
+All four figures come directly from the exported statistics and describe the analysis
+extent within West Kalimantan, not the whole province. The total is the final cumulative
+value, and the mean is that total divided by the 23 years.
 
 ## Annual tree-cover loss
 
@@ -90,12 +88,13 @@ cumulative value, and the mean is that total divided by the 23 years.
 - `UMD/hansen/global_forest_change_2023_v1_11` — Hansen Global Forest Change v1.11
 - Bands used: `treecover2000`, `loss`, `lossyear`
 - Loss-year codes run 1–23, where 1 corresponds to 2001 and 23 to 2023
-- Region of interest: **West Kalimantan (Kalimantan Barat), Indonesia**, filtered from the
-  provincial boundary layer and used as a single geometry for clipping, area calculation and
-  export
+- Study area: **an approximately 14,000 km² analysis extent within West Kalimantan
+  (Kalimantan Barat), Indonesia** — roughly 141 × 99 km. All results on this page describe
+  that extent, not the whole province
 
-*Study-area boundary: West Kalimantan provincial boundary derived from 2017 Kemendes
-village-boundary data and dissolved to the province level.*
+*West Kalimantan provincial boundary derived from 2017 Kemendes village-boundary data and
+dissolved to the province level. It is drawn on the map for geographic context only and is
+not the analysis boundary.*
 
 Hansen Global Forest Change identifies tree-cover loss rather than confirmed permanent
 forest-to-non-forest conversion. Tree-cover loss may reflect several disturbance processes,
@@ -147,7 +146,8 @@ These describe the scope of the current workflow rather than faults in it.
 - The optional `treecover2000 >= 30%` baseline tree-cover mask is present in the script but
   is commented out, so **no baseline canopy threshold is applied** in the current version.
 - No methodology-specific REDD+ forest definition is applied.
-- Results depend entirely on the region of interest supplied to the script.
+- Results describe the analysis extent used for this exploration, not the whole of West
+  Kalimantan province, and depend entirely on that extent.
 - No REDD+ reference level or baseline emission estimate is calculated.
 
 ## Open in Google Earth Engine

@@ -133,7 +133,7 @@
       fetch(el.dataset.outline).then(function (r) { return r.json(); }).then(function (gj) {
         var layer = L.geoJSON(gj, { style: { color: "#5c666f", weight: 1.2, fill: false,
                                              dashArray: "4 3", opacity: 0.9 } }).addTo(map);
-        overlays["Study-area province boundary"] = layer;
+        overlays["West Kalimantan provincial boundary"] = layer;
         L.control.layers(null, overlays, { collapsed: true, position: "topright" }).addTo(map);
       }).catch(function () {
         L.control.layers(null, overlays, { collapsed: true, position: "topright" }).addTo(map);
