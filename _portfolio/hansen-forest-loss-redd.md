@@ -6,6 +6,10 @@ category: technical
 featured: false
 date: 2025-09-01   # September 2025; day set only so Jekyll can sort - not a factual day
 date_precision: month   # only the month is confirmed; suppresses day-level date metadata
+# Results are withheld until the corrected full-province exports arrive. The
+# implementation below stays in place; set this to true to re-enable the map,
+# summary metrics and charts.
+results_published: false
 page_scripts:
   - /assets/lib/leaflet/leaflet.js
   - /assets/js/portfolio-viz.js
@@ -33,6 +37,7 @@ To examine long-term tree-cover-loss dynamics within a defined region of interes
 mapping annual loss, quantifying affected area and evaluating annual and cumulative
 temporal patterns from 2001–2023.
 
+{% if page.results_published %}
 ## Explore forest loss
 
 {% include geo-map.html
@@ -78,19 +83,19 @@ cumulative value, and the mean is that total divided by the 23 years.
    x="year" y="cumulative_loss_ha" type="line"
    ylabel="Cumulative area (ha)"
    caption="Running total of detected tree-cover loss, 2001–2023." %}
+{% endif %}
 
 ## Dataset and workflow
 
 - `UMD/hansen/global_forest_change_2023_v1_11` — Hansen Global Forest Change v1.11
 - Bands used: `treecover2000`, `loss`, `lossyear`
 - Loss-year codes run 1–23, where 1 corresponds to 2001 and 23 to 2023
-- Analysis extent: the area covered by the exported layers, roughly 141 × 99 km (about
-  14,000 km²) in **West Kalimantan (Kalimantan Barat), Indonesia**. The exported raster and
-  the annual and cumulative statistics all describe this extent, not the whole province
+- Region of interest: **West Kalimantan (Kalimantan Barat), Indonesia**, filtered from the
+  provincial boundary layer and used as a single geometry for clipping, area calculation and
+  export
 
 *Study-area boundary: West Kalimantan provincial boundary derived from 2017 Kemendes
-village-boundary data and dissolved to the province level. It is drawn on the map for
-geographic context; the analysis covers the smaller extent described above.*
+village-boundary data and dissolved to the province level.*
 
 Hansen Global Forest Change identifies tree-cover loss rather than confirmed permanent
 forest-to-non-forest conversion. Tree-cover loss may reflect several disturbance processes,
