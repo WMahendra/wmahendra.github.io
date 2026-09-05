@@ -1,0 +1,15 @@
+{% include base_path %}
+{% comment %}
+  Renders a chart from a CSV already published in assets/.
+  Parameters: id, src, x, y, type (bar|line), ylabel, caption
+  Values are read from the CSV at view time - none are transcribed into the page.
+{% endcomment %}
+<figure class="csv-chart" id="{{ include.id }}"
+        data-src="{{ base_path }}{{ include.src }}"
+        data-x="{{ include.x }}" data-y="{{ include.y }}"
+        data-type="{{ include.type | default: 'bar' }}"
+        data-ylabel="{{ include.ylabel }}">
+  <div class="csv-chart__canvas"></div>
+  {% if include.caption %}<figcaption>{{ include.caption }} Values read directly from
+    <a href="{{ base_path }}{{ include.src }}">{{ include.src | split: '/' | last }}</a>.</figcaption>{% endif %}
+</figure>

@@ -40,7 +40,11 @@
   {% assign seo_author_twitter = seo_author_twitter | replace: "@", "" %}
 {% endif %}
 
-{% if page.date %}
+{% comment %}
+  Pages marked date_precision: month know only the month, so no day-level published_time
+  is emitted for them. Publications and exactly dated pages are unaffected.
+{% endcomment %}
+{% if page.date and page.date_precision != 'month' %}
   <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
 {% endif %}
 

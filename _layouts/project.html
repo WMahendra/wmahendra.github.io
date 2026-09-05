@@ -2,6 +2,14 @@
 layout: single
 ---
 
+{% include base_path %}
+{% comment %}Per-page assets serve the results section; skip them when it is withheld.{% endcomment %}
+{% unless page.results_published == false %}{% for css in page.page_styles %}<link rel="stylesheet" href="{{ base_path }}{{ css }}">
+{% endfor %}{% endunless %}
+
 {% include project-links.html %}
 
 {{ content }}
+
+{% unless page.results_published == false %}{% for js in page.page_scripts %}<script src="{{ base_path }}{{ js }}"></script>
+{% endfor %}{% endunless %}
