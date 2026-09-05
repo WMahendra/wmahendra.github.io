@@ -15,7 +15,7 @@ page_styles:
 gee_url: "https://code.earthengine.google.com/46d383bb33a5de1bf3abb4a49ce8cb88"
 ---
 
-**Technical exploration · September 2025 · an analysis extent within West Kalimantan, Indonesia · Hansen Global Forest Change, 2001–2023**
+**Technical exploration · September 2025 · West Kalimantan, Indonesia · Hansen Global Forest Change, 2001–2023**
 
 ## REDD+ context
 
