@@ -577,3 +577,121 @@ body {
   .geo-map__legend { width: 132px; left: 8px; bottom: 20px; padding: 0.45em 0.5em; }
   .stat-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+
+/* ==========================================================================
+   Layout and typography refinement
+   ========================================================================== */
+
+/* --- Sidebar / content collision -------------------------------------------
+   Root cause: the theme takes .sidebar out of normal flow (position: fixed)
+   while the content column is placed by a susy float. Neither reserves space
+   for the other, so they overlap by an amount that varies with each page's
+   container width. Replacing that pair with one explicit two-column grid at
+   desktop widths fixes it at source, with no per-page offsets. */
+@media screen and (min-width: 1024px) {
+  #main {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    column-gap: 48px;
+    align-items: start;
+  }
+
+  #main > .sidebar {
+    position: sticky;
+    top: 5.5em;
+    float: none;
+    width: auto;
+    max-width: none;
+    height: auto;
+    max-height: calc(100vh - 7em);
+    overflow-y: auto;
+    margin: 0;
+    padding-right: 0;
+    opacity: 1;
+  }
+
+  /* Grid items must be allowed to shrink, or long words and wide children
+     (tables, code, the map) push the column past its track. */
+  #main > .page,
+  #main > .archive {
+    float: none;
+    width: auto;
+    min-width: 0;
+    margin: 0;
+  }
+}
+
+/* --- Sidebar typography --- */
+.author__name { line-height: 1.3; }
+
+.author__bio {
+  font-size: 0.86em;
+  line-height: 1.45;
+  color: var(--muted);
+  margin-top: 0.35em;
+  overflow-wrap: break-word;
+  hyphens: none;
+}
+
+/* --- Homepage capability keywords --- */
+.capability-strip li {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+/* --- Research focus: emphasis and justified prose --- */
+.focus-card__meta strong { font-weight: 600; color: var(--ink); }
+
+@media screen and (min-width: 768px) {
+  .focus-card p:not(.focus-card__meta) {
+    text-align: justify;
+    hyphens: auto;
+    overflow-wrap: break-word;
+  }
+}
+
+/* --- Project descriptions: justified on wider screens --- */
+@media screen and (min-width: 768px) {
+  .pcard__desc {
+    text-align: justify;
+    hyphens: auto;
+    overflow-wrap: break-word;
+  }
+
+  /* Running prose only. Captions, button rows and link rows are excluded on the
+     rule itself, since a separate override cannot outrank this selector. */
+  .page__content > p:not(.geo-map__caption):not(.hero__actions):not(.project-links):not(.csv-chart__fallback) {
+    text-align: justify;
+    hyphens: auto;
+  }
+}
+
+/* Justification is only ever applied to running prose. */
+.focus-card__meta,
+.focus-card h2,
+.pcard__title,
+.pcard__eyebrow,
+.pcard__meta,
+.pcard__actions,
+.geo-map__caption,
+.csv-chart figcaption,
+.pub-item__title,
+.pub-item__meta,
+.pub-item__links,
+.hero__actions,
+.capability-strip,
+.timeline,
+.stat-row {
+  text-align: left;
+  hyphens: none;
+}
+
+/* Narrow screens: justified text opens ugly word gaps, so revert to left. */
+@media screen and (max-width: 767px) {
+  .focus-card p,
+  .pcard__desc,
+  .page__content > p:not(.geo-map__caption):not(.hero__actions):not(.project-links) {
+    text-align: left;
+    hyphens: none;
+  }
+}
