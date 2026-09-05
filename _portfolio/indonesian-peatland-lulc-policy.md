@@ -1,6 +1,6 @@
 ---
-title: "Three Decades of Land-Use Change Across Indonesian Peat Hydrological Units"
-excerpt: "Thirty years of peatland land-use change mapped against the regulations meant to govern it — a UGM–University of Sydney collaboration, published in Soil Security."
+title: "Three Decades of Land-Use Change Across Indonesian Peatlands"
+excerpt: "Landsat time series from 1990 to 2020 across four peatland landscapes in Sumatra and Kalimantan, read against the chronology of Indonesian peatland regulation."
 collection: portfolio
 category: research
 featured: false
@@ -8,76 +8,130 @@ date: 2022-12-02
 publication_url: "https://doi.org/10.1016/j.soisec.2022.100080"
 ---
 
-**Sumatra and Kalimantan, Indonesia · Research Assistant, Faculty of Geography, Universitas Gadjah Mada · joint research with the University of Sydney (2021–2022)**
+**Sumatra and Kalimantan, Indonesia · Research Assistant, Faculty of Geography, Universitas Gadjah Mada · University of Sydney collaboration · Co-author · 2021–2022**
 
-## Problem
+## Research question
 
-Indonesia has issued a long sequence of peatland regulations in response to
-international climate commitments. Whether those regulations coincided with actual
-change on the ground is an empirical question, and answering it requires a consistent
-land-cover record long enough to span the policy history — along with the peat depth
-information that determines which land uses are appropriate in the first place.
+Indonesia has issued a long sequence of peatland regulations. A regulation on paper does
+not, by itself, show what happened to land cover on the ground, and the two are rarely
+examined against each other over a period long enough to matter.
+
+The main study asks how land use and forest cover changed across major peatland landscapes
+between **1990 and 2020**, and how those trajectories align with the chronology of peatland
+regulation. A second question concerns peat depth: whether forest conversion followed
+different patterns on shallow and deep peat, since depth has long been one of the criteria
+used to decide where cultivation is permitted.
+
+The numerical results reported below are findings of the collaborative studies as a whole,
+not of any single contribution.
+
+## Study areas
+
+Four peatland landscapes, spanning both major island groups:
+
+- **Bengkalis Island**, Riau
+- **Sungai Sugihan–Sungai Lumpur**, South Sumatra
+- **Kubu Raya**, West Kalimantan
+- **Central Kalimantan**
 
 ## Data
 
-- Remote sensing data from **1990 to 2020**, used to generate land-use/land-cover maps at
-  five-year intervals
-- **Four major peatland areas** in Sumatra and Kalimantan — peat hydrological units
-  covering more than 3 million hectares
-- Elevation data combined with field measurements, for peat depth
-- **115 peatland regulations**, compiled and summarised to build the policy chronology
+Observations were compiled at roughly five-year steps: **1990, 1995, 2000, 2005, 2010/2011
+where applicable, 2015 and 2020**, using **Landsat 5 TM** and **Landsat 8 OLI** surface
+reflectance. Cloud and cloud shadow were removed using the QA_PIXEL / CFMask masks, and the
+remaining observations were reduced to a **median composite** for each step, which is what
+makes a consistent 30-year series achievable in a persistently cloudy region.
 
-## Method
+## Land-use classification
 
-Land-use/land-cover maps were produced every five years across the study period and
-compared against the years in which regulations were established, so that the observed
-change trajectory could be read against the policy timeline. Peat depth was assessed by
-integrating elevation data with field measurements. A related strand of the work, on
-Bengkalis Island, tested whether spectral transformations — vegetation and wetness
-indices — could estimate peat thickness, using correlation and regression modelling
-evaluated with the standard error of estimate.
+Classification was implemented in **Google Earth Engine** using a **Random Forest**
+classifier, into **seven LULC classes**: forest, plantation, agriculture, built-up, bare
+soil, swampy bush and water body. Because each study area and each time step needs its own
+training and its own model, the study produced **26 LULC classification models** in total.
+
+## Linking land cover with peat depth and policy
+
+The classified series was combined with two further layers of information. Forest-area
+change was overlaid with **peat-depth information**, separated into **shallow peat (<3 m)**
+and **deep peat (>3 m)**, because Indonesian peatland protection rules have historically
+used depth as one criterion for whether an area may be cultivated. The resulting change
+trajectories were then compared against a chronology assembled from an inventory of **130
+peatland-related regulations**, of which the study reports **55% concerning environmental
+issues, 33% socio-economic issues and 7% disaster prevention or mitigation**.
 
 <figure>
-  <img src="/images/diagrams/peatland-lulc-policy-workflow.svg" alt="Workflow: 1990–2020 imagery becomes land-use maps at five-year intervals; elevation data and field measurements support a peat depth assessment; 115 compiled regulations form a chronology; all three feed a change analysis comparing land-use change against the years regulations were established.">
-  <figcaption>Analysis workflow, drawn from the methods described in the publications.</figcaption>
+  <img src="/images/diagrams/peatland-lulc-policy-workflow.svg" alt="Workflow: Landsat 5 TM and 8 OLI surface reflectance from 1990 to 2020 is cloud-masked and reduced to median composites, classified by Random Forest in Google Earth Engine into seven classes across 26 models, giving multi-temporal LULC and forest-change maps. These are overlaid with shallow and deep peat-depth information and compared against a chronology of 130 peatland regulations.">
+  <figcaption>Primary workflow, drawn from the methods described in the Soil Security publication.</figcaption>
 </figure>
-
-## My contribution
-
-This work was conducted collaboratively between Universitas Gadjah Mada and the
-University of Sydney and resulted in two peer-reviewed publications. I contributed as a
-Research Assistant at the Faculty of Geography, Universitas Gadjah Mada, and am a
-co-author on both studies.
-
-My contribution included:
-
-- monitoring land-use and land-cover change over the 30-year period across the four peat
-  hydrological units;
-- assessing peat depth from integrated elevation data and field measurements;
-- compiling and summarising the 115 regulations used for the policy analysis.
-
-The results reported below are the findings of the published studies as a whole, not of
-my contribution alone.
 
 ## Results
 
-- Temporal image analysis showed **massive land-use change between 1995 and 2010**.
-- **Since 2010 the deforestation rate has slowed and has remained low.**
-- The establishment of Indonesian peatland regulations coincided with the ongoing
-  development of international climate change agreements.
-- The study concluded that the absence of detailed mapping of peatland capability and
-  condition is one of the factors hindering effective policy development, and recommended
-  digital soil mapping to support peatland security.
+### The long-term trajectory
+
+Forest cover declined strongly through the earlier part of the record, with the most
+substantial conversion during the 1990s and 2000s. From around 2010 onwards the rate of
+deforestation generally slowed and stayed low — but that summary holds for the record as a
+whole, not for every landscape within it.
+
+### Differences between landscapes
+
+The four study areas did not follow one trajectory:
+
+- **Bengkalis Island (2010–2020)** continued to lose forest on both depth classes:
+  **44.92 km²** on shallow peat and **58.19 km²** on deep peat.
+- **Kubu Raya (2011–2020)** lost only about **1.03 km²** of shallow-peat forest, following
+  much larger conversion in earlier periods.
+- **Central Kalimantan (2010–2020)** showed roughly **246.90 km²** of reforested area.
+
+Together these show that a national-scale statement about slowing deforestation can conceal
+continuing loss in one landscape and recovery in another. They are examples of that spatial
+heterogeneity rather than a representative sample of Indonesian peatlands.
+
+### Alignment with the policy chronology
+
+Regulation became more specific over time, particularly following major climate and fire
+events. The **2015–2020** period coincided with comparatively smaller LULC changes and a
+slower overall deforestation rate. The study reports this as an association in time between
+the regulatory record and the observed land-cover record; the design compares two
+chronologies and does not isolate regulation from the other factors acting over the same
+decades.
+
+## Interpretation
+
+Policy information and spatial evidence have to be read together. A large body of
+regulation does not by itself demonstrate implementation, and a slowing national trend does
+not demonstrate that any particular landscape is protected. What a 30-year classified series
+adds is the ability to see where trajectories diverge, and when.
+
+The study's practical conclusion is that peatland management is limited less by the number
+of regulations than by the information available to apply them. Better mapping of peat
+depth, hydrology, land capability and condition is the prerequisite, and the paper
+recommends digital soil mapping as the route to it.
+
+## Related peat-thickness study
+
+A separate strand, on Bengkalis Island, tested whether spectral information could predict
+peat thickness directly — using vegetation and wetness indices derived from spectral
+transformations, with correlation and regression modelling evaluated by the standard error
+of estimate.
+
+Predictive performance was limited. The best NDWI-based approach reached approximately
+**41.96%**, and vegetation indices and NDSI proved unreliable where vegetation and land
+cover had themselves changed over the study period. The result is informative in a negative
+direction: surface spectral response has limited ability to predict a subsurface property
+such as peat thickness, which is consistent with the main study's conclusion that improved
+peat mapping requires more than optical imagery. This analysis is not part of the
+multi-temporal LULC workflow described above.
 
 ## Limitations
 
-On Bengkalis Island, vegetation indices and NDSI proved unreliable for modelling peat
-thickness because of unstable vegetation and land-cover change over the study period. The
-best-performing NDWI-based approach achieved **41.96% accuracy**, indicating limited
-predictive performance for peat-thickness estimation in the study setting. The study is
-reported as a preliminary investigation, and the published work recommends improved
-sampling design, better distribution of samples across preserved land covers, and the
-inclusion of additional environmental variables.
+- A five-year observation interval does not capture short-term change between steps.
+- Cloud cover forced some temporal substitutions, so not every study area has an
+  observation in exactly the same year.
+- The policy comparison is temporal and spatial evidence, not controlled causal inference.
+- Peat-depth information carries its own uncertainty.
+- The related spectral peat-thickness modelling had limited predictive performance and is
+  reported as a preliminary result.
 
 ## Publications
 
