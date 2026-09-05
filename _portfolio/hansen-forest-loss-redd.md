@@ -11,7 +11,7 @@ page_scripts:
   - /assets/js/portfolio-viz.js
 page_styles:
   - /assets/lib/leaflet/leaflet.css
-gee_url: "https://code.earthengine.google.com/65f9390439f9c2cea7df7080b47885d9"
+gee_url: "https://code.earthengine.google.com/46d383bb33a5de1bf3abb4a49ce8cb88"
 ---
 
 **Technical exploration · September 2025 · West Kalimantan, Indonesia · Hansen Global Forest Change, 2001–2023**
