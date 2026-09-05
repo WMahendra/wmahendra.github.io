@@ -2,6 +2,13 @@
 layout: single
 ---
 
+{% include base_path %}
+{% for css in page.page_styles %}<link rel="stylesheet" href="{{ base_path }}{{ css }}">
+{% endfor %}
+
 {% include project-links.html %}
 
 {{ content }}
+
+{% for js in page.page_scripts %}<script src="{{ base_path }}{{ js }}"></script>
+{% endfor %}

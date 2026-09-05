@@ -1,0 +1,32 @@
+{% include base_path %}
+{% comment %}
+  Reusable static-hosting map for a project page.
+  Parameters:
+    id            unique element id
+    overlay       path to a georeferenced PNG overlay (optional)
+    bounds        "south,west,north,east" for the overlay (required with overlay)
+    outline       path to a GeoJSON outline drawn as a subtle boundary (optional)
+    legend_title  legend heading (optional)
+    legend_from   label at the light end of the ramp (optional)
+    legend_to     label at the dark end of the ramp (optional)
+    caption       short text under the map (optional)
+  Renders nothing but the fallback text if the overlay file is absent.
+{% endcomment %}
+<div class="geo-map" id="{{ include.id }}"
+     data-overlay="{{ include.overlay }}"
+     data-bounds="{{ include.bounds }}"
+     data-outline="{{ include.outline }}">
+  <div class="geo-map__canvas" role="application" aria-label="{{ include.legend_title | default: 'Interactive map' }}"></div>
+  {% if include.legend_title %}
+  <div class="geo-map__legend">
+    <p class="geo-map__legend-title">{{ include.legend_title }}</p>
+    <div class="geo-map__ramp" aria-hidden="true"></div>
+    <p class="geo-map__legend-scale"><span>{{ include.legend_from }}</span><span>{{ include.legend_to }}</span></p>
+  </div>
+  {% endif %}
+</div>
+{% if include.caption %}<p class="geo-map__caption">{{ include.caption }}</p>{% endif %}
+<noscript>
+  <p class="geo-map__caption">The interactive map needs JavaScript. The underlying data is available
+  as a <a href="{{ base_path }}{{ include.overlay | replace: '.png', '.tif' }}">GeoTIFF</a>.</p>
+</noscript>
