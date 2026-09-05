@@ -23,5 +23,5 @@ remote-sensing research and technical workflows in Python and Google Earth Engin
   <li>Earth Observation</li>
   <li>Forest &amp; Nature-based Solutions</li>
   <li>SAR / LiDAR</li>
-  <li>Python / Google Earth Engine</li>
+  <li>Python / AI / Google Earth Engine</li>
 </ul>
