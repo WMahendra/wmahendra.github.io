@@ -151,6 +151,37 @@ body {
   }
 }
 
+/* --- Homepage credibility strip --- */
+.evidence-strip {
+  list-style: none;
+  margin: 2.4em 0 0.5em;
+  padding: 1.6em 0 0;
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.6em 1.5em;
+  align-items: start;
+
+  li { margin: 0; }
+}
+
+.evidence-strip__metric {
+  display: block;
+  font-size: 0.86em;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 0.4em;
+}
+
+.evidence-strip__note {
+  display: block;
+  font-size: 0.86em;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
 /* --- Action buttons --- */
 .page__content a.action,
 .action {
@@ -459,6 +490,12 @@ body {
   .timeline__logo img { max-width: 84px; max-height: 40px; }
 
   .hero__actions .action { flex: 0 1 auto; }
+
+  .evidence-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.4em 1.6em; }
+}
+
+@media (max-width: 400px) {
+  .evidence-strip { grid-template-columns: 1fr; gap: 1.2em; }
 }
 
 /* --- Project map and charts --- */
