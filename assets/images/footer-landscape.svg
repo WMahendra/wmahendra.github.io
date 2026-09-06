@@ -1,0 +1,270 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 1600 260"
+     preserveAspectRatio="xMidYMax slice">
+
+  <!-- Background -->
+  <rect width="1600" height="260" fill="#ffffff"/>
+
+  <!-- Satellite observing the land -->
+  <g transform="translate(260,45) rotate(-18)">
+    <!-- observation beam -->
+    <path d="M35 28 L120 165 L180 165 L58 28 Z"
+          fill="#b7d9f5"
+          opacity="0.28"/>
+
+    <!-- left solar panel -->
+    <rect x="-38" y="10" width="34" height="18" rx="2" fill="#7fb6e6" stroke="#5e95c5" stroke-width="2"/>
+    <line x1="-30" y1="10" x2="-30" y2="28" stroke="#5e95c5" stroke-width="1.5"/>
+    <line x1="-22" y1="10" x2="-22" y2="28" stroke="#5e95c5" stroke-width="1.5"/>
+    <line x1="-14" y1="10" x2="-14" y2="28" stroke="#5e95c5" stroke-width="1.5"/>
+
+    <!-- right solar panel -->
+    <rect x="44" y="10" width="34" height="18" rx="2" fill="#7fb6e6" stroke="#5e95c5" stroke-width="2"/>
+    <line x1="52" y1="10" x2="52" y2="28" stroke="#5e95c5" stroke-width="1.5"/>
+    <line x1="60" y1="10" x2="60" y2="28" stroke="#5e95c5" stroke-width="1.5"/>
+    <line x1="68" y1="10" x2="68" y2="28" stroke="#5e95c5" stroke-width="1.5"/>
+
+    <!-- connectors -->
+    <line x1="-4" y1="19" x2="8" y2="19" stroke="#777777" stroke-width="2"/>
+    <line x1="36" y1="19" x2="44" y2="19" stroke="#777777" stroke-width="2"/>
+
+    <!-- main body -->
+    <rect x="8" y="5" width="28" height="28" rx="4" fill="#d9d9d9" stroke="#888888" stroke-width="2"/>
+
+    <!-- lens -->
+    <circle cx="22" cy="19" r="6" fill="#7ec4ef" stroke="#5e95c5" stroke-width="2"/>
+
+    <!-- antenna -->
+    <line x1="22" y1="5" x2="22" y2="-8" stroke="#777777" stroke-width="2"/>
+    <circle cx="22" cy="-10" r="3" fill="#ffd91a" stroke="#d4b300" stroke-width="1.5"/>
+  </g>
+
+  <!-- Clouds -->
+  <g fill="none" stroke="#7db7e8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M70 88
+             C70 74 84 68 96 74
+             C102 58 126 58 134 74
+             C148 71 160 79 160 90
+             C160 100 151 105 140 105
+             L92 105
+             C80 105 70 98 70 88 Z"/>
+
+    <path d="M1200 92
+             C1200 78 1213 72 1225 77
+             C1231 61 1256 61 1263 77
+             C1277 74 1288 82 1288 93
+             C1288 103 1279 108 1268 108
+             L1220 108
+             C1208 108 1200 101 1200 92 Z"/>
+
+    <path d="M1440 95
+             C1440 83 1452 77 1462 82
+             C1468 67 1490 67 1496 82
+             C1509 80 1519 88 1519 98
+             C1519 107 1511 111 1501 111
+             L1458 111
+             C1447 111 1440 105 1440 95 Z"/>
+  </g>
+
+  <!-- Sun -->
+  <circle cx="1345" cy="82" r="24" fill="#ffd91a"/>
+  <g stroke="#ffd91a" stroke-width="4" stroke-linecap="round">
+    <line x1="1345" y1="42" x2="1345" y2="30"/>
+    <line x1="1345" y1="122" x2="1345" y2="134"/>
+    <line x1="1305" y1="82" x2="1293" y2="82"/>
+    <line x1="1385" y1="82" x2="1397" y2="82"/>
+    <line x1="1317" y1="54" x2="1308" y2="45"/>
+    <line x1="1373" y1="54" x2="1382" y2="45"/>
+    <line x1="1317" y1="110" x2="1308" y2="119"/>
+    <line x1="1373" y1="110" x2="1382" y2="119"/>
+  </g>
+
+  <!-- Mountains -->
+  <path d="
+    M0 185
+    L120 132
+    L215 175
+    L355 108
+    L470 180
+    L610 128
+    L730 182
+    L860 138
+    L965 185
+    L1090 135
+    L1215 182
+    L1340 122
+    L1465 182
+    L1600 145
+    L1600 260
+    L0 260 Z"
+    fill="#9bb7a3"/>
+
+  <!-- Snow caps -->
+  <g fill="#ffffff">
+    <path d="M104 142 L120 132 L136 144 L128 140 L120 150 L113 141 Z"/>
+    <path d="M336 121 L355 108 L373 123 L364 119 L355 131 L347 120 Z"/>
+    <path d="M592 138 L610 128 L628 141 L619 138 L610 148 L602 138 Z"/>
+    <path d="M1072 145 L1090 135 L1108 147 L1099 144 L1090 154 L1082 144 Z"/>
+    <path d="M1322 132 L1340 122 L1358 135 L1349 131 L1340 142 L1332 132 Z"/>
+  </g>
+
+  <!-- Hills -->
+  <path d="
+    M0 196
+    Q120 177 245 195
+    Q350 180 470 197
+    Q610 176 760 198
+    Q900 178 1040 196
+    Q1180 179 1325 197
+    Q1455 182 1600 196
+    L1600 260
+    L0 260 Z"
+    fill="#a8d36f"/>
+
+  <!-- Lake -->
+  <ellipse cx="1000" cy="219" rx="200" ry="27" fill="#7ec4ef"/>
+  <path d="M850 218 Q930 207 1010 216 Q1100 224 1160 216" fill="none" stroke="#9ed3f7" stroke-width="3"/>
+  <path d="M870 227 Q950 220 1035 226 Q1110 232 1140 225" fill="none" stroke="#9ed3f7" stroke-width="3"/>
+
+  <!-- Dense tropical forest band -->
+  <!-- back canopy -->
+  <g fill="#4f8b57">
+    <ellipse cx="35" cy="212" rx="30" ry="22"/>
+    <ellipse cx="70" cy="205" rx="28" ry="20"/>
+    <ellipse cx="105" cy="214" rx="30" ry="22"/>
+    <ellipse cx="145" cy="208" rx="27" ry="20"/>
+    <ellipse cx="180" cy="216" rx="28" ry="21"/>
+    <ellipse cx="220" cy="210" rx="31" ry="22"/>
+    <ellipse cx="255" cy="216" rx="26" ry="20"/>
+    <ellipse cx="290" cy="210" rx="29" ry="21"/>
+    <ellipse cx="325" cy="216" rx="27" ry="20"/>
+    <ellipse cx="360" cy="210" rx="30" ry="22"/>
+    <ellipse cx="395" cy="216" rx="27" ry="20"/>
+    <ellipse cx="430" cy="211" rx="31" ry="22"/>
+    <ellipse cx="465" cy="216" rx="26" ry="20"/>
+    <ellipse cx="500" cy="210" rx="30" ry="21"/>
+    <ellipse cx="535" cy="216" rx="27" ry="20"/>
+    <ellipse cx="570" cy="210" rx="30" ry="22"/>
+    <ellipse cx="605" cy="216" rx="26" ry="20"/>
+    <ellipse cx="640" cy="210" rx="31" ry="22"/>
+    <ellipse cx="675" cy="216" rx="27" ry="20"/>
+    <ellipse cx="710" cy="210" rx="29" ry="21"/>
+    <ellipse cx="745" cy="216" rx="27" ry="20"/>
+    <ellipse cx="780" cy="209" rx="31" ry="22"/>
+    <ellipse cx="815" cy="216" rx="27" ry="20"/>
+    <ellipse cx="1180" cy="210" rx="31" ry="22"/>
+    <ellipse cx="1215" cy="216" rx="27" ry="20"/>
+    <ellipse cx="1250" cy="209" rx="30" ry="22"/>
+    <ellipse cx="1285" cy="216" rx="27" ry="20"/>
+    <ellipse cx="1320" cy="210" rx="31" ry="22"/>
+    <ellipse cx="1355" cy="216" rx="27" ry="20"/>
+    <ellipse cx="1390" cy="209" rx="30" ry="22"/>
+    <ellipse cx="1425" cy="216" rx="27" ry="20"/>
+    <ellipse cx="1460" cy="210" rx="31" ry="22"/>
+    <ellipse cx="1495" cy="216" rx="27" ry="20"/>
+    <ellipse cx="1530" cy="209" rx="30" ry="22"/>
+    <ellipse cx="1565" cy="216" rx="27" ry="20"/>
+  </g>
+
+  <!-- front canopy -->
+  <g fill="#2f6f3f">
+    <ellipse cx="20" cy="225" rx="34" ry="25"/>
+    <ellipse cx="60" cy="220" rx="30" ry="23"/>
+    <ellipse cx="100" cy="228" rx="33" ry="25"/>
+    <ellipse cx="140" cy="222" rx="30" ry="23"/>
+    <ellipse cx="180" cy="228" rx="33" ry="25"/>
+    <ellipse cx="220" cy="223" rx="30" ry="23"/>
+    <ellipse cx="260" cy="228" rx="34" ry="25"/>
+    <ellipse cx="300" cy="222" rx="30" ry="23"/>
+    <ellipse cx="340" cy="228" rx="33" ry="25"/>
+    <ellipse cx="380" cy="223" rx="30" ry="23"/>
+    <ellipse cx="420" cy="228" rx="34" ry="25"/>
+    <ellipse cx="460" cy="222" rx="30" ry="23"/>
+    <ellipse cx="500" cy="228" rx="33" ry="25"/>
+    <ellipse cx="540" cy="223" rx="30" ry="23"/>
+    <ellipse cx="580" cy="228" rx="34" ry="25"/>
+    <ellipse cx="620" cy="222" rx="30" ry="23"/>
+    <ellipse cx="660" cy="228" rx="33" ry="25"/>
+    <ellipse cx="700" cy="223" rx="30" ry="23"/>
+    <ellipse cx="740" cy="228" rx="34" ry="25"/>
+    <ellipse cx="780" cy="223" rx="30" ry="23"/>
+
+    <ellipse cx="1200" cy="228" rx="34" ry="25"/>
+    <ellipse cx="1240" cy="222" rx="30" ry="23"/>
+    <ellipse cx="1280" cy="228" rx="33" ry="25"/>
+    <ellipse cx="1320" cy="223" rx="30" ry="23"/>
+    <ellipse cx="1360" cy="228" rx="34" ry="25"/>
+    <ellipse cx="1400" cy="222" rx="30" ry="23"/>
+    <ellipse cx="1440" cy="228" rx="33" ry="25"/>
+    <ellipse cx="1480" cy="223" rx="30" ry="23"/>
+    <ellipse cx="1520" cy="228" rx="34" ry="25"/>
+    <ellipse cx="1560" cy="222" rx="30" ry="23"/>
+  </g>
+
+  <!-- tropical tree trunks -->
+  <g fill="#7b5538">
+    <rect x="12" y="224" width="8" height="36"/>
+    <rect x="48" y="220" width="8" height="40"/>
+    <rect x="92" y="227" width="8" height="33"/>
+    <rect x="130" y="221" width="8" height="39"/>
+    <rect x="172" y="226" width="8" height="34"/>
+    <rect x="210" y="221" width="8" height="39"/>
+    <rect x="252" y="227" width="8" height="33"/>
+    <rect x="290" y="221" width="8" height="39"/>
+    <rect x="332" y="227" width="8" height="33"/>
+    <rect x="372" y="221" width="8" height="39"/>
+    <rect x="414" y="227" width="8" height="33"/>
+    <rect x="452" y="221" width="8" height="39"/>
+    <rect x="494" y="227" width="8" height="33"/>
+    <rect x="534" y="221" width="8" height="39"/>
+    <rect x="574" y="227" width="8" height="33"/>
+    <rect x="614" y="221" width="8" height="39"/>
+    <rect x="654" y="227" width="8" height="33"/>
+    <rect x="694" y="221" width="8" height="39"/>
+    <rect x="734" y="227" width="8" height="33"/>
+    <rect x="774" y="221" width="8" height="39"/>
+
+    <rect x="1192" y="227" width="8" height="33"/>
+    <rect x="1232" y="221" width="8" height="39"/>
+    <rect x="1272" y="227" width="8" height="33"/>
+    <rect x="1312" y="221" width="8" height="39"/>
+    <rect x="1352" y="227" width="8" height="33"/>
+    <rect x="1392" y="221" width="8" height="39"/>
+    <rect x="1432" y="227" width="8" height="33"/>
+    <rect x="1472" y="221" width="8" height="39"/>
+    <rect x="1512" y="227" width="8" height="33"/>
+    <rect x="1552" y="221" width="8" height="39"/>
+  </g>
+
+  <!-- a few simple tropical crowns sticking up -->
+  <g>
+    <g transform="translate(540,170)">
+      <rect x="10" y="30" width="8" height="30" fill="#7b5538"/>
+      <ellipse cx="14" cy="18" rx="24" ry="14" fill="#2c7a43"/>
+      <ellipse cx="0" cy="25" rx="14" ry="9" fill="#2c7a43"/>
+      <ellipse cx="28" cy="25" rx="14" ry="9" fill="#2c7a43"/>
+    </g>
+
+    <g transform="translate(675,165)">
+      <rect x="10" y="32" width="8" height="30" fill="#7b5538"/>
+      <ellipse cx="14" cy="18" rx="24" ry="14" fill="#2c7a43"/>
+      <ellipse cx="0" cy="24" rx="14" ry="9" fill="#2c7a43"/>
+      <ellipse cx="28" cy="24" rx="14" ry="9" fill="#2c7a43"/>
+    </g>
+
+    <g transform="translate(1275,170)">
+      <rect x="10" y="30" width="8" height="30" fill="#7b5538"/>
+      <ellipse cx="14" cy="18" rx="24" ry="14" fill="#2c7a43"/>
+      <ellipse cx="0" cy="25" rx="14" ry="9" fill="#2c7a43"/>
+      <ellipse cx="28" cy="25" rx="14" ry="9" fill="#2c7a43"/>
+    </g>
+
+    <g transform="translate(1450,165)">
+      <rect x="10" y="32" width="8" height="30" fill="#7b5538"/>
+      <ellipse cx="14" cy="18" rx="24" ry="14" fill="#2c7a43"/>
+      <ellipse cx="0" cy="24" rx="14" ry="9" fill="#2c7a43"/>
+      <ellipse cx="28" cy="24" rx="14" ry="9" fill="#2c7a43"/>
+    </g>
+  </g>
+
+</svg>
