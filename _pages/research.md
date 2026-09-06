@@ -10,8 +10,11 @@ author_profile: true
 <div class="focus-grid">
 
   <article class="focus-card">
-    <h2>Forest &amp; Land-Use Dynamics</h2>
-    <p>When land cover changes, where land cover changes, and if a change involves clearing, regrowth or gradual thinning of an intact canopy. The harder portion of that question is distinguishing deterioration from outright deforestation, because the signal is incomplete and easily mistaken with seasonal change.</p>Rather than comparing specific dates, I choose the approach of satellite time series where satellite optical and SAR measurements are used in the regions where the optical data alone is limited by cloud cover.
+    <h2>Forest &amp; LULC Dynamics</h2>
+    <p>Understanding **when, where, and how LULC changes occur** is a substantial part of the challenge, particularly when distinguishing forest degradation from outright deforestation. The satellite signal is often incomplete and can easily be confused with seasonal variations.
+
+Rather than comparing observations from specific dates, I use a **satellite time-series approach**, integrating optical and SAR measurements, particularly in regions where persistent cloud cover limits the availability of reliable optical observations.
+
   </article>
 
   <article class="focus-card">
