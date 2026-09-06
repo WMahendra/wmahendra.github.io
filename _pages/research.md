@@ -11,7 +11,7 @@ author_profile: true
 
   <article class="focus-card">
     <h2>Forest &amp; Land-Use Dynamics</h2>
-    <p>When land cover changes, where land cover changes, and if a change involves clearing, regrowth or gradual thinning of an intact canopy. The harder portion of that question is distinguishing deterioration from outright deforestation, because the signal is incomplete and easily mistaken with seasonal change.</p>Rather than comparing specific dates, I choose the approach of satellite time series where satellite optical and SAR measurements are used jointly in the situation where the optical data alone is limited by cloud cover.</p>
+    <p>When land cover changes, where land cover changes, and if a change involves clearing, regrowth or gradual thinning of an intact canopy. The harder portion of that question is distinguishing deterioration from outright deforestation, because the signal is incomplete and easily mistaken with seasonal change.</p>Rather than comparing specific dates, I choose the approach of satellite time series where satellite optical and SAR measurements are used in the regions where the optical data alone is limited by cloud cover.
   </article>
 
   <article class="focus-card">
