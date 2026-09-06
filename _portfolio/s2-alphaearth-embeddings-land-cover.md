@@ -2,6 +2,9 @@
 title: "Comparing Sentinel-2 Spectral Features and AlphaEarth Satellite Embeddings for Land-Cover Classification"
 excerpt: "Comparison of conventional Sentinel-2 spectral features and AlphaEarth learned satellite embeddings for three-class land-cover classification using the same training labels and Random Forest setup."
 collection: portfolio
+thumbnail: "/images/diagrams/s2-alphaearth-workflow.svg"
+thumbnail_alt: "Workflow diagram: a Sentinel-2 branch and an AlphaEarth embedding branch share the same training samples and Random Forest classifier, converging on a qualitative comparison of the two classifications."
+methods: "NDVI / NDWI vs learned embeddings · Random Forest (100 trees)"
 category: technical
 featured: false
 date: 2026-09-01   # September 2026; day set only so Jekyll can sort - not a factual day
@@ -51,8 +54,17 @@ are removed with the QA60 bitmask, reflectance is rescaled by dividing by 10,000
 filtered collection is reduced to an annual median composite clipped to the geometry.
 Two indices are added to the composite:
 
-- NDVI = (B8 − B4) / (B8 + B4), after Rouse et al. (1974)
-- NDWI = (B3 − B8) / (B3 + B8), after McFeeters (1996)
+$$ NDVI = \frac{NIR - Red}{NIR + Red}, \qquad NDWI = \frac{Green - NIR}{Green + NIR} $$
+
+For Sentinel-2 the bands substituted here are $$NIR = B8$$, $$Red = B4$$ and
+$$Green = B3$$. Both are normalised differences, so both are bounded between −1 and 1 and
+are insensitive to a uniform scaling of the input reflectance. NDVI contrasts the strong
+near-infrared response of healthy vegetation against its red absorption, and rises with
+vegetation cover and vigour (Rouse et al., 1974). NDWI reverses the role of the
+near-infrared against green to highlight open water, which absorbs strongly in the
+near-infrared and therefore returns high values where the surface is inundated
+(McFeeters, 1996). The two indices are added because forest, water and bare soil separate
+along exactly these two contrasts.
 
 The classification feature set is B2, B3, B4, B8, B11, B12, NDVI and NDWI — eight features
 in total.
@@ -105,6 +117,26 @@ inputs without feature selection (Breiman, 2001) — a property that matters mor
 embedding side, where the feature count is large and the dimensions are not independently
 meaningful. The whole workflow runs in the Earth Engine Code Editor (Gorelick et al.,
 2017).
+
+## Classifier formulation
+
+Both branches use the same estimator, so the classifier is not a variable in this
+comparison. A Random Forest grows many decision trees on bootstrap samples of the training
+data, drawing a random subset of the available features at each split, and assigns the class
+that most trees vote for (Breiman, 2001):
+
+$$ \hat{y}(x) = \operatorname{mode}\{ T_1(x), T_2(x), \ldots, T_B(x) \} $$
+
+where $$T_b(x)$$ is the class predicted for pixel $$x$$ by tree $$b$$ and $$B$$ is the
+number of trees — here $$B = 100$$ on both sides. Two properties make this estimator
+suitable for the comparison. It accepts many correlated predictors without prior feature
+selection, which is necessary on the embedding side where the dimensions are numerous and
+not independently meaningful; and it makes no assumption about the distribution or the
+physical units of its inputs, so reflectance values, normalised indices and learned
+embedding coordinates can all be fed to the same algorithm without rescaling.
+
+Since $$B$$, the estimator and the labelled samples are identical across the two runs, the
+feature representation is the only substantive difference between them.
 
 ## Outputs
 
