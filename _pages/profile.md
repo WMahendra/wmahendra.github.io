@@ -6,12 +6,8 @@ author_profile: true
 classes: wide
 ---
 
-Geospatial specialist working in GIS, remote sensing, geodatabase management and carbon
-project calculation, with delivery experience across Africa, Latin America and Asia. I
-apply machine learning and deep learning to multisource satellite data for land-use change,
-deforestation and carbon calculation, and use FME for data integration. I combine technical
-analysis with field observation, and I am used to explaining spatial results to clients,
-partners and non-technical audiences.
+Utilize GIS, remote sensing, and carbon
+modelling to understand trees and ecosystems and how they contribute positively into nature. experienced on working carbon project across Africa, Latin America and Asia. In particular, I am excited to apply machine learning and deep learning to multisource satellite data for land-use change, deforestation and carbon calculation, and use FME for data integration. I combine technical analysis with field observation, and I am used to explaining spatial results to clients, partners and non-technical audiences.
 
 ## Experience
 
