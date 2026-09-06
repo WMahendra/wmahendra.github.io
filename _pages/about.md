@@ -17,7 +17,7 @@ in forests, environmental, and the diversity of flora and fauna they support. I 
 realised that understanding landscapes at this scale requires more than field observation
 alone. Over the past five years, this has led me to work with remote sensing, geospatial
 analysis, machine learning to study forest change and structure in ways that
-are more systematic, spatially explicit and measurable. I want to work hard to protect trees, as they have been protecting our planet for hundreds of millions of years.
+are more systematic, spatially explicit and measurable. I have been working hard to protect trees, as they have been protecting our planet for hundreds of millions of years.
 
   
 </p>
