@@ -25,22 +25,3 @@ remote-sensing research and technical workflows in Python and Google Earth Engin
   <li>SAR / LiDAR</li>
   <li>Python / AI / Google Earth Engine</li>
 </ul>
-
-<ul class="evidence-strip">
-  <li>
-    <span class="evidence-strip__metric">3.5+ years experience</span>
-    <span class="evidence-strip__note">Geospatial, remote sensing and environmental analysis</span>
-  </li>
-  <li>
-    <span class="evidence-strip__metric">12 carbon projects</span>
-    <span class="evidence-strip__note">REDD+ and ARR, forest monitoring and restoration</span>
-  </li>
-  <li>
-    <span class="evidence-strip__metric">6 publications</span>
-    <span class="evidence-strip__note">Remote sensing, land cover and peatlands</span>
-  </li>
-  <li>
-    <span class="evidence-strip__metric">3 continents</span>
-    <span class="evidence-strip__note">Africa &middot; Asia &middot; Latin America</span>
-  </li>
-</ul>

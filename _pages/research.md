@@ -18,7 +18,6 @@ author_profile: true
     <p>I approach it through satellite time series rather than single-date comparisons,
     using optical and SAR observations together where cloud cover limits what optical
     data alone can see.</p>
-    <p class="focus-card__meta"><strong>Optical and SAR time series</strong> · <strong>change detection</strong> · <strong>land-cover classification</strong></p>
   </article>
 
   <article class="focus-card">
@@ -30,7 +29,6 @@ author_profile: true
     <p>I am interested in extending my work on forest structure and biomass towards LiDAR and
     spaceborne observations such as GEDI, alongside SAR, optical imagery and field
     measurements.</p>
-    <p class="focus-card__meta">Research interests: <strong>LiDAR</strong> · <strong>GEDI</strong> · <strong>SAR and optical integration</strong> · <strong>field observations</strong></p>
   </article>
 
   <article class="focus-card">
@@ -41,7 +39,6 @@ author_profile: true
     maps.</p>
     <p>My interest is in how spatial analysis is built into monitoring and environmental
     decision-making, and in what makes the resulting evidence auditable.</p>
-    <p class="focus-card__meta"><strong>Eligibility mapping</strong> · <strong>baselines</strong> · <strong>monitoring</strong> · <strong>spatial evidence for decisions</strong></p>
   </article>
 
   <article class="focus-card">
@@ -51,7 +48,6 @@ author_profile: true
     steps and their assumptions can be inspected rather than taken on faith.</p>
     <p>This covers time-series processing, machine learning for classification and
     regression, and automating the repetitive parts of a workflow so that reruns are cheap.</p>
-    <p class="focus-card__meta"><strong>Python</strong> · <strong>Google Earth Engine</strong> · <strong>machine learning</strong> · <strong>time-series processing</strong> · <strong>automation</strong></p>
   </article>
 
 </div>

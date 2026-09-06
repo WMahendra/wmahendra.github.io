@@ -55,7 +55,6 @@ partners and non-technical audiences.
     <div class="timeline__body">
       <span class="timeline__role">MSc Geoinformation Science and Earth Observation</span>
       <span class="timeline__org">University of Twente — Faculty of Geo-Information Science and Earth Observation (ITC)</span>
-      <span class="timeline__note">Erasmus Mundus Joint Master scholarship</span>
     </div>
   </div>
   <div class="timeline__row">
@@ -64,6 +63,7 @@ partners and non-technical audiences.
     <div class="timeline__body">
       <span class="timeline__role">MSc Physical Geography and Ecosystem Science</span>
       <span class="timeline__org">Lund University</span>
+      <span class="timeline__note">VG (Pass with Distinction)</span>
     </div>
   </div>
   <div class="timeline__row">

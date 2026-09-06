@@ -135,7 +135,7 @@ body {
 
 .capability-strip {
   list-style: none;
-  margin: 0 0 0.5em;
+  margin: 62px 0 0.5em;
   padding: 1.1em 0 0;
   border-top: 1px solid var(--line);
   display: flex;
@@ -149,37 +149,6 @@ body {
     text-transform: uppercase;
     color: var(--muted);
   }
-}
-
-/* --- Homepage credibility strip --- */
-.evidence-strip {
-  list-style: none;
-  margin: 2.4em 0 0.5em;
-  padding: 1.6em 0 0;
-  border-top: 1px solid var(--line);
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1.6em 1.5em;
-  align-items: start;
-
-  li { margin: 0; }
-}
-
-.evidence-strip__metric {
-  display: block;
-  font-size: 0.86em;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  color: var(--ink);
-  margin-bottom: 0.4em;
-}
-
-.evidence-strip__note {
-  display: block;
-  font-size: 0.86em;
-  line-height: 1.5;
-  color: var(--muted);
 }
 
 /* --- Action buttons --- */
@@ -263,14 +232,6 @@ body {
     margin: 0 0 0.8em;
     max-width: none;
   }
-}
-
-.focus-card__meta {
-  margin: 0 !important;
-  padding-top: 0.7em;
-  border-top: 1px solid var(--line);
-  font-size: 0.78em !important;
-  color: var(--muted);
 }
 
 /* --- Timeline (experience and education) --- */
@@ -491,11 +452,7 @@ body {
 
   .hero__actions .action { flex: 0 1 auto; }
 
-  .evidence-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.4em 1.6em; }
-}
-
-@media (max-width: 400px) {
-  .evidence-strip { grid-template-columns: 1fr; gap: 1.2em; }
+  .capability-strip { margin-top: 40px; }
 }
 
 /* --- Project map and charts --- */
@@ -677,10 +634,8 @@ body {
 }
 
 /* --- Research focus: emphasis and justified prose --- */
-.focus-card__meta strong { font-weight: 600; color: var(--ink); }
-
 @media screen and (min-width: 768px) {
-  .focus-card p:not(.focus-card__meta) {
+  .focus-card p {
     text-align: justify;
     hyphens: auto;
     overflow-wrap: break-word;
@@ -704,7 +659,6 @@ body {
 }
 
 /* Justification is only ever applied to running prose. */
-.focus-card__meta,
 .focus-card h2,
 .pcard__title,
 .pcard__eyebrow,
