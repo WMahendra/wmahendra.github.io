@@ -2,9 +2,9 @@
 {% comment %}
   Renders action buttons for a project from its front matter.
   A button appears only if the matching URL exists - never a placeholder.
-  Supported fields: publication_url, github_url, gee_url, demo_url
+  Supported fields: publication_url, github_url, gee_url, earth_engine_app_url, demo_url
 {% endcomment %}
-{% if page.publication_url or page.github_url or page.gee_url or page.demo_url %}
+{% if page.publication_url or page.github_url or page.gee_url or page.earth_engine_app_url or page.demo_url %}
 <p class="project-links">
   {% if page.publication_url %}
   <a class="action action--primary" href="{{ page.publication_url }}" target="_blank" rel="noopener noreferrer">View publication <span aria-hidden="true">&#8599;</span><span class="sr-only">(opens in a new tab)</span></a>
@@ -14,6 +14,9 @@
   {% endif %}
   {% if page.gee_url %}
   <a class="action" href="{{ page.gee_url }}" target="_blank" rel="noopener noreferrer">Open in Google Earth Engine <span aria-hidden="true">&#8599;</span><span class="sr-only">(opens in a new tab)</span></a>
+  {% endif %}
+  {% if page.earth_engine_app_url %}
+  <a class="action" href="{{ page.earth_engine_app_url }}" target="_blank" rel="noopener noreferrer">Open Earth Engine App <span aria-hidden="true">&#8599;</span><span class="sr-only">(opens in a new tab)</span></a>
   {% endif %}
   {% if page.demo_url %}
   <a class="action" href="{{ page.demo_url }}" target="_blank" rel="noopener noreferrer">Open demo <span aria-hidden="true">&#8599;</span><span class="sr-only">(opens in a new tab)</span></a>
