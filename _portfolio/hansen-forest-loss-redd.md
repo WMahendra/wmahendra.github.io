@@ -2,6 +2,9 @@
 title: "Long-Term Forest Loss Monitoring for REDD+ Using Google Earth Engine"
 excerpt: "Annual tree-cover loss analysis with Hansen Global Forest Change, 2001–2023, mapping loss year and quantifying affected area across an analysis extent within West Kalimantan, Indonesia."
 collection: portfolio
+thumbnail: "/images/figures/hansen-annual-loss-chart.svg"
+thumbnail_alt: "Bar chart of annual tree-cover loss in hectares from 2001 to 2023, computed from the Hansen loss-year band over the analysis extent within West Kalimantan."
+methods: "Hansen loss-year · annual and cumulative area"
 category: technical
 featured: false
 date: 2025-09-01   # September 2025; day set only so Jekyll can sort - not a factual day
@@ -103,7 +106,7 @@ methodology-specific deforestation assessment.
 
 <figure>
   <img src="/images/diagrams/hansen-forest-loss-workflow.svg" alt="Workflow: Hansen Global Forest Change bands treecover2000, loss and lossyear are masked to pixels with detected tree-cover loss and clipped to a region of interest, giving an annual loss map for 2001–2023. Pixel area is converted from square metres to hectares and summed per loss-year code, producing annual statistics, a cumulative running total, and GeoTIFF and CSV exports.">
-  <figcaption>Processing chain implemented in the Earth Engine script.</figcaption>
+  <figcaption>Processing chain redrawn from the Earth Engine script used for this analysis.</figcaption>
 </figure>
 
 Pixels without detected tree-cover loss are masked out, and the loss-year layer is clipped
@@ -113,16 +116,30 @@ Hansen loss-year codes from 1 to 23 drives the per-year statistics.
 ### How annual area is calculated
 
 Affected area is derived from `ee.Image.pixelArea()`, which returns pixel area in square
-metres. Dividing by 10,000 converts it to hectares. For each Hansen loss-year code, the
-hectare values are summed inside the region of interest, and the code is converted to its
-calendar year — 1 to 2001, through to 23 to 2023. The script produces annual statistics
-along with bar and line charts of the annual series.
+metres; dividing by 10,000 converts it to hectares. For a given loss year, the area is the
+sum of the areas of every pixel whose loss-year band carries that year's code:
 
+$$ A_y = \sum_{i \in R} a_i \, \mathbb{1}(L_i = y) $$
+
+where $$a_i$$ is the area represented by pixel $$i$$, $$L_i$$ is that pixel's Hansen
+loss-year code, $$R$$ is the region of interest, and $$\mathbb{1}(\cdot)$$ is the indicator
+function — one when the condition holds, zero otherwise. The indicator is what the masking
+step implements: pixels of other years, and pixels with no detected loss at all, contribute
+zero. Because each pixel carries a single loss year, the annual series partitions the
+detected loss and no area is counted twice.
 
 ### How cumulative area is calculated
 
-Total affected area across 2001–2023 is calculated, along with a running cumulative area
-that accumulates each year's loss in sequence, and a cumulative chart of that series.
+The cumulative series is the running sum of the annual series from the start of the record
+to year $$t$$:
+
+$$ C_t = \sum_{y=2001}^{t} A_y $$
+
+so $$C_t$$ is the total area on which loss had been detected at any point up to and
+including $$t$$. It rises monotonically by construction: a year with little loss flattens
+the curve but cannot lower it, because the quantity is accumulated detection, not standing
+forest. Regrowth after a loss event is not subtracted, and a pixel that loses tree cover
+once is counted once and never removed.
 
 ## Relevance to REDD+
 
@@ -149,6 +166,22 @@ These describe the scope of the current workflow rather than faults in it.
 - Results describe the analysis extent used for this exploration, not the whole of West
   Kalimantan province, and depend entirely on that extent.
 - No REDD+ reference level or baseline emission estimate is calculated.
+
+## References
+
+Gorelick, N., Hancher, M., Dixon, M., Ilyushchenko, S., Thau, D., & Moore, R. (2017).
+Google Earth Engine: Planetary-scale geospatial analysis for everyone. *Remote Sensing of
+Environment, 202*, 18–27.
+[doi.org/10.1016/j.rse.2017.06.031](https://doi.org/10.1016/j.rse.2017.06.031)
+
+Hansen, M. C., Potapov, P. V., Moore, R., Hancher, M., Turubanova, S. A., Tyukavina, A.,
+Thau, D., Stehman, S. V., Goetz, S. J., Loveland, T. R., Kommareddy, A., Egorov, A., Chini,
+L., Justice, C. O., & Townshend, J. R. G. (2013). High-resolution global maps of
+21st-century forest cover change. *Science, 342*(6160), 850–853.
+[doi.org/10.1126/science.1244693](https://doi.org/10.1126/science.1244693)
+
+Data accessed as `UMD/hansen/global_forest_change_2023_v1_11` through the Earth Engine Data
+Catalog.
 
 ## Open in Google Earth Engine
 

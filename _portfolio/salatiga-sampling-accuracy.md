@@ -2,6 +2,9 @@
 title: "Sampling Design and Accuracy Assessment for Land-Cover Mapping"
 excerpt: "How many reference samples a land-cover map needs, and how they should be distributed, tested against a full-area benchmark for 25- and 9-class schemes in Salatiga, Indonesia."
 collection: portfolio
+thumbnail: "/images/diagrams/salatiga-accuracy-workflow.svg"
+thumbnail_alt: "Workflow diagram: a multispectral classification and a visual-interpretation reference map feed three sampling designs, an area-based accuracy assessment and a test of estimate stability against sample size."
+methods: "Accuracy assessment · sampling design · confusion matrix"
 category: research
 featured: false
 date: 2024-01-29
@@ -63,8 +66,31 @@ value.
 
 <figure>
   <img src="/images/diagrams/salatiga-accuracy-workflow.svg" alt="Workflow: a multispectral classification and a visual-interpretation reference are compared under three sampling designs at varying sample sizes, producing a confusion matrix and overall accuracy, which is examined against a full-area benchmark.">
-  <figcaption>Assessment workflow, drawn from the method described in the publication.</figcaption>
+  <figcaption>Assessment workflow, redrawn from the methodology described in Mahendra &amp; Danoedoro (2024). Not a reproduction of a published figure.</figcaption>
 </figure>
+
+## Accuracy formulation
+
+Accuracy assessment in this study follows the standard confusion-matrix framework for
+categorical maps (Congalton, 1991; Olofsson et al., 2014). A reference sample is compared
+with the map, and the agreement between them is summarised as overall accuracy:
+
+$$ OA = \frac{\sum_{i=1}^{q} n_{ii}}{N} $$
+
+where $$n_{ii}$$ is the number of reference observations of class $$i$$ that the map also
+assigns to class $$i$$, $$q$$ is the number of classes, and $$N$$ is the total number of
+reference observations. In plain terms, overall accuracy is the proportion of reference
+observations placed in the correct class — the diagonal of the confusion matrix divided by
+its grand total.
+
+Two properties of this measure matter for the question asked here. It is a single number
+summarising every class at once, so a map can score well while a small class is mapped
+badly; and it is an estimate from a sample, so a different draw of reference observations
+returns a different value. The experiment exploits the second property directly: rather than
+reporting one overall accuracy, it repeats the estimate across sample sizes and sampling
+designs and observes how far the returned value moves. Class-specific measures — producer's
+and user's accuracy, the row and column ratios of the same matrix — were not the object of
+this experiment.
 
 ## Results
 
@@ -113,13 +139,22 @@ size and reporting whatever figure it returns.
   wider set of agreement statistics.
 - **36 and 200 samples are observations from this experiment, not universal thresholds.**
 
-## Publication
+## References
+
+Congalton, R. G. (1991). A review of assessing the accuracy of classifications of remotely
+sensed data. *Remote Sensing of Environment, 37*(1), 35–46.
+[doi.org/10.1016/0034-4257(91)90048-B](https://doi.org/10.1016/0034-4257(91)90048-B)
 
 Mahendra, W. K., & Danoedoro, P. (2024). *Understanding the influence of different sample
 sizes and sample techniques on accuracy assessment of land cover mapping: Case study of
 Salatiga City, Indonesia.* Proceedings of SPIE, Eighth Geoinformation Science Symposium,
 12977, 129770E.
 [https://doi.org/10.1117/12.3009445](https://doi.org/10.1117/12.3009445)
+
+Olofsson, P., Foody, G. M., Herold, M., Stehman, S. V., Woodcock, C. E., & Wulder, M. A.
+(2014). Good practices for estimating area and assessing accuracy of land change. *Remote
+Sensing of Environment, 148*, 42–57.
+[doi.org/10.1016/j.rse.2014.02.015](https://doi.org/10.1016/j.rse.2014.02.015)
 
 Presented as an oral presentation at the 8th Geoinformation Science Symposium, 2023.
 Supervised by Prof. Projo Danoedoro. No public code repository accompanies this study.

@@ -113,42 +113,18 @@ body {
 }
 
 /* --- Hero (homepage) --- */
-.hero__subhead {
-  font-size: 1.15em;
-  color: var(--muted);
-  margin: -0.4em 0 1.1em;
-  max-width: 40em;
-}
-
 .hero__lead {
   font-size: 1.02em;
   line-height: 1.7;
   max-width: 44em;
 }
 
+.page__content p.hero__actions,
 .hero__actions {
-  margin: 1.8em 0 1.4em;
+  margin: 100px 0 1.4em;
   display: flex;
   flex-wrap: wrap;
   gap: 0.6em;
-}
-
-.capability-strip {
-  list-style: none;
-  margin: 180px 0 0.5em;
-  padding: 1.1em 0 0;
-  border-top: 1px solid var(--line);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5em 1.6em;
-
-  li {
-    margin: 0;
-    font-size: 0.78em;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
 }
 
 /* --- Action buttons --- */
@@ -369,8 +345,18 @@ body {
 .pcard__thumb {
   display: block;
   border-bottom: 1px solid var(--line);
+  background: #fff;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
 
-  img { display: block; width: 100%; height: auto; }
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 0.9em 1em;
+    box-sizing: border-box;
+  }
 }
 
 .pcard__body {
@@ -415,6 +401,8 @@ body {
   font-size: 0.78em !important;
   color: var(--muted);
   margin: 0 0 0.9em !important;
+  padding-top: 0.7em;
+  border-top: 1px solid var(--line);
 }
 
 .pcard__actions {
@@ -452,7 +440,8 @@ body {
 
   .hero__actions .action { flex: 0 1 auto; }
 
-  .capability-strip { margin-top: 96px; }
+  .page__content p.hero__actions,
+  .hero__actions { margin-top: 60px; }
 }
 
 /* --- Project map and charts --- */
@@ -627,12 +616,6 @@ body {
   hyphens: none;
 }
 
-/* --- Homepage capability keywords --- */
-.capability-strip li {
-  font-weight: 700;
-  color: var(--ink);
-}
-
 /* --- Research focus: emphasis and justified prose --- */
 @media screen and (min-width: 768px) {
   .focus-card p {
@@ -670,7 +653,6 @@ body {
 .pub-item__meta,
 .pub-item__links,
 .hero__actions,
-.capability-strip,
 .timeline,
 .stat-row {
   text-align: left;

@@ -2,6 +2,9 @@
 title: "Three Decades of Land-Use Change Across Indonesian Peatlands"
 excerpt: "Landsat time series from 1990 to 2020 across four peatland landscapes in Sumatra and Kalimantan, read against the chronology of Indonesian peatland regulation."
 collection: portfolio
+thumbnail: "/images/diagrams/peatland-lulc-policy-workflow.svg"
+thumbnail_alt: "Workflow diagram: Landsat 1990-2020 is preprocessed and classified with Random Forest into multi-temporal land cover, which is compared alongside peat-depth information and the peatland policy chronology."
+methods: "Landsat time series · Random Forest · land-use change"
 category: research
 featured: false
 date: 2022-12-02
@@ -61,8 +64,34 @@ issues, 33% socio-economic issues and 7% disaster prevention or mitigation**.
 
 <figure>
   <img src="/images/diagrams/peatland-lulc-policy-workflow.svg" alt="Workflow: Landsat 5 TM and 8 OLI surface reflectance from 1990 to 2020 is cloud-masked and reduced to median composites, classified by Random Forest in Google Earth Engine into seven classes across 26 models, giving multi-temporal LULC and forest-change maps. These are overlaid with shallow and deep peat-depth information and compared against a chronology of 130 peatland regulations.">
-  <figcaption>Primary workflow, drawn from the methods described in the Soil Security publication.</figcaption>
+  <figcaption>Primary workflow, redrawn from the methodology described in Widyatmanti et al. (2022). Not a reproduction of a published figure; the related Bengkalis peat-thickness study is deliberately excluded.</figcaption>
 </figure>
+
+## Change formulation
+
+Land-use change is quantified from the classified series as a difference in mapped class
+area between two dates:
+
+$$ \Delta A_c = A_{c,t_2} - A_{c,t_1} $$
+
+where $$A_{c,t}$$ is the mapped area of land-cover class $$c$$ at time $$t$$. A positive
+$$\Delta A_c$$ means the class occupies more area at $$t_2$$ than at $$t_1$$ — expansion;
+a negative value means contraction. Because the classes partition the same study area at
+both dates, the expansions and contractions across all classes sum to approximately zero,
+and a gain in one class is necessarily a loss somewhere else.
+
+Absolute differences are hard to compare between landscapes of unequal size, so change is
+also expressed relative to the starting area:
+
+$$ R_c = \frac{A_{c,t_2} - A_{c,t_1}}{A_{c,t_1}} \times 100\% $$
+
+A small class can post a large $$R_c$$ from a modest absolute change, so the two measures
+are read together rather than separately.
+
+Two cautions apply to both quantities. They are differences between two classifications, so
+they carry the error of both maps, and a change in mapped area is not by itself evidence of
+a change on the ground. And they are descriptive: neither expresses why a class changed, so
+neither supports a causal reading of the policy chronology discussed below.
 
 ## Results
 
