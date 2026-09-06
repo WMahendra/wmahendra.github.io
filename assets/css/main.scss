@@ -674,8 +674,8 @@ body {
 
 .page__footer {
   position: relative;
-  min-height: 230px;
-  padding-top: 120px;
+  min-height: 0;
+  padding-top: max(16.25%, 96px);
   overflow: hidden;
 
   background-color: #ffffff;
@@ -702,8 +702,8 @@ body {
 /* Mobile */
 @media (max-width: 768px) {
   .page__footer {
-    min-height: 250px;
-    padding-top: 130px;
-    background-size: auto 180px;
+    background-size: 100% auto;
+    padding-top: 1.5em;
+    padding-bottom: calc(16.25% + 0.5em);
   }
 }
