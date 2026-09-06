@@ -668,3 +668,42 @@ body {
     hyphens: none;
   }
 }
+/* ==================================================
+   Tropical forest illustrated footer
+   ================================================== */
+
+.page__footer {
+  position: relative;
+  min-height: 230px;
+  padding-top: 120px;
+  overflow: hidden;
+
+  background-color: #ffffff;
+  background-image: url("/assets/images/footer-landscape.svg");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100% auto;
+
+  border-top: none;
+}
+
+/* Keep footer content above the landscape */
+.page__footer footer {
+  position: relative;
+  z-index: 2;
+}
+
+.page__footer-follow,
+.page__footer-copyright {
+  position: relative;
+  z-index: 2;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .page__footer {
+    min-height: 180px;
+    padding-top: 90px;
+    background-size: auto 180px;
+  }
+}
