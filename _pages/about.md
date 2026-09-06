@@ -18,6 +18,8 @@ realised that understanding landscapes at this scale requires more than field ob
 alone. Over the past five years, this has led me to work with remote sensing, geospatial
 analysis, machine learning to study forest change and structure in ways that
 are more systematic, spatially explicit and measurable. I want to work hard to protect trees, as they have been protecting our planet for hundreds of millions of years.
+
+  
 </p>
 
 <p class="hero__actions">
