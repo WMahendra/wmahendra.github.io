@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 780" role="img"
+     aria-labelledby="t d" style="width:100%;height:auto;color:inherit">
+  <title id="t">Sentinel-2 and AlphaEarth embedding classification workflow</title>
+  <desc id="d">Two parallel branches. The left branch takes Sentinel-2 SR Harmonized for 2024,
+  applies QA60 cloud and cirrus masking, builds an annual median composite and forms a feature
+  stack of B2, B3, B4, B8, B11, B12 with NDVI and NDWI. The right branch takes AlphaEarth
+  Satellite Embeddings for 2024, mosaics the annual collection and keeps all embedding dimensions.
+  Both branches draw on the same merged training samples for forest, water and bare soil, train a
+  Random Forest with 100 trees, and produce a three-class classification. The two classifications
+  converge on a qualitative comparison of the outputs. No accuracy assessment is part of the
+  workflow.</desc>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="currentColor"/>
+    </marker>
+  </defs>
+  <g fill="none" stroke="currentColor" stroke-width="1.2">
+    <rect x="40" y="10" width="400" height="62" rx="4"/>
+    <rect x="40" y="110" width="400" height="62" rx="4"/>
+    <rect x="40" y="210" width="400" height="62" rx="4"/>
+    <rect x="40" y="310" width="400" height="62" rx="4"/>
+    <rect x="500" y="10" width="400" height="62" rx="4"/>
+    <rect x="500" y="110" width="400" height="62" rx="4"/>
+    <rect x="500" y="210" width="400" height="62" rx="4"/>
+    <rect x="160" y="400" width="640" height="62" rx="4"/>
+    <rect x="40" y="500" width="400" height="62" rx="4"/>
+    <rect x="40" y="600" width="400" height="62" rx="4"/>
+    <rect x="500" y="500" width="400" height="62" rx="4"/>
+    <rect x="500" y="600" width="400" height="62" rx="4"/>
+    <rect x="160" y="706" width="640" height="62" rx="4"/>
+  </g>
+  <g stroke="currentColor" stroke-width="1.2" fill="none">
+    <path d="M240 662 L240 672"/>
+    <path d="M700 662 L700 672"/>
+    <path d="M240 672 L700 672"/>
+  </g>
+  <g stroke="currentColor" stroke-width="1.2" marker-end="url(#ar)" fill="none">
+    <path d="M240 72 L240 106"/>
+    <path d="M240 172 L240 206"/>
+    <path d="M240 272 L240 306"/>
+    <path d="M240 372 L240 396"/>
+    <path d="M700 72 L700 106"/>
+    <path d="M700 172 L700 206"/>
+    <path d="M700 272 L700 396"/>
+    <path d="M240 462 L240 496"/>
+    <path d="M240 562 L240 596"/>
+    <path d="M700 462 L700 496"/>
+    <path d="M700 562 L700 596"/>
+    <path d="M480 672 L480 702"/>
+  </g>
+  <g fill="currentColor" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14">
+    <text x="240" y="46" text-anchor="middle">Sentinel-2 SR Harmonized, 2024</text>
+    <text x="240" y="146" text-anchor="middle">QA60 cloud / cirrus masking</text>
+    <text x="240" y="246" text-anchor="middle">Annual median composite</text>
+    <text x="240" y="346" text-anchor="middle">B2, B3, B4, B8, B11, B12 + NDVI, NDWI</text>
+    <text x="700" y="46" text-anchor="middle">AlphaEarth Satellite Embeddings, 2024</text>
+    <text x="700" y="146" text-anchor="middle">Annual embedding mosaic</text>
+    <text x="700" y="246" text-anchor="middle">All embedding dimensions</text>
+    <text x="480" y="436" text-anchor="middle">Same merged training samples (Forest / Water / Bare soil)</text>
+    <text x="240" y="536" text-anchor="middle">Random Forest (100 trees)</text>
+    <text x="240" y="636" text-anchor="middle">Forest / Water / Bare soil</text>
+    <text x="700" y="536" text-anchor="middle">Random Forest (100 trees)</text>
+    <text x="700" y="636" text-anchor="middle">Forest / Water / Bare soil</text>
+    <text x="480" y="742" text-anchor="middle">Qualitative comparison of classification outputs</text>
+  </g>
+</svg>
