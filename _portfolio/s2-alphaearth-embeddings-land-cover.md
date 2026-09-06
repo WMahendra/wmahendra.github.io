@@ -57,6 +57,12 @@ Two indices are added to the composite:
 The classification feature set is B2, B3, B4, B8, B11, B12, NDVI and NDWI — eight features
 in total.
 
+Cloud masking used the QA60 opaque-cloud and cirrus flags (bits 10 and 11). Earth Engine
+documents a QA60 availability discontinuity through 28 February 2024, with
+legacy-consistent bands reconstructed from that date onwards, which should be considered
+when interpreting a full-year 2024 median composite: masking is not applied on identical
+terms across every input scene of the year.
+
 **Satellite embeddings.** The learned branch uses `GOOGLE/SATELLITE_EMBEDDING/V1/ANNUAL`
 (Google Earth Engine, n.d.-b), filtered to 2024 and to the same geometry, mosaicked across
 the annual collection and clipped. Every band returned by `bandNames()` is used as a
@@ -159,6 +165,9 @@ These bound what the current workflow can support.
   construction are not comparable.
 - The Sentinel-2 input is an annual median composite; the embedding is an annual learned
   representation. The two summarise the year in different ways.
+- QA60 is not documented as consistently available across the whole 2024 input period, so
+  cloud and cirrus masking is not applied on identical terms to every scene contributing to
+  the composite.
 - Embedding dimensions are not physically interpretable in the way optical bands are.
 - This is not a fully independent sensor-to-sensor comparison, because the AlphaEarth
   representation incorporates optical observations among its sources.
@@ -180,8 +189,11 @@ testing on spatially adjacent pixels. None of these is implemented in the curren
 Breiman, L. (2001). Random forests. *Machine Learning, 45*(1), 5–32.
 [doi.org/10.1023/A:1010933404324](https://doi.org/10.1023/A:1010933404324)
 
-Brown, C. F., et al. (2025). *AlphaEarth Foundations: An embedding field model for accurate
-and efficient global mapping from sparse label data.* arXiv:2507.22291.
+Brown, C. F., Kazmierski, M. R., Pasquarella, V. J., Rucklidge, W. J., Samsikova, M.,
+Zhang, C., Shelhamer, E., Lahera, E., Wiles, O., Ilyushchenko, S., Gorelick, N., Zhang,
+L. L., Alj, S., Schechter, E., Askay, S., Guinan, O., Moore, R., Boukouvalas, A., & Kohli,
+P. (2025). *AlphaEarth Foundations: An embedding field model for accurate and efficient
+global mapping from sparse label data.* arXiv:2507.22291.
 [arxiv.org/abs/2507.22291](https://arxiv.org/abs/2507.22291)
 
 Google Earth Engine. (n.d.-a). [*Harmonized Sentinel-2 MSI: MultiSpectral Instrument,
@@ -201,7 +213,8 @@ delineation of open water features. *International Journal of Remote Sensing, 17
 1425–1432. [doi.org/10.1080/01431169608948714](https://doi.org/10.1080/01431169608948714)
 
 Rouse, J. W., Haas, R. H., Schell, J. A., & Deering, D. W. (1974). Monitoring vegetation
-systems in the Great Plains with ERTS. *NASA Special Publication, 351*, 309–317.
+systems in the Great Plains with ERTS. *NASA Special Publication, 351*, 309–317. (NASA
+technical publication / symposium proceedings, not a journal article.)
 
 ## Source
 
