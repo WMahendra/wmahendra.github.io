@@ -111,18 +111,11 @@ I use GIS, remote sensing, and carbon modelling to understand forests and ecosys
         <p class="timeline__small">
           Supervisors: Dr. Michael Schlund and Dr. Claudia Paris
         </p>
-
         <ul>
           <li>
             Analysed vegetation loss across land-use and land-cover classes using
             Sentinel-1 SAR time series, focusing on backscatter changes associated
             with vegetation structure.
-          </li>
-
-          <li>
-            Investigated relationships between Sentinel-1A polarization and canopy
-            height and developed a Python-based automated spatio-temporal workflow
-            for canopy-height loss detection.
           </li>
         </ul>
 
@@ -162,15 +155,12 @@ I use GIS, remote sensing, and carbon modelling to understand forests and ecosys
 
       <div class="timeline__education">
         <p><strong>Selected coursework:</strong></p>
-
         <ul>
           <li>Geographic Information Systems</li>
-          <li>Advanced Geographic Information Systems</li>
           <li>Ecosystem Modelling</li>
           <li>Satellite Remote Sensing</li>
         </ul>
       </div>
-
     </div>
   </div>
 
@@ -201,7 +191,7 @@ I use GIS, remote sensing, and carbon modelling to understand forests and ecosys
       </span>
 
       <span class="timeline__note">
-        GPA: 3.6/4.0 — Cum laude
+        Cum laude
       </span>
 
       <div class="timeline__education">
@@ -222,7 +212,6 @@ I use GIS, remote sensing, and carbon modelling to understand forests and ecosys
   </div>
 
 </div>
-
 
 ## Technical Expertise
 
