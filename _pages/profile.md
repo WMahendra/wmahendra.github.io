@@ -21,33 +21,6 @@ I use GIS, remote sensing, and carbon modelling to understand forests and ecosys
     <div class="timeline__body">
       <span class="timeline__role">GIS and Forestry Consultant</span>
       <span class="timeline__org">Form International</span>
-
-      <ul class="timeline__details">
-        <li>
-          Implemented machine learning and deep learning models using multisource
-          satellite data for land-use change and deforestation mapping, achieving
-          overall accuracies above 90%.
-        </li>
-
-        <li>
-          Contributed to 12 REDD+ and ARR carbon projects across Africa, Asia, and
-          Latin America under Verra and Plan Vivo standards, including biomass
-          modelling, spatial analysis, forest stratification, and PDD development.
-        </li>
-
-        <li>
-          Provided technical advice and knowledge transfer to project partners and
-          clients on remote sensing, GIS workflows, geospatial QA/QC, and carbon
-          accounting methodologies for REDD+ and ARR projects, including VM0007
-          and VM0047.
-        </li>
-
-        <li>
-          Developed a Kalman-filter-based satellite time-series noise-reduction
-          workflow to improve temporal consistency, data quality, and transparency
-          for performance benchmarking under VM0007.
-        </li>
-      </ul>
     </div>
   </div>
 
@@ -61,27 +34,6 @@ I use GIS, remote sensing, and carbon modelling to understand forests and ecosys
     <div class="timeline__body">
       <span class="timeline__role">Remote Sensing Intern</span>
       <span class="timeline__org">Acorn / Rabobank</span>
-
-      <ul class="timeline__details">
-        <li>
-          Worked within Project Acorn, which supports smallholder agroforestry
-          projects across Africa, Asia, and Latin America through remote sensing
-          and carbon monitoring.
-        </li>
-
-        <li>
-          Processed Sentinel-1A GRD data and evaluated multiple speckle-filtering
-          and temporal-compositing approaches, identifying Refined Lee filtering
-          combined with monthly composites as an effective approach for improving
-          backscatter consistency.
-        </li>
-
-        <li>
-          Modelled and mapped aboveground biomass in low-biomass areas of the
-          Kigoma Region, Tanzania, using Sentinel-1 and ALOS PALSAR-2 SAR data
-          with Random Forest and regression models, achieving R² values above 0.70.
-        </li>
-      </ul>
     </div>
   </div>
 
@@ -94,25 +46,9 @@ I use GIS, remote sensing, and carbon modelling to understand forests and ecosys
 
     <div class="timeline__body">
       <span class="timeline__role">Research Assistant</span>
-      <span class="timeline__org">Faculty of Geography, Universitas Gadjah Mada</span>
-
-      <ul class="timeline__details">
-        <li>
-          Participated in a joint research project between the University of Sydney
-          and Universitas Gadjah Mada investigating Indonesian tropical peatlands.
-        </li>
-
-        <li>
-          Analysed approximately 30 years of land-use and land-cover change across
-          four peat hydrological units covering more than 3 million hectares, and
-          assessed peat depth using elevation data and field measurements.
-        </li>
-
-        <li>
-          Compiled and reviewed 115 regulations related to peat-soil security.
-          The research contributed to a publication in <em>Soil Security</em>.
-        </li>
-      </ul>
+      <span class="timeline__org">
+        Faculty of Geography, Universitas Gadjah Mada
+      </span>
     </div>
   </div>
 
