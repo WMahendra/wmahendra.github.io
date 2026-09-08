@@ -54,7 +54,7 @@ together to give a single composite for that period. In addition, averaging asce
 
 <figure>
   <img src="/images/diagrams/s1-crop-classification-workflow.svg" alt="Workflow: Sentinel-1 GRD filtered to IW mode with VV and VH over a region of interest, split into three 2023 periods; per period an ascending mean and a descending mean are computed and then averaged. The VV temporal stack feeds SNIC segmentation and object-level mean VV via reduceConnectedComponents; the VH temporal stack is used for RGB visualisation only. Merged crop and non_crop training points with a class property train smileRandomForest with 50 trees, producing a binary crop / non-crop classification.">
-  <figcaption>Processing workflow for this exploration, implemented using Google Earth Engine.</figcaption>
+  <figcaption>Processing workflow for this exploration, implemented in Google Earth Engine.</figcaption>
 </figure>
 
 ## Seasonal RGB visualisations
@@ -64,7 +64,7 @@ Two three-band composites are built, each mapping the three periods to the colou
 - **VV composite** — R / G / B = Period 1 VV, Period 2 VV, Period 3 VV
 - **VH composite** — R / G / B = Period 1 VH, Period 2 VH, Period 3 VH
 
-These are intended to visually highlight temporal differences in backscatter across the
+These are intended to highlight temporal differences in backscatter across the
 year. They are a display aid: colour variation indicates that backscatter differs between
 periods, and is not by itself evidence of change on the ground.
 
@@ -73,12 +73,12 @@ periods, and is not by itself evidence of change on the ground.
 SNIC (Simple Non-Iterative Clustering) segmentation is run on the complete three-period VV
 stack — Period 1 VV, Period 2 VV and Period 3 VV. **VH is not used in the segmentation.**
 
-SNIC groups neighbouring pixels into compact segments by combining their similarity in
+SNIC segmentation works by neighbouring pixels into compact segments by combining their similarity in
 feature space with their proximity in image space, growing regions from a regular grid of
 seeds in a single pass rather than iterating to convergence (Achanta & Süsstrunk, 2017).
-Applied to a temporal stack, the similarity is evaluated across all three periods at once,
+The similarity is evaluated across all three periods at once,
 so a segment is a patch that behaves consistently through the year rather than in any single
-image. The practical effect for this workflow is that the classifier operates on field-like
+image. The classifier operates on field-like
 units instead of individual pixels, which suppresses the speckle that dominates per-pixel
 radar classification.
 
