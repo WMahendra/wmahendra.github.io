@@ -28,7 +28,7 @@ author_profile: true
     <h2>Forest Structure &amp; Carbon</h2>
 
     <p>
-      I am interested in how canopy height, vertical structure, and related biomass indicators can be measured reliably, as well as in understanding the uncertainty associated with those estimates. Low-biomass and structurally heterogeneous landscapes are particularly challenging because structural estimates are often weakest in these environments.
+      I am interested in how canopy height, vertical structure, and related biomass indicators can be measured reliably, as well as in understanding the uncertainty associated with those estimates. Low-biomass and structurally heterogeneous landscapes are particularly challenging (i.e., tropical forests) compared those with homogenous landscapes.
     </p>
 
     <p>
@@ -41,11 +41,11 @@ author_profile: true
     <h2>Geospatial Evidence for Nature-based Solutions</h2>
 
     <p>
-      Forest-carbon and restoration activities depend on spatial evidence: which land is eligible, what the baseline was, and what has actually changed over time. These questions need to be answered in a form that can be understood, evaluated, and reproduced by people who did not produce the original analysis.
+      Forest-carbon and restoration activities depend on spatial evidence: which land is eligible, what the baseline was, and what has changed over time. These questions need to be answered in a form that can be understood, evaluated, and reproduced by people who did not produce the original analysis.
     </p>
 
     <p>
-      My interest is in how geospatial analysis can be integrated into monitoring and environmental decision-making, and in what makes the resulting evidence transparent, reproducible, and auditable.
+      I am intrigued on how geospatial analysis can be integrated into monitoring and in what makes the resulting evidence transparent, reproducible, and auditable.
     </p>
   </article>
 
