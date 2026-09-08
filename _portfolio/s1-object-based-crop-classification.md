@@ -23,9 +23,7 @@ support crop/non-crop classification in Google Earth Engine.
 
 ## Why I explored it
 
-This exploration grew out of the radar component of my MSc research, where I was working
-with Sentinel-1 time-series data and exploring different ways to extract useful temporal
-information from SAR imagery. Here, I tested an end-to-end workflow that combines
+Here, I tested a workflow that combines
 multi-period Sentinel-1 composites, object-based segmentation and Random Forest
 classification in Google Earth Engine to explore crop/non-crop mapping.
 
@@ -42,21 +40,21 @@ classification in Google Earth Engine to explore crop/non-crop mapping.
 
 The year is divided into three periods:
 
-| Period | Date range |
-| --- | --- |
-| Period 1 | 1 January – 30 April 2023 |
-| Period 2 | 1 May – 31 August 2023 |
-| Period 3 | 1 September – 31 December 2023 |
+| Period | Date range | Information
+| --- | --- | --- | 
+| Period 1 | 1 January – 30 April 2023 | Lean Season |
+| Period 2 | 1 May – 31 August 2023 | Harvest Season |
+| Period 3 | 1 September – 31 December 2023 | Planting season |
 
 Within each period, the ascending images are reduced to a temporal mean and the descending
 images are reduced to a temporal mean separately. Those two mean images are then averaged
-together to give a single composite for that period.
+together to give a single composite for that period. In addition, averaging ascending and descending sensors reduce the impact of topographyic influence over the study area.
 
 ## Technical workflow
 
 <figure>
   <img src="/images/diagrams/s1-crop-classification-workflow.svg" alt="Workflow: Sentinel-1 GRD filtered to IW mode with VV and VH over a region of interest, split into three 2023 periods; per period an ascending mean and a descending mean are computed and then averaged. The VV temporal stack feeds SNIC segmentation and object-level mean VV via reduceConnectedComponents; the VH temporal stack is used for RGB visualisation only. Merged crop and non_crop training points with a class property train smileRandomForest with 50 trees, producing a binary crop / non-crop classification.">
-  <figcaption>Processing chain redrawn from the Earth Engine script used for this exploration.</figcaption>
+  <figcaption>Processing workflow for this exploration, implemented using Google Earth Engine.</figcaption>
 </figure>
 
 ## Seasonal RGB visualisations
