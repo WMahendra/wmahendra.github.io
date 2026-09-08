@@ -1,8 +1,8 @@
 ---
 title: "Object-Based Crop Classification from Multi-Period Sentinel-1 Time Series"
-excerpt: "Exploring whether multi-period Sentinel-1 backscatter and object-based segmentation can support crop/non-crop classification in Google Earth Engine."
+excerpt: "Can Sentinel-1 backscatter and object-based segmentation map crop/non-crop in Google Earth Engine?"
 collection: portfolio
-thumbnail: "/images/diagrams/s1-crop-classification-workflow.svg"
+thumbnail: "/images/Paddyfield.jpg"
 thumbnail_alt: "Workflow diagram: Sentinel-1 GRD scenes are split into three periods of 2023, averaged per orbit, segmented with SNIC on the VV stack and classified with Random Forest into crop and non-crop."
 methods: "SNIC segmentation · Random Forest (50 trees)"
 category: technical
