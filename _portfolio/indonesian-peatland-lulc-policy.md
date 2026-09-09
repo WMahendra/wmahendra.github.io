@@ -2,7 +2,7 @@
 title: "Three Decades of Land-Use Change Across Indonesian Peatlands"
 excerpt: "Landsat time series from 1990 to 2020 across four peatland landscapes in Sumatra and Kalimantan, read against the chronology of Indonesian peatland regulation."
 collection: portfolio
-thumbnail: "/images/diagrams/peatland-lulc-policy-workflow.svg"
+thumbnail: "/images/Bengkalis_Peatland.png"
 thumbnail_alt: "Workflow diagram: Landsat 1990-2020 is preprocessed and classified with Random Forest into multi-temporal land cover, which is compared alongside peat-depth information and the peatland policy chronology."
 methods: "Landsat time series · Random Forest · land-use change"
 category: research
