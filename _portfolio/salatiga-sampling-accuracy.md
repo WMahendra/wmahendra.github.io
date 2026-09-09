@@ -2,7 +2,7 @@
 title: "Sampling Design and Accuracy Assessment for Land-Cover Mapping"
 excerpt: "How many reference samples a land-cover map needs, and how they should be distributed, tested against a full-area benchmark for 25- and 9-class schemes in Salatiga, Indonesia."
 collection: portfolio
-thumbnail: "/images/diagrams/salatiga-accuracy-workflow.svg"
+thumbnail: "/images/GIS_Sampling.png"
 thumbnail_alt: "Workflow diagram: a multispectral classification and a visual-interpretation reference map feed three sampling designs, an area-based accuracy assessment and a test of estimate stability against sample size."
 methods: "Accuracy assessment · sampling design · confusion matrix"
 category: research
