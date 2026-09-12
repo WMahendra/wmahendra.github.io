@@ -205,26 +205,29 @@ html[data-theme="dark"] .theme-toggle .theme-toggle__moon { display: block; }
   html:not([data-theme="light"]) .theme-toggle .theme-toggle__moon { display: block; }
 }
 
+/* Anchored to the masthead wrapper, not to the nav: the greedy-navigation
+   plugin owns everything inside #site-nav, so the toggle stays outside it. */
+.masthead__inner-wrap { position: relative; }
+
 .theme-toggle {
   position: absolute;
-  right: 0;
+  /* Clear of the nav's own overflow button, which the theme pins to right: 0
+     and is about 44px wide once it appears on narrow screens. */
+  right: 4.2em;
   top: 50%;
   transform: translateY(-50%);
   z-index: 20;
   border: 0;
   background: none;
   cursor: pointer;
-  padding: 0.4em 0.5em;
+  padding: 0.45em;
   line-height: 0;
+  border-radius: 4px;
   color: var(--global-masthead-link-color);
 
   &:hover,
   &:focus { color: var(--global-masthead-link-color-hover); }
 }
-
-/* The greedy-nav script measures the link row, so keep clear of the button. */
-.greedy-nav { position: relative; }
-.greedy-nav .visible-links { padding-right: 2.5em; }
 
 /* --- Action buttons --- */
 .page__content a.action,
