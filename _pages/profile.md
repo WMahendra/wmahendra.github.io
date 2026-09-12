@@ -14,6 +14,19 @@ I use GIS, remote sensing, and carbon modelling to understand forests and ecosys
 
   <div class="timeline__row">
     <div class="timeline__date">
+      05/2024 – Present<br>
+      Enschede, The Netherlands
+    </div>
+
+    <div class="timeline__body">
+      <span class="timeline__role">Geospatial Carbon Analyst</span>
+      <span class="timeline__org">Forestiva</span>
+    </div>
+    
+  </div>
+  
+  <div class="timeline__row">
+    <div class="timeline__date">
       08/2024 – 04/2026<br>
       Zwolle, The Netherlands
     </div>
