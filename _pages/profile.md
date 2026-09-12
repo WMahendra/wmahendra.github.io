@@ -46,7 +46,7 @@ I use GIS, remote sensing, and carbon modelling to understand forests and ecosys
 
     <div class="timeline__body">
       <span class="timeline__role">Remote Sensing Intern</span>
-      <span class="timeline__org">Acorn / Rabobank</span>
+      <span class="timeline__org">Acorn, Rabobank</span>
     </div>
   </div>
 
