@@ -20,57 +20,66 @@
           {% endfor %}
         </ul>
         <ul class="hidden-links hidden"></ul>
-        {% comment %}
-          The bundle binds this: $("#theme-toggle").on("click", toggleTheme).
-          No onclick - main.min.js is an ES module, so toggleTheme is not global
-          and an inline handler would throw. Only the id matters.
-
-          Inline SVG rather than a Font Awesome icon: this theme compiles only a
-          subset of Font Awesome, and fa-sun / fa-moon are not in it, so the
-          button rendered empty and invisible. Which icon shows is decided in
-          CSS from the theme state, so it needs no class swapping either.
-        {% endcomment %}
-        <button id="theme-toggle" class="theme-toggle" type="button"
-                aria-label="Switch between light and dark mode"
-                title="Switch between light and dark mode">
-          <svg class="theme-toggle__sun" viewBox="0 0 24 24" width="18" height="18"
-               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="4.2"/>
-            <path d="M12 2.4v2.4M12 19.2v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.4 12h2.4M19.2 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/>
-          </svg>
-          <svg class="theme-toggle__moon" viewBox="0 0 24 24" width="18" height="18"
-               fill="currentColor" aria-hidden="true">
-            <path d="M20.6 14.2A8.6 8.6 0 0 1 9.8 3.4a8.6 8.6 0 1 0 10.8 10.8z"/>
-          </svg>
-        </button>
-        <ul class="visible-links">
-          <li class="masthead__menu-item masthead__menu-item--lg persist {% if page.url == '/' or page.url == '/index.html' %}selected{% endif %}">
-            <a href="{{ base_path }}/">{{ site.title }}</a>
-          </li>
-          {% for link in site.data.navigation.main %}
-            {% if link.url contains 'http' %}
-              {% assign domain = '' %}
-            {% else %}
-              {% assign domain = base_path %}
-            {% endif %}
-            <li class="masthead__menu-item {% if page.url contains link.url and link.url != '/' %}selected{% endif %}">
-              <a href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
-            </li>
-          {% endfor %}
-        </ul>
-        <ul class="hidden-links hidden"></ul>
-        {% comment %}
-          The bundle already binds this: $("#theme-toggle").on("click", toggleTheme).
-          No onclick attribute - main.min.js is an ES module, so toggleTheme is not
-          a global and an inline handler would throw. Only the id matters.
-          setTheme() runs on load and honours prefers-color-scheme.
-        {% endcomment %}
-        <button id="theme-toggle" class="theme-toggle" type="button"
-                aria-label="Switch between light and dark mode"
-                title="Switch between light and dark mode">
-          <i id="theme-icon" class="fas fa-sun" aria-hidden="true"></i>
-        </button>
       </nav>
     </div>
+
+    {% comment %}
+      Light / dark toggle.
+
+      It sits OUTSIDE #site-nav deliberately. jquery.greedy-navigation.js does
+      `$('#site-nav button')`, which matches every button inside the nav, so a
+      toggle placed in there is treated as the menu's own overflow button: it
+      gets the plugin's "hidden" class and the overflow measurement goes wrong.
+
+      Inline SVG rather than a Font Awesome icon, because this theme compiles
+      only a subset of Font Awesome and fa-sun / fa-moon are not in it, so an
+      icon-font button renders empty. Which icon shows is decided in CSS.
+
+      The click handler is inline and self-contained rather than relying on the
+      bundle, so the button works even if main.min.js fails. The id is
+      site-theme-toggle, not theme-toggle, so the bundle does not also bind it -
+      two handlers would toggle twice and cancel each other out.
+    {% endcomment %}
+    <button id="site-theme-toggle" class="theme-toggle" type="button"
+            aria-label="Switch between light and dark mode"
+            title="Switch between light and dark mode">
+      <svg class="theme-toggle__sun" viewBox="0 0 24 24" width="19" height="19"
+           fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="4.2"/>
+        <path d="M12 2.4v2.4M12 19.2v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.4 12h2.4M19.2 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/>
+      </svg>
+      <svg class="theme-toggle__moon" viewBox="0 0 24 24" width="19" height="19"
+           fill="currentColor" aria-hidden="true">
+        <path d="M20.6 14.2A8.6 8.6 0 0 1 9.8 3.4a8.6 8.6 0 1 0 10.8 10.8z"/>
+      </svg>
+    </button>
   </div>
 </div>
+<script>
+  (function () {
+    var KEY = "theme";
+    var root = document.documentElement;
+
+    function apply(theme) {
+      root.setAttribute("data-theme", theme === "dark" ? "dark" : "light");
+    }
+
+    function current() {
+      var saved = null;
+      try { saved = localStorage.getItem(KEY); } catch (e) {}
+      if (saved === "dark" || saved === "light") return saved;
+      return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+
+    apply(current());
+
+    var btn = document.getElementById("site-theme-toggle");
+    if (btn) {
+      btn.addEventListener("click", function () {
+        var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+        try { localStorage.setItem(KEY, next); } catch (e) {}
+        apply(next);
+      });
+    }
+  })();
+</script>
