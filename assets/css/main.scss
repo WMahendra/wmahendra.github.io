@@ -116,6 +116,29 @@ body {
    ========================================================================== */
 
 @mixin dark-palette {
+  /* The theme's own dark values, inlined. They have to be repeated here rather
+     than left to the imported dark partial, because that partial targets
+     html[data-theme="dark"] only. Without them the prefers-color-scheme branch
+     below flipped the custom properties while --global-bg-color stayed white,
+     which left a white page carrying near-white text. */
+  --global-base-color: #0ea1c5;
+  --global-bg-color: #474747;
+  --global-footer-bg-color: #474747;
+  --global-border-color: #bdc0c4;
+  --global-dark-border-color: #dadada;
+  --global-code-background-color: #fafafa;
+  --global-code-text-color: #313436;
+  --global-fig-caption-color: #bdc0c4;
+  --global-link-color: #0ea1c5;
+  --global-link-color-hover: #0a7994;
+  --global-link-color-visited: #4ab9d4;
+  --global-masthead-link-color: #ffffff;
+  --global-masthead-link-color-hover: #0ea1c5;
+  --global-text-color: #ffffff;
+  --global-text-color-light: #f3f3f3;
+  --global-thead-color: #ededed;
+
+  /* Custom properties this site adds on top of the theme. */
   --accent: #4ab8d3;
   --accent-dark: #7ccbe0;
   --accent-soft: #17323a;
@@ -126,8 +149,12 @@ body {
   --on-accent: #12252b;
 }
 
+/* Explicit choice, set by the toggle. */
 html[data-theme="dark"] { @include dark-palette; }
 
+/* OS preference, for visitors who have not chosen. Scoped so that an explicit
+   "light" choice still wins, and now complete, so the page is fully dark even
+   before the theme script runs. */
 @media (prefers-color-scheme: dark) {
   html:not([data-theme="light"]) { @include dark-palette; }
 }
@@ -164,6 +191,20 @@ html[data-theme="dark"] { @include dark-palette; }
 }
 
 /* --- Light / dark toggle in the masthead --- */
+/* Sun in light mode, moon in dark, decided purely in CSS from the theme state.
+   Every rule below is written at the same specificity as the descendant
+   selector that sets the icon's display, so neither can silently win. */
+.theme-toggle .theme-toggle__sun  { display: block; }
+.theme-toggle .theme-toggle__moon { display: none; }
+
+html[data-theme="dark"] .theme-toggle .theme-toggle__sun  { display: none; }
+html[data-theme="dark"] .theme-toggle .theme-toggle__moon { display: block; }
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .theme-toggle .theme-toggle__sun  { display: none; }
+  html:not([data-theme="light"]) .theme-toggle .theme-toggle__moon { display: block; }
+}
+
 .theme-toggle {
   position: absolute;
   right: 0;
@@ -174,8 +215,7 @@ html[data-theme="dark"] { @include dark-palette; }
   background: none;
   cursor: pointer;
   padding: 0.4em 0.5em;
-  font-size: 1em;
-  line-height: 1;
+  line-height: 0;
   color: var(--global-masthead-link-color);
 
   &:hover,
