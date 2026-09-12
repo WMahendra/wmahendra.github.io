@@ -20,6 +20,17 @@
           {% endfor %}
         </ul>
         <ul class="hidden-links hidden"></ul>
+        {% comment %}
+          The bundle already binds this: $("#theme-toggle").on("click", toggleTheme).
+          No onclick attribute - main.min.js is an ES module, so toggleTheme is not
+          a global and an inline handler would throw. Only the id matters.
+          setTheme() runs on load and honours prefers-color-scheme.
+        {% endcomment %}
+        <button id="theme-toggle" class="theme-toggle" type="button"
+                aria-label="Switch between light and dark mode"
+                title="Switch between light and dark mode">
+          <i id="theme-icon" class="fas fa-sun" aria-hidden="true"></i>
+        </button>
       </nav>
     </div>
   </div>
