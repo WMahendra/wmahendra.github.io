@@ -108,6 +108,39 @@
   }
 
   /* ---------- map ---------- */
+  /* Basemaps are all key-free and usable on static hosting with attribution.
+     CARTO was dropped because its anonymous endpoint now returns tiles stamped
+     "API KEY REQUIRED" - they arrive with HTTP 200 and a valid image, so the
+     failure was visible only on screen. Esri World Imagery is the default here
+     because satellite context suits a forest-loss map; a muted street basemap
+     and OpenStreetMap remain switchable. No Google endpoint is used, since
+     those need credentials and their terms do not allow this kind of embed.
+     maxNativeZoom is set per service so Leaflet upscales instead of requesting
+     zoom levels a service does not publish, which would return blank tiles. */
+  var ESRI = "https://server.arcgisonline.com/ArcGIS/rest/services/";
+  var ESRI_ATTR = 'Tiles &copy; <a href="https://www.esri.com/">Esri</a>';
+
+  function baseLayers() {
+    var grayBase = L.tileLayer(ESRI + "Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}", {
+      attribution: ESRI_ATTR + " &mdash; Esri, HERE, Garmin, &copy; OpenStreetMap contributors",
+      maxZoom: 19, maxNativeZoom: 16
+    });
+    var grayRef = L.tileLayer(ESRI + "Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}", {
+      maxZoom: 19, maxNativeZoom: 16, pane: "shadowPane"
+    });
+    return {
+      "Satellite imagery": L.tileLayer(ESRI + "World_Imagery/MapServer/tile/{z}/{y}/{x}", {
+        attribution: ESRI_ATTR + " &mdash; Source: Esri, Maxar, Earthstar Geographics and the GIS User Community",
+        maxZoom: 19, maxNativeZoom: 18
+      }),
+      "Light basemap": L.layerGroup([grayBase, grayRef]),
+      "OpenStreetMap": L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        maxZoom: 19
+      })
+    };
+  }
+
   function drawMap(el) {
     if (typeof L === "undefined") return;
     var canvas = el.querySelector(".geo-map__canvas");
@@ -116,28 +149,32 @@
     var bounds = [[b[0], b[1]], [b[2], b[3]]];
 
     var map = L.map(canvas, { scrollWheelZoom: false, zoomControl: true });
-    L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-      subdomains: "abcd", maxZoom: 19
-    }).addTo(map);
+    var bases = baseLayers();
+    bases["Satellite imagery"].addTo(map);
 
     var overlays = {};
     if (el.dataset.overlay) {
-      var img = L.imageOverlay(el.dataset.overlay, bounds, { opacity: 0.9,
+      var img = L.imageOverlay(el.dataset.overlay, bounds, { opacity: 0.85,
         alt: "Tree-cover loss year, 2001 to 2023" }).addTo(map);
       overlays["Tree-cover loss year"] = img;
     }
     map.fitBounds(bounds);
 
+    /* One layer control, added once the optional outline has resolved either
+       way, so the basemap switcher still works if the GeoJSON fails to load. */
+    function addControl() {
+      L.control.layers(bases, overlays, { collapsed: true, position: "topright" }).addTo(map);
+    }
+
     if (el.dataset.outline) {
       fetch(el.dataset.outline).then(function (r) { return r.json(); }).then(function (gj) {
-        var layer = L.geoJSON(gj, { style: { color: "#5c666f", weight: 1.2, fill: false,
-                                             dashArray: "4 3", opacity: 0.9 } }).addTo(map);
-        overlays["West Kalimantan provincial boundary"] = layer;
-        L.control.layers(null, overlays, { collapsed: true, position: "topright" }).addTo(map);
-      }).catch(function () {
-        L.control.layers(null, overlays, { collapsed: true, position: "topright" }).addTo(map);
-      });
+        overlays["West Kalimantan provincial boundary"] =
+          L.geoJSON(gj, { style: { color: "#ffffff", weight: 1.6, fill: false,
+                                   dashArray: "4 3", opacity: 0.95 } }).addTo(map);
+        addControl();
+      }).catch(addControl);
+    } else {
+      addControl();
     }
     L.control.scale({ imperial: false }).addTo(map);
     map.on("focus", function () { map.scrollWheelZoom.enable(); });

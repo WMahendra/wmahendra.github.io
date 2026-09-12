@@ -2,8 +2,8 @@
 title: "Comparing Sentinel-2 Spectral Features and AlphaEarth Satellite Embeddings for Land-Cover Classification"
 excerpt: "Comparison of conventional Sentinel-2 spectral features and AlphaEarth learned satellite embeddings for three-class land-cover classification using the same training labels and Random Forest setup."
 collection: portfolio
-thumbnail: "/images/diagrams/s2-alphaearth-workflow.svg"
-thumbnail_alt: "Workflow diagram: a Sentinel-2 branch and an AlphaEarth embedding branch share the same training samples and Random Forest classifier, converging on a qualitative comparison of the two classifications."
+thumbnail: "/images/s2-alphaearth-embedding-illustration.jpg"
+thumbnail_alt: "Stylised illustration, not real data: a false-colour composite in the visual language of a learned satellite embedding, over an invented drowned-valley coastline. Generated procedurally by scripts/make-embedding-illustration.py."
 methods: "NDVI / NDWI vs learned embeddings · Random Forest (100 trees)"
 category: technical
 featured: false

@@ -38,7 +38,14 @@
 
     "vendor/font-awesome/fontawesome",
     "vendor/font-awesome/solid",
-    "vendor/font-awesome/brands"
+    "vendor/font-awesome/brands",
+
+    /* The theme ships a matching dark palette keyed on html[data-theme="dark"],
+       but it was never imported, so the toggle in _main.js had nothing to switch
+       to. It is imported last on purpose: it reassigns the same SCSS variables
+       as the light theme, and importing it earlier would recolour every layout
+       partial below it. Imported here it only emits its own :root-level block. */
+    "theme/{{ site.site_theme | default: 'default' | append: '_dark' }}"
 ;
 /* === Custom styles === */
 .page__content p {
@@ -55,12 +62,12 @@
 }
 
 .archive__item-title a {
-  color: #000 !important;
+  color: var(--ink) !important;
   text-decoration: none;
 }
 
 .archive__item-title a:hover {
-  color: #000 !important;
+  color: var(--ink) !important;
   text-decoration: underline;
 }
 
@@ -99,6 +106,35 @@ body {
   --line: #e3e7ea;
 }
 
+/* ==========================================================================
+   Dark mode
+   The palette above is the light one. Everything below re-points the same
+   custom properties for dark, so no component needs its own dark rule. The
+   toggle sets html[data-theme="dark"]; the media query covers visitors whose
+   OS is dark and who have not chosen explicitly, and is scoped so an explicit
+   "light" choice still wins.
+   ========================================================================== */
+
+@mixin dark-palette {
+  --accent: #4ab8d3;
+  --accent-dark: #7ccbe0;
+  --accent-soft: #17323a;
+  --ink: #ececec;
+  --muted: #a9b2b8;
+  --line: #5a5a5a;
+  --surface: #3c3c3c;
+  --on-accent: #12252b;
+}
+
+html[data-theme="dark"] { @include dark-palette; }
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) { @include dark-palette; }
+}
+
+/* Card and button faces follow the theme instead of being fixed white. */
+:root { --surface: #fff; --on-accent: #fff; }
+
 /* Readable measure for running text */
 .page__content > p,
 .page__content > ul,
@@ -127,6 +163,29 @@ body {
   gap: 0.6em;
 }
 
+/* --- Light / dark toggle in the masthead --- */
+.theme-toggle {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  padding: 0.4em 0.5em;
+  font-size: 1em;
+  line-height: 1;
+  color: var(--global-masthead-link-color);
+
+  &:hover,
+  &:focus { color: var(--global-masthead-link-color-hover); }
+}
+
+/* The greedy-nav script measures the link row, so keep clear of the button. */
+.greedy-nav { position: relative; }
+.greedy-nav .visible-links { padding-right: 2.5em; }
+
 /* --- Action buttons --- */
 .page__content a.action,
 .action {
@@ -138,7 +197,7 @@ body {
   line-height: 1.4;
   color: var(--ink);
   text-decoration: none !important;
-  background: #fff;
+  background: var(--surface);
   transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
 
   &:hover,
@@ -153,13 +212,13 @@ body {
 .action--primary {
   background: var(--accent);
   border-color: var(--accent);
-  color: #fff;
+  color: var(--on-accent);
 
   &:hover,
   &:focus {
     background: var(--accent-dark);
     border-color: var(--accent-dark);
-    color: #fff;
+    color: var(--on-accent);
   }
 }
 
@@ -192,7 +251,7 @@ body {
   border: 1px solid var(--line);
   border-radius: 6px;
   padding: 1.3em 1.4em;
-  background: #fff;
+  background: var(--surface);
 
   h2 {
     margin: 0 0 0.6em;
@@ -332,7 +391,7 @@ body {
   flex-direction: column;
   border: 1px solid var(--line);
   border-radius: 6px;
-  background: #fff;
+  background: var(--surface);
   overflow: hidden;
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 
@@ -345,7 +404,7 @@ body {
 .pcard__thumb {
   display: block;
   border-bottom: 1px solid var(--line);
-  background: #fff;
+  background: var(--surface);
   aspect-ratio: 16 / 9;
   overflow: hidden;
 
@@ -534,7 +593,7 @@ body {
   margin: 1.4em 0 0.6em;
 }
 
-.stat-row > div { background: #fff; padding: 0.85em 1em; }
+.stat-row > div { background: var(--surface); padding: 0.85em 1em; }
 
 .stat-row dt {
   margin: 0;
@@ -685,6 +744,21 @@ body {
   background-size: 100% auto;
 
   border-top: none;
+}
+
+/* The footer artwork has a white sky, so the band stays white in both themes.
+   In dark mode the theme's light footer text would vanish on it, so the footer
+   keeps dark text regardless of theme. */
+html[data-theme="dark"] .page__footer,
+html[data-theme="dark"] .page__footer a {
+  color: #23282d;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .page__footer,
+  html:not([data-theme="light"]) .page__footer a {
+    color: #23282d;
+  }
 }
 
 /* Keep footer content above the landscape */

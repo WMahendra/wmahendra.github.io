@@ -74,10 +74,11 @@ author_profile: true
 }
 
 .focus-card {
-  border: 1px solid #dddddd;
+  /* Theme variables so the cards follow light and dark mode. */
+  border: 1px solid var(--line);
   border-radius: 6px;
   padding: 24px;
-  background: #ffffff;
+  background: var(--surface);
 }
 
 .focus-card h2 {
