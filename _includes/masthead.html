@@ -64,11 +64,22 @@
       root.setAttribute("data-theme", theme === "dark" ? "dark" : "light");
     }
 
+    /* Light unless this visitor has chosen otherwise here before. The OS
+       preference is deliberately not consulted: a first-time visitor on a
+       machine set to dark was landing on the dark page.
+
+       The default is written to storage on that first visit, because the
+       theme's own bundle runs setTheme() on ready and falls back to the OS
+       preference whenever this key is empty; it also re-checks the OS
+       preference whenever it changes. Storing "light" settles both. */
     function current() {
       var saved = null;
       try { saved = localStorage.getItem(KEY); } catch (e) {}
-      if (saved === "dark" || saved === "light") return saved;
-      return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      if (saved === "dark") return "dark";
+      if (saved !== "light") {
+        try { localStorage.setItem(KEY, "light"); } catch (e) {}
+      }
+      return "light";
     }
 
     apply(current());
