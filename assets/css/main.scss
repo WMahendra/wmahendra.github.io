@@ -116,11 +116,11 @@ body {
    ========================================================================== */
 
 @mixin dark-palette {
-  /* The theme's own dark values, inlined. They have to be repeated here rather
-     than left to the imported dark partial, because that partial targets
-     html[data-theme="dark"] only. Without them the prefers-color-scheme branch
-     below flipped the custom properties while --global-bg-color stayed white,
-     which left a white page carrying near-white text. */
+  /* The theme's own dark values are repeated here alongside the site's own, so
+     the whole palette changes together. Flipping only the custom properties and
+     leaving --global-bg-color light is what produced a white page carrying
+     near-white text. The imported dark partial sets the same --global-* values,
+     but it is imported at the top of this file, so these win on order. */
   --global-base-color: #0ea1c5;
   --global-bg-color: #474747;
   --global-footer-bg-color: #474747;
@@ -152,12 +152,10 @@ body {
 /* Explicit choice, set by the toggle. */
 html[data-theme="dark"] { @include dark-palette; }
 
-/* OS preference, for visitors who have not chosen. Scoped so that an explicit
-   "light" choice still wins, and now complete, so the page is fully dark even
-   before the theme script runs. */
-@media (prefers-color-scheme: dark) {
-  html:not([data-theme="light"]) { @include dark-palette; }
-}
+/* Light is the default, deliberately: the OS preference is not consulted. A
+   first-time visitor on a machine set to dark was landing on the dark page,
+   and the site should introduce itself the same way to everyone. Dark is one
+   click away, and that choice is remembered from then on. */
 
 /* Card and button faces follow the theme instead of being fixed white. */
 :root { --surface: #fff; --on-accent: #fff; }
@@ -199,11 +197,6 @@ html[data-theme="dark"] { @include dark-palette; }
 
 html[data-theme="dark"] .theme-toggle .theme-toggle__sun  { display: none; }
 html[data-theme="dark"] .theme-toggle .theme-toggle__moon { display: block; }
-
-@media (prefers-color-scheme: dark) {
-  html:not([data-theme="light"]) .theme-toggle .theme-toggle__sun  { display: none; }
-  html:not([data-theme="light"]) .theme-toggle .theme-toggle__moon { display: block; }
-}
 
 /* Anchored to the masthead wrapper, not to the nav: the greedy-navigation
    plugin owns everything inside #site-nav, so the toggle stays outside it. */
@@ -795,13 +788,6 @@ html[data-theme="dark"] .theme-toggle .theme-toggle__moon { display: block; }
 html[data-theme="dark"] .page__footer,
 html[data-theme="dark"] .page__footer a {
   color: #23282d;
-}
-
-@media (prefers-color-scheme: dark) {
-  html:not([data-theme="light"]) .page__footer,
-  html:not([data-theme="light"]) .page__footer a {
-    color: #23282d;
-  }
 }
 
 /* Keep footer content above the landscape */
