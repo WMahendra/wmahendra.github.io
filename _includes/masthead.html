@@ -24,3 +24,26 @@
     </div>
   </div>
 </div>
+<script>
+  /* The site is light only. The theme's compiled bundle still runs setTheme()
+     on ready, which puts data-theme="dark" on <html> for anyone whose browser
+     kept a stored preference from when the toggle existed, or whose OS is set
+     to dark. Nothing in the stylesheet selects that attribute any more, so it
+     is normally harmless - but a visitor still holding a cached copy of the
+     previous stylesheet would get a fully dark page with no toggle to escape
+     it. Clearing the stored key and stripping the attribute whenever it
+     reappears removes that possibility, without having to rebuild the bundle. */
+  (function () {
+    var root = document.documentElement;
+    try { localStorage.removeItem("theme"); } catch (e) {}
+    function strip() {
+      if (root.hasAttribute("data-theme")) root.removeAttribute("data-theme");
+    }
+    strip();
+    if (window.MutationObserver) {
+      new MutationObserver(strip).observe(root, {
+        attributes: true, attributeFilter: ["data-theme"]
+      });
+    }
+  })();
+</script>
