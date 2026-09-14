@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 784" role="img"
+     aria-labelledby="t d" style="width:100%;height:auto;color:inherit">
+  <title id="t">Multi-period Sentinel-2 classification workflow</title>
+  <desc id="d">Sentinel-2 SR Harmonized scenes for 2024 with less than 30 per cent cloud are split
+  into three four-month periods: January to April, May to August, and September to December. Each
+  period is masked with the Scene Classification Layer, reduced to a median composite and rescaled,
+  then unmixed into green vegetation, shade, non-photosynthetic vegetation, soil and cloud fractions
+  with a normalised difference of the green vegetation and non-photosynthetic vegetation fractions
+  added. Training samples for forest, bareland, open land and shrubland are taken from the period 1
+  stack only, buffered to 30 metres. One Random Forest of 150 trees is fitted to that period 1 stack
+  and then applied to all three periods, producing three classifications. The three are combined into
+  a majority-vote final class, a per-pixel disagreement layer and a period 1 versus period 3 change
+  layer. No accuracy assessment is part of the workflow.</desc>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="currentColor"/>
+    </marker>
+  </defs>
+
+  <g fill="none" stroke="currentColor" stroke-width="1.2">
+    <rect x="20" y="8" width="900" height="52" rx="4"/>
+
+    <rect x="20" y="92" width="280" height="52" rx="4"/>
+    <rect x="330" y="92" width="280" height="52" rx="4"/>
+    <rect x="640" y="92" width="280" height="52" rx="4"/>
+
+    <rect x="20" y="176" width="280" height="68" rx="4"/>
+    <rect x="330" y="176" width="280" height="68" rx="4"/>
+    <rect x="640" y="176" width="280" height="68" rx="4"/>
+
+    <rect x="20" y="276" width="280" height="68" rx="4"/>
+    <rect x="330" y="276" width="280" height="68" rx="4"/>
+    <rect x="640" y="276" width="280" height="68" rx="4"/>
+
+    <rect x="20" y="396" width="300" height="64" rx="4"/>
+    <rect x="360" y="396" width="560" height="64" rx="4"/>
+
+    <rect x="20" y="500" width="280" height="52" rx="4"/>
+    <rect x="330" y="500" width="280" height="52" rx="4"/>
+    <rect x="640" y="500" width="280" height="52" rx="4"/>
+
+    <rect x="20" y="604" width="900" height="68" rx="4"/>
+    <rect x="120" y="716" width="700" height="52" rx="4"/>
+  </g>
+
+  <!-- plain connectors (no arrowhead): collector buses -->
+  <g stroke="currentColor" stroke-width="1.2" fill="none">
+    <path d="M160 344 L160 376"/>
+    <path d="M470 344 L470 376"/>
+    <path d="M780 344 L780 376"/>
+    <path d="M160 376 L780 376"/>
+    <path d="M640 376 L640 388"/>
+
+    <path d="M640 460 L640 480"/>
+    <path d="M160 480 L780 480"/>
+    <path d="M160 480 L160 492"/>
+    <path d="M470 480 L470 492"/>
+    <path d="M780 480 L780 492"/>
+
+    <path d="M160 552 L160 584"/>
+    <path d="M470 552 L470 584"/>
+    <path d="M780 552 L780 584"/>
+    <path d="M160 584 L780 584"/>
+    <path d="M470 584 L470 596"/>
+  </g>
+
+  <!-- junction where the period 1 stack both trains and is classified -->
+  <circle cx="160" cy="376" r="3.2" fill="currentColor"/>
+
+  <g stroke="currentColor" stroke-width="1.2" marker-end="url(#ar)" fill="none">
+    <path d="M160 60 L160 88"/>
+    <path d="M470 60 L470 88"/>
+    <path d="M780 60 L780 88"/>
+
+    <path d="M160 144 L160 172"/>
+    <path d="M470 144 L470 172"/>
+    <path d="M780 144 L780 172"/>
+
+    <path d="M160 244 L160 272"/>
+    <path d="M470 244 L470 272"/>
+    <path d="M780 244 L780 272"/>
+
+    <path d="M160 376 L160 392"/>
+    <path d="M640 388 L640 392"/>
+    <path d="M320 428 L356 428"/>
+
+    <path d="M160 492 L160 496"/>
+    <path d="M470 492 L470 496"/>
+    <path d="M780 492 L780 496"/>
+
+    <path d="M470 596 L470 600"/>
+    <path d="M470 672 L470 712"/>
+  </g>
+
+  <g fill="currentColor" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14">
+    <text x="470" y="39" text-anchor="middle">Sentinel-2 SR Harmonized, 2024 · scenes below 30 % cloud</text>
+
+    <text x="160" y="123" text-anchor="middle" font-size="13">Period 1 · 1 Jan – 30 Apr</text>
+    <text x="470" y="123" text-anchor="middle" font-size="13">Period 2 · 1 May – 31 Aug</text>
+    <text x="780" y="123" text-anchor="middle" font-size="13">Period 3 · 1 Sep – 31 Dec</text>
+
+    <text x="160" y="203" text-anchor="middle" font-size="13">SCL mask: 1, 3, 8, 9, 10</text>
+    <text x="160" y="225" text-anchor="middle" font-size="13">median composite ÷ 10 000</text>
+    <text x="470" y="203" text-anchor="middle" font-size="13">SCL mask: 1, 3, 8, 9, 10</text>
+    <text x="470" y="225" text-anchor="middle" font-size="13">median composite ÷ 10 000</text>
+    <text x="780" y="203" text-anchor="middle" font-size="13">SCL mask: 1, 3, 8, 9, 10</text>
+    <text x="780" y="225" text-anchor="middle" font-size="13">median composite ÷ 10 000</text>
+
+    <text x="160" y="303" text-anchor="middle" font-size="13">Unmix → GV, Shade, NPV, Soil, Cloud</text>
+    <text x="160" y="325" text-anchor="middle" font-size="13">+ (GV − NPV) / (GV + NPV)</text>
+    <text x="470" y="303" text-anchor="middle" font-size="13">Unmix → GV, Shade, NPV, Soil, Cloud</text>
+    <text x="470" y="325" text-anchor="middle" font-size="13">+ (GV − NPV) / (GV + NPV)</text>
+    <text x="780" y="303" text-anchor="middle" font-size="13">Unmix → GV, Shade, NPV, Soil, Cloud</text>
+    <text x="780" y="325" text-anchor="middle" font-size="13">+ (GV − NPV) / (GV + NPV)</text>
+
+    <text x="170" y="423" text-anchor="middle" font-size="13">Training samples · 4 classes</text>
+    <text x="170" y="445" text-anchor="middle" font-size="13">period 1 stack only, 30 m buffer</text>
+
+    <text x="640" y="423" text-anchor="middle" font-size="13">Random Forest · 150 trees · 3 variables per split · seed 42</text>
+    <text x="640" y="445" text-anchor="middle" font-size="13">fitted to the period 1 stack, then applied to all three periods</text>
+
+    <text x="160" y="531" text-anchor="middle" font-size="13">Classification · period 1</text>
+    <text x="470" y="531" text-anchor="middle" font-size="13">Classification · period 2</text>
+    <text x="780" y="531" text-anchor="middle" font-size="13">Classification · period 3</text>
+
+    <text x="470" y="632" text-anchor="middle">Combine the three classifications</text>
+    <text x="470" y="655" text-anchor="middle" font-size="13">majority vote (FinalClass) · per-pixel disagreement · period 1 vs period 3 change</text>
+
+    <text x="470" y="747" text-anchor="middle" font-size="13">No accuracy assessment: the outputs are compared for agreement, not for correctness</text>
+  </g>
+</svg>
