@@ -710,3 +710,35 @@ body {
     padding-bottom: calc(16.25% + 0.5em);
   }
 }
+
+/* ==================================================================
+   Reading progress (project pages)
+   ================================================================== */
+
+/* A line on the masthead's lower edge that extends to the right as the reader
+   moves down a project page. _includes/reading-progress.html creates the element
+   and appends it to .masthead, which the theme positions fixed at the top of the
+   viewport - so this sits exactly on the masthead's bottom border at any header
+   height, including the taller wrapped header on narrow screens.
+
+   Width is driven by transform rather than by the width property, so each scroll
+   frame is a compositor operation and never triggers layout. No transition: the
+   line should track the scroll position exactly, and easing would leave it
+   lagging behind the text. */
+.reading-progress {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  /* Above .masthead::after, the 1px divider this line sits on top of. */
+  z-index: 2;
+  width: 100%;
+  height: 3px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+  pointer-events: none;
+}
+
+@media print {
+  .reading-progress { display: none; }
+}
