@@ -1,0 +1,70 @@
+{% comment %}
+  Reading progress for project pages.
+
+  A line on the masthead's lower edge that extends to the right as the reader
+  moves down the write-up. The element is created here rather than written into
+  the masthead markup, so it exists only on pages that include this file, and so
+  a reader with JavaScript off sees nothing missing.
+
+  It is appended to .masthead, which the theme positions fixed at the top of the
+  viewport. That makes the masthead the containing block, so the line sits exactly
+  on its bottom border at any header height - including the taller wrapped header
+  on narrow screens - without hard-coding an offset.
+
+  Progress is measured across .page__content, not the whole document: the line
+  completes where the text ends rather than at the bottom of the footer artwork.
+{% endcomment %}
+<script>
+  (function () {
+    var masthead = document.querySelector(".masthead");
+    var article = document.querySelector(".page__content");
+    if (!masthead || !article) return;
+
+    var bar = document.createElement("div");
+    bar.className = "reading-progress";
+    /* Decorative: it duplicates what the scrollbar already reports, so announcing
+       a changing value on every scroll frame would be noise. */
+    bar.setAttribute("aria-hidden", "true");
+    masthead.appendChild(bar);
+
+    var start = 0;
+    var span = 0;
+    var ticking = false;
+
+    function draw() {
+      var p = span > 0 ? (window.pageYOffset - start) / span : 0;
+      if (p < 0) p = 0;
+      else if (p > 1) p = 1;
+      bar.style.transform = "scaleX(" + p + ")";
+      ticking = false;
+    }
+
+    function measure() {
+      var box = article.getBoundingClientRect();
+      start = box.top + window.pageYOffset;
+      /* Full when the last line of the article reaches the bottom of the viewport.
+         A page shorter than the viewport has nothing to scroll, so span stays 0
+         and the line stays at zero width rather than jumping to full. */
+      span = box.height - window.innerHeight;
+      if (span < 1) span = 0;
+      draw();
+    }
+
+    function onScroll() {
+      if (!ticking) {
+        ticking = true;
+        window.requestAnimationFrame(draw);
+      }
+    }
+
+    measure();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", measure);
+    /* Figures, the Leaflet map and the CSV charts all change the article's height
+       after first paint, which moves the end point. */
+    window.addEventListener("load", measure);
+    if (window.ResizeObserver) {
+      new ResizeObserver(measure).observe(article);
+    }
+  })();
+</script>
